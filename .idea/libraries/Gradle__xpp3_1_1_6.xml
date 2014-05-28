@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: xpp3-1.1.6">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ogce/xpp3/1.1.6/dc87e00ddb69341b46a3eb1c331c6fcebf6c8546/xpp3-1.1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ogce/xpp3/1.1.6/9af6000f09d6f52fdf0b2eb7c0347c8ad2f6b22b/xpp3-1.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

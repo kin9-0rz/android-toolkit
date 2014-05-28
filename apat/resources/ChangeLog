@@ -1,0 +1,67 @@
+2013-05-29
+Version 0.1
+Get android package file's information.
+
+2013-05-31
+Version 0.2
+Analysis APIs.
+
+2013-06-03
+Version 0.3
+Search string.
+
+2013-08-13
+Feature Code
+
+2013-08-14
+V0.5
+对敏感的权限，做出中文解释。
+修正清单中服务解析的错误信息。
+
+2013-08-14
+V0.5.1
+敏感API可配置化。
+
+2013-09-04 V0.5.2 release.
+Fix a display bug in the services tab.
+Fix a bug that can't decode apk without certificate file.
+
+2013-09-05 V0.5.3 release
+Fix some bug.
+
+2013-09-12 V0.5.4 release
+Fix bug that URI can't display.
+
+2013-10-16 V0.5.5 release
+Performance optimization in decompress the zip file.
+Fix a bug that api info tab will give misleading message in some case.
+
+2013-10-16 V0.5.6 release
+提高 APK Infos 的解析速度，解决文件资源占用问题。
+优化没有 AndroidManifest.xml 情况下的，提示信息。
+增强 APIs 的解析能力，能对某些奇怪的 dex 进行解析。
+
+已知的BUG：
+不存在 AndroidManifest.xml 的 APK，在 APK Infos 中，无法释放。
+
+2014-2-13
+优化获取特征的视图效果。
+
+2014-2-14
+特征码支持类文件多选功能。
+
+2014-2-24
+修正特征码获取的树错误bug。
+
+2014-3-14
+增强代码搜索。
+修正无限循环的bug。
+
+2014-3-18
+增强异步线程的搜索.
+
+增强搜索容错.
+
+2014-5-15 ----
+调试开关放到配置中么
+

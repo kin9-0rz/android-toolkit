@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+  <import resource="file:conf/vscan.xml" />
+  <bean id="engine" class="com.htjf.kvtool.vscan.pub.Engine">
+    <property name="kvChecker" ref="kvChecker" />
+    <property name="filter" ref="decompileFilter" />
+  </bean>
+  <bean id="kvChecker" class="com.htjf.kvtool.vscan.pub.KVChecker">
+    <constructor-arg index="0" ref="dirMonitor" />
+    <constructor-arg index="1" value="conf/AKvLibs" />
+  </bean>
+  <bean id="decompileFilter" class="com.htjf.kvtool.vscan.pub.DecompileFilter">
+    <property name="filterMap" ref="filterMap" />
+  </bean>
+  <bean id="dirMonitor" class="com.htjf.util.mon.DirMonitor">
+    <property name="interval" value="5000" />
+    <property name="name" value="DirMonitor" />
+  </bean>
+</beans>

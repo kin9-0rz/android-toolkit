@@ -1,0 +1,22 @@
+dependencies {
+	compile project(':dex-reader')
+//	compile project(':core')
+
+    compile 'org.json:json:20090211'
+	compile 'org.xerial.thirdparty:jdbc-api:1.+'
+	compile 'org.xerial.thirdparty:nestedvm:1.+'
+    compile 'org.ogce:xpp3:1.1.6'
+    compile 'org.xerial:sqlite-jdbc:3.7.15-M1'
+}
+
+test {
+    systemProperties 'property': 'value'
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}

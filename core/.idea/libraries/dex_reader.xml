@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="dex-reader">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../dex-reader/out/artifacts/dex_reader/dex-reader.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

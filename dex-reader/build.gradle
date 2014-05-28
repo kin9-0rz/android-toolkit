@@ -1,0 +1,21 @@
+dependencies {
+}
+
+task dist(type: Zip) {
+    from 'resources'
+    from jar.outputs.files
+    into('libs') {
+        from configurations.runtime
+    }
+}
+
+artifacts {
+    archives dist
+}
+
+jar {
+    manifest {
+        attributes "Implementation-Title": "dex-reader"
+        attributes "Class-Path": configurations.runtime.collect{ "libs/"+it.getName() }.join(' ')
+    }
+}

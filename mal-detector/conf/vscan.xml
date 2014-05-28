@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+    <!-- This will automatically locate any and all property files you have
+        within your conf directory. The located property files are parsed and their
+        values can then be used within application context files in the form of ${propertyKey}. -->
+    <context:property-placeholder location="file:conf/*.properties"/>
+
+    <!-- 过滤代码用到的API -->
+    <util:map id="filterMap" value-type="java.util.List">
+        <entry key="install">
+            <!-- 1.权限需以p:开头标识
+                 2.一个value里可以有多个关键字，它们是or关系(以'|'分隔)
+                 3.多个value之间是and关系
+             -->
+            <list>
+                <value>p:INSTALL_PACKAGES</value>
+                <value>pm install|application/vnd.android.package-archive|com.android.packageinstaller</value>
+            </list>
+        </entry>
+        <entry key="recvsms">
+            <list>
+                <value>p:RECEIVE_SMS</value>
+                <value>SmsMessage;->createFromPdu|SmsMessage;->get|getMessagesFromIntent</value>
+            </list>
+        </entry>
+        <entry key="abort">
+            <list>
+                <value>p:RECEIVE_SMS</value>
+                <value>abortBroadcast</value>
+            </list>
+        </entry>
+        <entry key="delsms">
+            <list>
+                <value>ContentResolver;->delete</value>
+            </list>
+        </entry>
+        <entry key="sendsms">
+            <list>
+                <value>p:SEND_SMS</value>
+                <value>SmsManager;->sendTextMessage</value>
+            </list>
+        </entry>
+        <entry key="net">
+            <list>
+                <value>p:INTERNET</value>
+                <value>openConnection|HttpClient;->execute</value>
+            </list>
+        </entry>
+        <entry key="private">
+            <list>
+                <value>p:READ_PHONE_STATE</value>
+                <value>TelephonyManager;->get|PhoneStateListener</value>
+            </list>
+        </entry>
+        <entry key="auto">
+            <list>
+                <value>android/app/Service|android/app/IntentService|Callable|java/lang/Thread|AsyncTask</value>
+            </list>
+        </entry>
+        <entry key="notif">
+            <list>
+                <value>Landroid/app/Notification</value>
+            </list>
+        </entry>
+
+    </util:map>
+</beans>

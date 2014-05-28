@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="lib-java6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../kvtool-core/out/artifacts/lib/lib-java6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

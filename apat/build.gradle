@@ -1,0 +1,38 @@
+dependencies {	
+	compile project(':core')
+	
+    compile "com.jgoodies:jgoodies-forms:1.6.0"
+    compile "com.jgoodies:forms:1.2.1"
+    compile "com.jgoodies:jgoodies-common:1.4.0"
+    compile "org.apache.directory.studio:org.dom4j.dom4j:1.6.1"
+}
+
+version = '0.6.2'
+
+task dist(type: Zip) {
+    from 'resources'
+    from jar.outputs.files
+	into('libs') {
+		from configurations.runtime
+	}
+}
+
+artifacts {
+	archives dist
+}
+
+jar {
+	manifest {
+		attributes "Implementation-Title": "apat"
+		attributes 'Main-Class': 'gui.Main'
+		attributes "Class-Path": configurations.runtime.collect{ "libs/"+it.getName() }.join(' ')
+	}
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
