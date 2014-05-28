@@ -6,6 +6,8 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
 
+
+//FIXME 现在只能拿字符串部分，但是，其他部分仍然存在问题，需要改进。
 public class Elf {
     //elf头部偏移地址
     private static final int E_IDENT = 0x00;
