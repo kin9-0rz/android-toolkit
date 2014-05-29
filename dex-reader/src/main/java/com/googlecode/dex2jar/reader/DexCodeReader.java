@@ -36,10 +36,6 @@ import java.util.TreeMap;
 /* default */class DexCodeReader implements DexOpcodes {
 
     /**
-     * 标签映射,指令位置->指令编号
-     */
-    /* default */ Map<Integer, DexLabel> labels = new TreeMap<Integer, DexLabel>();
-    /**
      * dex文件
      */
     private DexFileReader dex;
@@ -47,7 +43,13 @@ import java.util.TreeMap;
      * 输入流
      */
     private DataIn in;
+    /**
+     * 标签映射,指令位置->指令编号
+     */
+    /* default */ Map<Integer, DexLabel> labels = new TreeMap<Integer, DexLabel>();
+
     private boolean isStatic;
+
     /**
      * 方法的描述
      */
@@ -66,44 +68,30 @@ import java.util.TreeMap;
         this.isStatic = isStatic;
     }
 
-    private static long xLong(DataIn in) {
-        long rs = in.readUShortx();
-        rs |= ((long) in.readUShortx()) << 16;
-        rs |= ((long) in.readUShortx()) << 32;
-        rs |= ((long) in.readUShortx()) << 48;
-        return rs;
-    }
-
-    private static int xInt(DataIn in) {
-        return in.readUShortx() | (in.readUShortx() << 16);
-    }
-
-    private static int xUint(DataIn in) {
-        return in.readUShortx() | (in.readUShortx() << 16);
-    }
-
     private void findLabels(DataIn in, int instruction_size) {
-        for (int baseOffset = in.getCurrentPosition(), currentOffset = 0; currentOffset < instruction_size; currentOffset = (in
+        int baseOffset = in.getCurrentPosition();
+        fixIssue130(in, instruction_size);
+        for (int currentOffset = (in.getCurrentPosition() - baseOffset) / 2; currentOffset < instruction_size; currentOffset = (in
                 .getCurrentPosition() - baseOffset) / 2) {
-            int opCode = in.readUShortx();
-            int uOpCodeH = opCode >> 8;
+            int opcode = in.readUShortx();
+            int uOpcodeH = opcode >> 8;
             {
-                int uOpcodeL = opCode & 0xFF;
+                int uOpcodeL = opcode & 0xFF;
                 if (uOpcodeL != 0xFF) {
-                    opCode = uOpcodeL;
+                    opcode = uOpcodeL;
                 }
             }
-            OpcodeFormat format = OpcodeFormat.get(opCode, dex.apiLevel);
 
-            // 无视未知的操作
+            OpcodeFormat format = OpcodeFormat.get(opcode, dex.apiLevel);
+
             if (format == null) {
                 return;
             }
 
             try {
-                switch (opCode) {
+                switch (opcode) {
                     case OP_GOTO:// 10t
-                        order(currentOffset + (byte) uOpCodeH);
+                        order(currentOffset + (byte) uOpcodeH);
                         break;
                     case OP_IF_EQZ:// 21t
                     case OP_IF_NEZ:
@@ -130,7 +118,7 @@ import java.util.TreeMap;
                         in.push();
                         try {
                             in.skip((offset - 3) * 2);
-                            switch (opCode) {
+                            switch (opcode) {
                                 case OP_SPARSE_SWITCH: {
                                     in.skip(2);
                                     int switch_size = in.readUShortx();
@@ -161,7 +149,7 @@ import java.util.TreeMap;
                     }
 
                     case OP_NOP: {// OP_NOP
-                        switch (uOpCodeH) {
+                        switch (uOpcodeH) {
                             case 0: // 0000 //spacer
                                 break;
                             case 1: // packed-switch-data
@@ -197,13 +185,50 @@ import java.util.TreeMap;
         }
     }
 
-    private void findTryCatch(DataIn in, DexCodeVisitor dcv, int tries_size) {
+    /**
+     * This is a trick to fix issue 130 http://code.google.com/p/dex2jar/issues/detail?id=130
+     * <p/>
+     * <pre>
+     * 036280: 3200 0900                              |0000: if-eq v0, v0, 0009 // +0009
+     * 036284: 2600 0300 0000                         |0002: fill-array-data v0, 00000005 // +00000003
+     * 03628a: 0003 0100 0800 0000 7010 ce0b 0000 ... |0005: array-data (8 units)
+     * </pre>
+     * <p/>
+     * skip the if-eq, and direct read from 0009
+     *
+     * @param in
+     * @param instruction_size
+     */
+    private void fixIssue130(DataIn in, int instruction_size) {
+        if (instruction_size < 4) {
+            return;
+        }
+        int base = in.getCurrentPosition();
+        int opcode = in.readUShortx();
+        int uOpcodeH = opcode >> 8;
+        {
+            int uOpcodeL = opcode & 0xFF;
+            if (uOpcodeL != 0xFF) {
+                opcode = uOpcodeL;
+            }
+        }
+        if ((opcode == OP_IF_EQ) && ((uOpcodeH & 0xF) == (uOpcodeH >> 4))) {
+            int offset = in.readShortx();
+            in.skip(offset * 2 - 4);
+        } else {
+            in.move(base);
+        }
+    }
+
+    private void findTryCatch(DataIn in, DexCodeVisitor dcv, int tries_size, int insn_size) {
         int encoded_catch_handler_list = in.getCurrentPosition() + tries_size * 8;
         for (int i = 0; i < tries_size; i++) {
             int start_addr = in.readUIntx();
             int insn_count = in.readUShortx();
             int handler_offset = in.readUShortx();
-
+            if (start_addr > insn_size) {
+                continue;
+            }
             order(start_addr);
             int end = start_addr + insn_count;
             order(end);
@@ -212,23 +237,28 @@ import java.util.TreeMap;
             try {
                 boolean catchAll = false;
                 int listSize = (int) in.readLeb128();
+                int handlerCount = listSize;
                 if (listSize <= 0) {
                     listSize = -listSize;
+                    handlerCount = listSize + 1;
                     catchAll = true;
                 }
+                DexLabel labels[] = new DexLabel[handlerCount];
+                String types[] = new String[handlerCount];
                 for (int k = 0; k < listSize; k++) {
                     int type_id = (int) in.readULeb128();
                     int handler = (int) in.readULeb128();
                     order(handler);
 
-                    String type = dex.getType(type_id);
-                    dcv.visitTryCatch(this.labels.get(start_addr), this.labels.get(end), this.labels.get(handler), type);
+                    types[k] = dex.getType(type_id);
+                    labels[k] = this.labels.get(handler);
                 }
                 if (catchAll) {
                     int handler = (int) in.readULeb128();
                     order(handler);
-                    dcv.visitTryCatch(this.labels.get(start_addr), this.labels.get(end), this.labels.get(handler), null);
+                    labels[listSize] = this.labels.get(handler);
                 }
+                dcv.visitTryCatch(this.labels.get(start_addr), this.labels.get(end), labels, types);
             } finally {
                 in.pop();
             }
@@ -240,7 +270,7 @@ import java.util.TreeMap;
      *
      * @param dcv
      */
-    public void accept(DexCodeVisitor dcv, int config) {
+    public int accept(DexCodeVisitor dcv, int config) {
 
         DataIn in = this.in;
         int total_registers_size = in.readUShortx();
@@ -253,26 +283,28 @@ import java.util.TreeMap;
         LocalVariable localVariables[] = new LocalVariable[total_registers_size];
         int args[];
         // 处理方法的参数
-        int args_index;
-        int i = total_registers_size - in_register_size;
-        String[] parameterTypes = method.getParameterTypes();
-        if (!isStatic) {
-            args = new int[parameterTypes.length + 1];
-            localVariables[i] = new LocalVariable(i, 0, -1, "this", method.getOwner(), null);
-            args[0] = i++;
-            args_index = 1;
-        } else {
-            args = new int[parameterTypes.length];
-            args_index = 0;
-        }
-        for (String type : parameterTypes) {
-            localVariables[i] = new LocalVariable(i, 0, -1, "arg" + args_index, type, null);
-            args[args_index++] = i++;
-            if ("D".equals(type) || "J".equals(type)) {// 为Double/Long型特殊处理
-                i++;
+        {
+            int args_index;
+            int i = total_registers_size - in_register_size;
+            String[] parameterTypes = method.getParameterTypes();
+            if (!isStatic) {
+                args = new int[parameterTypes.length + 1];
+                localVariables[i] = new LocalVariable(i, 0, -1, "this", method.getOwner(), null);
+                args[0] = i++;
+                args_index = 1;
+            } else {
+                args = new int[parameterTypes.length];
+                args_index = 0;
             }
+            for (String type : parameterTypes) {
+                localVariables[i] = new LocalVariable(i, 0, -1, "arg" + args_index, type, null);
+                args[args_index++] = i++;
+                if ("D".equals(type) || "J".equals(type)) {// 为Double/Long型特殊处理
+                    i++;
+                }
+            }
+            dcv.visitArguments(total_registers_size, args);
         }
-        dcv.visitArguments(total_registers_size, args);
 
         // 处理异常处理
         if (tries_size > 0) {
@@ -282,7 +314,7 @@ import java.util.TreeMap;
                 if ((instruction_size & 0x01) != 0) {// skip padding
                     in.skip(2);
                 }
-                findTryCatch(in, dcv, tries_size);
+                findTryCatch(in, dcv, tries_size, instruction_size);
             } finally {
                 in.pop();
             }
@@ -296,7 +328,6 @@ import java.util.TreeMap;
                 in.pop();
             }
         }
-
         // 查找标签
         in.push();
         try {
@@ -305,16 +336,27 @@ import java.util.TreeMap;
             in.pop();
         }
         DexOpcodeAdapter n = new DexOpcodeAdapter(this.dex, this.labels, dcv);
-        acceptInsn(in, instruction_size, n);
+        int tmp = acceptInsn(in, instruction_size, n);
+
+        if (tmp == -1) {
+            return -1;
+        }
         dcv.visitEnd();
+
+        return 1;
+
     }
 
-    private void acceptInsn(DataIn in, int instruction_size, DexOpcodeAdapter n) {
-        // 处理指令
+    // 处理指令
+    private int acceptInsn(DataIn in, int instruction_size, DexOpcodeAdapter n) {
+
         Iterator<Integer> labelOffsetIterator = this.labels.keySet().iterator();
         Integer nextLabelOffset = labelOffsetIterator.hasNext() ? labelOffsetIterator.next() : null;
-        for (int baseOffset = in.getCurrentPosition(), currentOffset = 0; currentOffset < instruction_size; currentOffset = (in
+        int baseOffset = in.getCurrentPosition();
+        fixIssue130(in, instruction_size);
+        for (int currentOffset = (in.getCurrentPosition() - baseOffset) / 2; currentOffset < instruction_size; currentOffset = (in
                 .getCurrentPosition() - baseOffset) / 2) {
+
             boolean currentOffsetVisited = false;
             while (nextLabelOffset != null) {// issue 65, a label may `inside` an instruction
                 int _intNextLabelOffset = nextLabelOffset;// autobox
@@ -341,11 +383,11 @@ import java.util.TreeMap;
                     opcode = uOpcodeL;
                 }
             }
+
             OpcodeFormat format = OpcodeFormat.get(opcode, dex.apiLevel);
 
-            // 无视未知的操作
             if (format == null) {
-                return;
+                return baseOffset;
             }
 
             switch (format) {
@@ -504,38 +546,41 @@ import java.util.TreeMap;
                                     case OP_FILL_ARRAY_DATA: {
 
                                         in.skip(2);
-//                                        int elemWidth = in.readUShortx();
-//                                        int initLength = in.readUIntx();
-//
-////                            System.out.println("initLength : " + initLength);
-//
-//                                        Object[] values = new Object[initLength];
-//
-//                                        switch (elemWidth) {
-//                                            case 1:
-//                                                for (int j = 0; j < initLength; j++) {
-//                                                    values[j] = (byte) in.readByte();
-//                                                }
-//                                                break;
-//                                            case 2:
-//                                                for (int j = 0; j < initLength; j++) {
-//                                                    values[j] = (short) in.readShortx();
-//                                                }
-//                                                break;
-//                                            case 4:
-//                                                for (int j = 0; j < initLength; j++) {
-//                                                    values[j] = in.readIntx();
-//                                                }
-//                                                break;
-//                                            case 8:
-//                                                for (int j = 0; j < initLength; j++) {
-//                                                    values[j] = (in.readIntx() & 0x00000000FFFFFFFFL) | (((long) in.readIntx()) << 32);
-//                                                }
-//                                                break;
-//                                        }
-//
-//                                        n.visitFillArrayStmt(opcode, uOpcodeH, elemWidth, initLength, values);
-                                    }
+                                       /* int elemWidth = in.readUShortx();
+                                        int initLength = in.readUIntx();
+
+                                        // add
+                                        if (initLength >= Integer.MAX_VALUE) {
+                                            return -1;
+                                        }
+
+                                        Object[] values = new Object[initLength];
+
+                                        switch (elemWidth) {
+                                            case 1:
+                                                for (int j = 0; j < initLength; j++) {
+                                                    values[j] = (byte) in.readByte();
+                                                }
+                                                break;
+                                            case 2:
+                                                for (int j = 0; j < initLength; j++) {
+                                                    values[j] = (short) in.readShortx();
+                                                }
+                                                break;
+                                            case 4:
+                                                for (int j = 0; j < initLength; j++) {
+                                                    values[j] = in.readIntx();
+                                                }
+                                                break;
+                                            case 8:
+                                                for (int j = 0; j < initLength; j++) {
+                                                    values[j] = (in.readIntx() & 0x00000000FFFFFFFFL) | (((long) in.readIntx()) << 32);
+                                                }
+                                                break;
+                                        }
+
+                                        n.visitFillArrayStmt(opcode, uOpcodeH, elemWidth, initLength, values);
+                                    */}
                                 }
                             } finally {
                                 in.pop();
@@ -647,6 +692,23 @@ import java.util.TreeMap;
                 break;
             }
         }
+        return 1;
+    }
+
+    private static long xLong(DataIn in) {
+        long rs = in.readUShortx();
+        rs |= ((long) in.readUShortx()) << 16;
+        rs |= ((long) in.readUShortx()) << 32;
+        rs |= ((long) in.readUShortx()) << 48;
+        return rs;
+    }
+
+    private static int xInt(DataIn in) {
+        return in.readUShortx() | (in.readUShortx() << 16);
+    }
+
+    private static int xUint(DataIn in) {
+        return in.readUShortx() | (in.readUShortx() << 16);
     }
 
     /**

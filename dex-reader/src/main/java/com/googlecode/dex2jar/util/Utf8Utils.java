@@ -30,40 +30,31 @@ import java.io.Writer;
 /**
  * Constants of type <code>CONSTANT_Utf8_info</code>.
  */
-public final class Utf8Utils
-{
+public final class Utf8Utils {
 
     /**
-     * Converts a string into its Java-style UTF-8 form. Java-style UTF-8
-     * differs from normal UTF-8 in the handling of character '\0' and surrogate
-     * pairs.
+     * Converts a string into its Java-style UTF-8 form. Java-style UTF-8 differs from normal UTF-8 in the handling of
+     * character '\0' and surrogate pairs.
      * 
      * @param string
      *            non-null; the string to convert
      * @return non-null; the UTF-8 bytes for it
      */
-    public static byte[] stringToUtf8Bytes(String string)
-    {
-        final int len = string.length();
-        final byte[] bytes = new byte[len * 3]; // Avoid having to reallocate.
+    public static byte[] stringToUtf8Bytes(String string) {
+        int len = string.length();
+        byte[] bytes = new byte[len * 3]; // Avoid having to reallocate.
         int outAt = 0;
 
-        for (int i = 0; i < len; i++)
-        {
-            final char c = string.charAt(i);
-            if ((c != 0) && (c < 0x80))
-            {
+        for (int i = 0; i < len; i++) {
+            char c = string.charAt(i);
+            if ((c != 0) && (c < 0x80)) {
                 bytes[outAt] = (byte) c;
                 outAt++;
-            }
-            else if (c < 0x800)
-            {
+            } else if (c < 0x800) {
                 bytes[outAt] = (byte) (((c >> 6) & 0x1f) | 0xc0);
                 bytes[outAt + 1] = (byte) ((c & 0x3f) | 0x80);
                 outAt += 2;
-            }
-            else
-            {
+            } else {
                 bytes[outAt] = (byte) (((c >> 12) & 0x0f) | 0xe0);
                 bytes[outAt + 1] = (byte) (((c >> 6) & 0x3f) | 0x80);
                 bytes[outAt + 2] = (byte) ((c & 0x3f) | 0x80);
@@ -71,45 +62,37 @@ public final class Utf8Utils
             }
         }
 
-        final byte[] result = new byte[outAt];
+        byte[] result = new byte[outAt];
         System.arraycopy(bytes, 0, result, 0, outAt);
         return result;
     }
 
-    private static ThreadLocal<char[]> tempBuffer = new ThreadLocal<char[]>();
+    private static char[] tempBuffer = null;
 
     /**
      * Converts an array of UTF-8 bytes into a string.
      * 
-     * This method uses a global buffer to avoid having to allocate one every
-     * time, so it is *not* thread-safe
+     * This method uses a global buffer to avoid having to allocate one every time, so it is *not* thread-safe
      * 
      * @param bytes
      *            non-null; the bytes to convert
      * @param start
      *            the start index of the utf8 string to convert
      * @param length
-     *            the length of the utf8 string to convert, not including any
-     *            null-terminator that might be present
+     *            the length of the utf8 string to convert, not including any null-terminator that might be present
      * @return non-null; the converted string
      */
-    public static String utf8BytesToString(byte[] bytes, int start, int length)
-    {
-        char[] buf = tempBuffer.get();
-        if (buf == null || buf.length < length)
-        {
-            buf = new char[length];
-            tempBuffer.set(buf);
+    public static String utf8BytesToString(byte[] bytes, int start, int length) {
+        if (tempBuffer == null || tempBuffer.length < length) {
+            tempBuffer = new char[length];
         }
-        final char[] chars = buf;
+        char[] chars = tempBuffer;
         int outAt = 0;
 
-        for (int at = start; length > 0; /* at */)
-        {
-            final int v0 = bytes[at] & 0xFF;
+        for (int at = start; length > 0; /* at */) {
+            int v0 = bytes[at] & 0xFF;
             char out;
-            switch (v0 >> 4)
-            {
+            switch (v0 >> 4) {
             case 0x00:
             case 0x01:
             case 0x02:
@@ -117,62 +100,65 @@ public final class Utf8Utils
             case 0x04:
             case 0x05:
             case 0x06:
-            case 0x07:
-            {
+            case 0x07: {
                 // 0XXXXXXX -- single-byte encoding
                 length--;
-                if (v0 == 0)
+                if (v0 == 0) {
                     // A single zero byte is illegal.
                     return throwBadUtf8(v0, at);
+                }
                 out = (char) v0;
                 at++;
                 break;
             }
             case 0x0c:
-            case 0x0d:
-            {
+            case 0x0d: {
                 // 110XXXXX -- two-byte encoding
                 length -= 2;
-                if (length < 0)
+                if (length < 0) {
                     return throwBadUtf8(v0, at);
-                final int v1 = bytes[at + 1] & 0xFF;
-                if ((v1 & 0xc0) != 0x80)
+                }
+                int v1 = bytes[at + 1] & 0xFF;
+                if ((v1 & 0xc0) != 0x80) {
                     return throwBadUtf8(v1, at + 1);
-                final int value = ((v0 & 0x1f) << 6) | (v1 & 0x3f);
-                if ((value != 0) && (value < 0x80))
+                }
+                int value = ((v0 & 0x1f) << 6) | (v1 & 0x3f);
+                if ((value != 0) && (value < 0x80)) {
                     /*
                      * This should have been represented with one-byte encoding.
                      */
                     return throwBadUtf8(v1, at + 1);
+                }
                 out = (char) value;
                 at += 2;
                 break;
             }
-            case 0x0e:
-            {
+            case 0x0e: {
                 // 1110XXXX -- three-byte encoding
                 length -= 3;
-                if (length < 0)
+                if (length < 0) {
                     return throwBadUtf8(v0, at);
-                final int v1 = bytes[at + 1] & 0xFF;
-                if ((v1 & 0xc0) != 0x80)
+                }
+                int v1 = bytes[at + 1] & 0xFF;
+                if ((v1 & 0xc0) != 0x80) {
                     return throwBadUtf8(v1, at + 1);
-                final int v2 = bytes[at + 2] & 0xFF;
-                if ((v1 & 0xc0) != 0x80)
+                }
+                int v2 = bytes[at + 2] & 0xFF;
+                if ((v1 & 0xc0) != 0x80) {
                     return throwBadUtf8(v2, at + 2);
-                final int value = ((v0 & 0x0f) << 12) | ((v1 & 0x3f) << 6) | (v2 & 0x3f);
-                if (value < 0x800)
+                }
+                int value = ((v0 & 0x0f) << 12) | ((v1 & 0x3f) << 6) | (v2 & 0x3f);
+                if (value < 0x800) {
                     /*
-                     * This should have been represented with one- or two-byte
-                     * encoding.
+                     * This should have been represented with one- or two-byte encoding.
                      */
                     return throwBadUtf8(v2, at + 2);
+                }
                 out = (char) value;
                 at += 3;
                 break;
             }
-            default:
-            {
+            default: {
                 // 10XXXXXX, 1111XXXX -- illegal
                 return throwBadUtf8(v0, at);
             }
@@ -185,8 +171,7 @@ public final class Utf8Utils
     }
 
     /**
-     * Helper for {@link #utf8BytesToString}, which throws the right exception
-     * for a bogus utf-8 byte.
+     * Helper for {@link #utf8BytesToString}, which throws the right exception for a bogus utf-8 byte.
      * 
      * @param value
      *            the byte value
@@ -196,23 +181,20 @@ public final class Utf8Utils
      * @throws IllegalArgumentException
      *             always thrown
      */
-    private static String throwBadUtf8(int value, int offset)
-    {
-        throw new IllegalArgumentException("bad utf-8 byte  at offset ");
+    private static String throwBadUtf8(int value, int offset) {
+        throw new IllegalArgumentException("bad utf-8 byte " + String.format("%02x", value) + " at offset "
+                + String.format("%08x", offset));
     }
 
-    public static void writeEscapedChar(Writer writer, char c) throws IOException
-    {
-        if ((c >= ' ') && (c < 0x7f))
-        {
-            if ((c == '\'') || (c == '\"') || (c == '\\'))
+    public static void writeEscapedChar(Writer writer, char c) throws IOException {
+        if ((c >= ' ') && (c < 0x7f)) {
+            if ((c == '\'') || (c == '\"') || (c == '\\')) {
                 writer.write('\\');
+            }
             writer.write(c);
             return;
-        }
-        else if (c <= 0x7f)
-            switch (c)
-            {
+        } else if (c <= 0x7f) {
+            switch (c) {
             case '\n':
                 writer.write("\\n");
                 return;
@@ -223,6 +205,7 @@ public final class Utf8Utils
                 writer.write("\\t");
                 return;
             }
+        }
 
         writer.write("\\u");
         writer.write(Character.forDigit(c >> 12, 16));
@@ -232,22 +215,18 @@ public final class Utf8Utils
 
     }
 
-    public static void writeEscapedString(Writer writer, String value) throws IOException
-    {
-        for (int i = 0; i < value.length(); i++)
-        {
-            final char c = value.charAt(i);
+    public static void writeEscapedString(Writer writer, String value) throws IOException {
+        for (int i = 0; i < value.length(); i++) {
+            char c = value.charAt(i);
 
-            if ((c >= ' ') && (c < 0x7f))
-            {
-                if ((c == '\'') || (c == '\"') || (c == '\\'))
+            if ((c >= ' ') && (c < 0x7f)) {
+                if ((c == '\'') || (c == '\"') || (c == '\\')) {
                     writer.write('\\');
+                }
                 writer.write(c);
                 continue;
-            }
-            else if (c <= 0x7f)
-                switch (c)
-                {
+            } else if (c <= 0x7f) {
+                switch (c) {
                 case '\n':
                     writer.write("\\n");
                     continue;
@@ -258,6 +237,7 @@ public final class Utf8Utils
                     writer.write("\\t");
                     continue;
                 }
+            }
 
             writer.write("\\u");
             writer.write(Character.forDigit(c >> 12, 16));
@@ -267,25 +247,21 @@ public final class Utf8Utils
         }
     }
 
-    public static String escapeString(String value)
-    {
-        final int len = value.length();
-        final StringBuilder sb = new StringBuilder(len * 3 / 2);
+    public static String escapeString(String value) {
+        int len = value.length();
+        StringBuilder sb = new StringBuilder(len * 3 / 2);
 
-        for (int i = 0; i < len; i++)
-        {
-            final char c = value.charAt(i);
+        for (int i = 0; i < len; i++) {
+            char c = value.charAt(i);
 
-            if ((c >= ' ') && (c < 0x7f))
-            {
-                if ((c == '\'') || (c == '\"') || (c == '\\'))
+            if ((c >= ' ') && (c < 0x7f)) {
+                if ((c == '\'') || (c == '\"') || (c == '\\')) {
                     sb.append('\\');
+                }
                 sb.append(c);
                 continue;
-            }
-            else if (c <= 0x7f)
-                switch (c)
-                {
+            } else if (c <= 0x7f) {
+                switch (c) {
                 case '\n':
                     sb.append("\\n");
                     continue;
@@ -296,6 +272,7 @@ public final class Utf8Utils
                     sb.append("\\t");
                     continue;
                 }
+            }
 
             sb.append("\\u");
             sb.append(Character.forDigit(c >> 12, 16));

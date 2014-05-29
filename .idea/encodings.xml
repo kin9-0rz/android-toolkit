@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/asm/FieldAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/asm/LdcOptimizeAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/asm/OrderInnerOutterInsnNodeClassAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/Constant.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ET.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/IrMethod.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/Local.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/LocalVar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ToStringUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/Trap.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/Value.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ValueBox.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/ArrayExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/BinopExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/CastExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/Exprs.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/FieldExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/FilledArrayExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/InvokeExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/NewExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/NewMutiArrayExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/RefExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/TypeExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/UnopExpr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/AssignStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/BaseSwitchStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/JumpStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/LabelStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/LookupSwitchStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/NopStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/ReturnVoidStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/Stmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/StmtList.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/Stmts.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/TableSwitchStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/stmt/UnopStmt.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/ArrayNullPointerTransformer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/BaseLiveAnalyze.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/Cfg.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/CleanLabel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/EndRemover.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/ExceptionHandlerCurrectTransformer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/ExceptionHandlerTrim.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/FixVar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/LiveAnalyze.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/LocalRemove.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/LocalSplit.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/LocalType.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/TopologicalSort.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/Transformer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/TypeAnalyze.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ir/ts/ZeroTransformer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/AnnotationNode.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/ClassVisitorFactory.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/Dex2AsmAnnotationAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/Dex2jar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/DexExceptionHandler.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/DexExceptionHandlerImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/IrMethod2AsmMethod.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3ClassAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3CodeAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3FieldAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3InnerClzGather.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3MethodAdapter.java" charset="UTF-8" />
+  </component>
 </project>
 

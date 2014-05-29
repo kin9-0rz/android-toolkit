@@ -241,7 +241,7 @@ class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, 
         try {
             APK apk = new APK(filePath);
 
-
+            // TODO 这里也许使用 getCodes() 比较统一点好。
             HashMap<String, String> methods = apk.getMethods();
 
             HashMap<String, ArrayList<String>> contentMap = new HashMap<>();

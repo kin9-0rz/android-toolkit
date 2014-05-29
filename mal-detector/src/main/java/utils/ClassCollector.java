@@ -2,7 +2,7 @@ package utils;
 
 import com.googlecode.dex2jar.visitors.DexClassVisitor;
 import com.googlecode.dex2jar.visitors.DexFileVisitor;
-import parser.dex.ClassDefItem;
+import parser.dex.DexClass;
 
 import java.util.List;
 
@@ -13,10 +13,10 @@ import java.util.List;
  */
 public class ClassCollector implements DexFileVisitor// Dex代码扫描
 {
-    List<ClassDefItem> classList;
+    List<DexClass> classList;
     int classIdx = 0;
     /**收集dex的class*/
-    public ClassCollector(List<ClassDefItem> c)
+    public ClassCollector(List<DexClass> c)
     {
         this.classList = c;
     }
@@ -25,7 +25,7 @@ public class ClassCollector implements DexFileVisitor// Dex代码扫描
     public DexClassVisitor visit(int access_flags, String className, String superClass,
             String[] interfaceNames)
     {
-        final ClassDefItem item = new ClassDefItem();
+        final DexClass item = new DexClass();
         item.className = className;
         item.superName = superClass;
         item.classIdx = classIdx++;

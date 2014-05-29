@@ -20,10 +20,10 @@ public class ApkActionPos implements DexFileVisitor {
      * 行为位置收集器
      */
     final List<String> posCollector;
-    ClassDefItem classItem;
+    DexClass classItem;
 
 
-    public ApkActionPos(ClassDefItem c, List<String> collector, Map<String, String> lapis, Map<String, String> eapis) {
+    public ApkActionPos(DexClass c, List<String> collector, Map<String, String> lapis, Map<String, String> eapis) {
         this.classItem = c;
         this.posCollector = collector;
         lApis = lapis;
@@ -33,7 +33,7 @@ public class ApkActionPos implements DexFileVisitor {
     /**
      * 更新ClassDefItem，保存其相关的字串值
      */
-    public ApkActionPos(ClassDefItem c) {
+    public ApkActionPos(DexClass c) {
         classItem = c;
         posCollector = null;
         lApis = null;

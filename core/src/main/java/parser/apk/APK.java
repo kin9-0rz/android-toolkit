@@ -4,10 +4,8 @@ import com.googlecode.dex2jar.reader.DexFileReader;
 import org.apache.commons.io.IOUtils;
 import parser.axml.ManifestInfo;
 import parser.axml.ManifestParser;
-import parser.dex.ApkActionPos;
-import parser.dex.ClassCollector;
-import parser.dex.ClassDefItem;
-import parser.dex.CodeCollector;
+import parser.dex.CodeGather;
+import parser.dex.DexClass;
 import parser.elf.Elf;
 import parser.utils.CertTool;
 import parser.utils.FileTypesDetector;
@@ -31,6 +29,8 @@ import java.util.zip.ZipInputStream;
  * </p>
  */
 public class APK {
+    private List<DexClass> codes = new ArrayList<>();
+
     HashMap<String, String> certificateInfos;
     @SuppressWarnings("UnusedDeclaration")
     private String absolutePath;
@@ -44,7 +44,6 @@ public class APK {
     private HashMap<String, APK> subApkDataMap;
     private HashMap<String, String> subFileHash256Map;
     private HashMap<String, String> subAPKHash256Map;
-
 
     public APK(InputStream inputStream) throws IOException {
         BufferedInputStream bis = new BufferedInputStream(inputStream);
@@ -193,7 +192,8 @@ public class APK {
 
 
         dexFileReader = new DexFileReader(file);
-
+        dexFileReader.accept(new CodeGather(codes),
+                DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
 
         // 解析清单信息
         final ManifestParser mp = new ManifestParser();
@@ -434,20 +434,26 @@ public class APK {
      * @return ClassDefItem 列表
      */
     @SuppressWarnings("UnusedDeclaration")
-    public List<ClassDefItem> getClassDefItems() {
-        final List<ClassDefItem> classDefItems = new ArrayList<>();
+    public List<DexClass> getClassDefItems() {
+        final List<DexClass> dexClasses = new ArrayList<>();
         // FIXME ClassDefItem 中的 stringData 并没有值，访问失败。
-        dexFileReader.accept(new ClassCollector(classDefItems));
+        dexFileReader.accept(new CodeGather(dexClasses));
 
         //Test
-        for (ClassDefItem classDefItem : classDefItems) {
-            dexFileReader.visitClass(new CodeCollector(classDefItem), classDefItem.classIdx,
-                    DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+//        for (DexClass dexClass : codes) {
+//            dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
+//                    DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+//
+//        }
 
-        }
-
-        return classDefItems;
+        return dexClasses;
     }
+
+
+    public List<DexClass> getCodes() {
+        return codes;
+    }
+
 
     /**
      * 获取所有类/方法/内容
@@ -458,19 +464,36 @@ public class APK {
     public HashMap<String, String> getMethods() {
         HashMap<String, String> methods = new HashMap<>();
 
-        final List<ClassDefItem> classDefItems = new ArrayList<>();
-        dexFileReader.accept(new ClassCollector(classDefItems));
-//        int count = 0;
-        for (ClassDefItem classDefItem : classDefItems) {
-            dexFileReader.visitClass(new CodeCollector(classDefItem), classDefItem.classIdx,
-                    DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
 
-            if (classDefItem.methodBodys.size() > 0) {
-                for (String key : classDefItem.methodBodys.keySet()) {
-                    methods.put(key, classDefItem.methodBodys.get(key));
+        for (DexClass dexClass : codes) {
+            if (dexClass.methodMap.size() > 0) {
+                for (String key : dexClass.methodMap.keySet()) {
+                    methods.put(key, dexClass.methodMap.get(key));
                 }
             }
         }
+
+
+//        dexFileReader.accept(new ClassCollector(classDefItems));
+
+//        for (DexClass dexClass : codes) {
+//            System.out.println("-------------->>>>>>>>>>>>>>>>" + dexClass.className);
+//            System.out.println("-------------->>>>>>>>>>>>>>>>" + dexClass.methodMap);
+//            System.out.println("-------------->>>>>>>>>>>>>>>>" + dexClass.methods);
+//        }
+
+
+//        int count = 0;
+//        for (DexClass dexClass : codes) {
+//            dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
+//                    DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+//
+//            if (dexClass.methodMap.size() > 0) {
+//                for (String key : dexClass.methodMap.keySet()) {
+//                    methods.put(key, dexClass.methodMap.get(key));
+//                }
+//            }
+//        }
 
         return methods;
     }
@@ -486,26 +509,23 @@ public class APK {
     /**
      * @return @return <class : set(String)>
      */
-    @SuppressWarnings("UnusedDeclaration")
     public HashMap<String, HashSet<String>> getStringsMap() {
         HashMap<String, HashSet<String>> stringMap = new HashMap<>();
 
-        final List<ClassDefItem> classDefItems = new ArrayList<>();
-        dexFileReader.accept(new ClassCollector(classDefItems));
+        final List<DexClass> dexClasses = new ArrayList<>();
+        dexFileReader.accept(new CodeGather(dexClasses));
 
         try {
 
 
-            for (ClassDefItem classDefItem : classDefItems) {
+            for (DexClass dexClass : dexClasses) {
+//                dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
+//                        DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
 
+//                dexFileReader.visitClass(new ApkActionPos(dexClass), dexClass.classIdx, DexFileReader.SKIP_DEBUG
+//                        | DexFileReader.SKIP_ANNOTATION);
 
-                dexFileReader.visitClass(new CodeCollector(classDefItem), classDefItem.classIdx,
-                        DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
-
-                dexFileReader.visitClass(new ApkActionPos(classDefItem), classDefItem.classIdx, DexFileReader.SKIP_DEBUG
-                        | DexFileReader.SKIP_ANNOTATION);
-
-                stringMap.put(classDefItem.className, new HashSet<>(classDefItem.stringData));
+                stringMap.put(dexClass.className, new HashSet<>(dexClass.stringData));
             }
         } catch (java.lang.OutOfMemoryError error) {
             error.printStackTrace();

@@ -1,7 +1,7 @@
 package utils;
 
 import com.googlecode.dex2jar.Method;
-import parser.dex.ClassDefItem;
+import parser.dex.DexClass;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -11,9 +11,9 @@ import java.util.Enumeration;
 
 public class UtilLocal {
 
-    public static boolean DEBUG = false;
+    public static boolean DEBUG = true;
 
-    public static String getPackageName(ClassDefItem clsDef) {
+    public static String getPackageName(DexClass clsDef) {
         final String className = clsDef.className;
         final String[] s = className.substring(1, className.length() - 1).split("/", 100);
         final StringBuilder sb = new StringBuilder();
@@ -25,13 +25,13 @@ public class UtilLocal {
         return join.isEmpty() ? "(default)" : join.substring(0, join.length() - 1);
     }
 
-    public static String getClassName(ClassDefItem clsDef) {
+    public static String getClassName(DexClass clsDef) {
         final String className = clsDef.className;
         final String[] s = className.substring(1, className.length() - 1).split("/", 100);
         return s[s.length - 1];
     }
 
-    public static String getFieldName(ClassDefItem.TField f) {
+    public static String getFieldName(DexClass.TField f) {
         final String s = f.field.getName();
         final String s1 = f.field.getType();
         String s2 = f.value != null ? "=" + f.value.toString() : "";

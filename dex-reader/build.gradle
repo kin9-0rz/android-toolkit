@@ -9,6 +9,11 @@ task dist(type: Zip) {
     }
 }
 
+dependencies {
+    compile 'org.apache.commons:commons-compress:1.8.1'
+    compile 'org.apache.xmlgraphics:xmlgraphics-commons:1.5'
+}
+
 artifacts {
     archives dist
 }

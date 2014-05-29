@@ -2,7 +2,7 @@ package utils;
 
 import com.googlecode.dex2jar.Method;
 import com.googlecode.dex2jar.reader.DexFileReader;
-import parser.dex.ClassDefItem;
+import parser.dex.DexClass;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
@@ -46,7 +46,7 @@ public class UtilClass {
             if (userObject == null)
                 return null;
             else
-                return UtilLocal.getClassName((ClassDefItem) userObject);
+                return UtilLocal.getClassName((DexClass) userObject);
         }
     }
 
@@ -60,7 +60,7 @@ public class UtilClass {
             if (userObject == null)
                 return null;
             else
-                return UtilLocal.getFieldName((ClassDefItem.TField) userObject);
+                return UtilLocal.getFieldName((DexClass.TField) userObject);
         }
     }
 

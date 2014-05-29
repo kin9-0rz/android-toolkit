@@ -2,9 +2,7 @@ package gui;
 
 import com.googlecode.dex2jar.reader.DexFileReader;
 import parser.apk.APK;
-import parser.dex.ApkActionPos;
-import parser.dex.ClassDefItem;
-import parser.dex.CodeCollector;
+import parser.dex.DexClass;
 import utils.ClassCollector;
 import utils.FileDrop;
 import utils.UtilLocal;
@@ -97,12 +95,12 @@ public class CodeView extends JPanel {
                     return;
                 final DefaultMutableTreeNode selectNode = (DefaultMutableTreeNode) treeSelectionPath.getLastPathComponent();
 
-                if (selectNode.getUserObject() instanceof ClassDefItem) {
-                    ClassDefItem classDefItem = (ClassDefItem) selectNode.getUserObject();
+                if (selectNode.getUserObject() instanceof DexClass) {
+                    DexClass dexClass = (DexClass) selectNode.getUserObject();
 
-                    for (String method : classDefItem.methodBodys.keySet()) {
+                    for (String method : dexClass.methodMap.keySet()) {
                         stringList.append(method + "\n");
-                        stringList.append(classDefItem.methodBodys.get(method).replace("|     |", "") + "\n");
+                        stringList.append(dexClass.methodMap.get(method).replace("|     |", "") + "\n");
                         stringList.append("\n");
                     }
 
@@ -158,7 +156,7 @@ public class CodeView extends JPanel {
     String getStrings(ArrayList<ClassNode> classNodes) {
         HashSet<String> hashSet = new HashSet<>();
         for (ClassNode classNode : classNodes) {
-            List<String> strList = classNode.classDefItem.stringData;
+            List<String> strList = classNode.dexClass.stringData;
             for (String str : strList) {
                 hashSet.add("<i>" + str + "</i>" + '\n');
             }
@@ -196,7 +194,7 @@ public class CodeView extends JPanel {
             rootNode.add(fileNode);
 
             // initialize class List, and sort them.
-            final List<ClassDefItem> classList = new ArrayList<>();
+            final List<DexClass> classList = new ArrayList<>();
 
             DexFileReader dexFileReader = apk.getDexFileReader();
 
@@ -210,9 +208,9 @@ public class CodeView extends JPanel {
             //sort
             Collections.sort(classList, new ComparatorClass());
 
-            for (final ClassDefItem classDefItem : classList) {
+            for (final DexClass dexClass : classList) {
                 // 完整类名（com.pkg1.pkg2.cls;）
-                String className = classDefItem.className;
+                String className = dexClass.className;
 
                 // 获得节点字符串数组（com pkg1 pkg2 cls）
                 final String[] strings = className.substring(1, className.length() - 1).split("/");
@@ -231,14 +229,14 @@ public class CodeView extends JPanel {
                     pkgNode = findOrAddNode(new TreePath(pkgNode), strings[i]);
                 }
 
-                if (classDefItem.fields == null && classDefItem.methods == null) {
-                    dexFileReader.visitClass(new CodeCollector(classDefItem), classDefItem.classIdx,
-                            DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
-                    dexFileReader.visitClass(new ApkActionPos(classDefItem), classDefItem.classIdx,
-                            DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
-                }
+//                if (dexClass.fields == null && dexClass.methods == null) {
+//                    dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
+//                            DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+//                    dexFileReader.visitClass(new ApkActionPos(dexClass), dexClass.classIdx,
+//                            DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+//                }
 
-                ClassNode classNode = new ClassNode(classDefItem);
+                ClassNode classNode = new ClassNode(dexClass);
 
                 pkgNode.add(classNode);
             }
@@ -277,15 +275,15 @@ public class CodeView extends JPanel {
 
     class ClassNode extends DefaultMutableTreeNode {
         String className;
-        ClassDefItem classDefItem;
+        DexClass dexClass;
 
-        ClassNode(ClassDefItem classDefItem) {
-            super(classDefItem, true);
-            final String[] strings = classDefItem.className.substring
-                    (1, classDefItem.className.length() - 1).split("/");
+        ClassNode(DexClass dexClass) {
+            super(dexClass, true);
+            final String[] strings = dexClass.className.substring
+                    (1, dexClass.className.length() - 1).split("/");
 
             className = strings[strings.length - 1];
-            this.classDefItem = classDefItem;
+            this.dexClass = dexClass;
         }
 
         @Override
@@ -297,9 +295,9 @@ public class CodeView extends JPanel {
     /**
      * 比较两个 ClassDefItem 对象（排序）。
      */
-    class ComparatorClass implements Comparator<ClassDefItem> {
+    class ComparatorClass implements Comparator<DexClass> {
         @Override
-        public int compare(ClassDefItem arg0, ClassDefItem arg1) {
+        public int compare(DexClass arg0, DexClass arg1) {
             final String name0 = arg0.className;
             final String name1 = arg1.className;
 

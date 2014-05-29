@@ -5,7 +5,7 @@ import com.googlecode.dex2jar.Field;
 import com.googlecode.dex2jar.Method;
 import com.googlecode.dex2jar.util.DumpDexCodeAdapter;
 import com.googlecode.dex2jar.visitors.*;
-import parser.dex.ClassDefItem.TField;
+import parser.dex.DexClass.TField;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -17,18 +17,15 @@ import java.util.HashMap;
  *
  */
 public class CodeCollector implements DexFileVisitor {
-    ClassDefItem classItem;
+    DexClass classItem;
 
     /**
      * 该收集器主要功能——完善 classItem 内容：className,superName,fields,methods 和 methodBody
      */
-    public CodeCollector(ClassDefItem c) {
+    public CodeCollector(DexClass c) {
         this.classItem = c;
     }
 
-    /**
-     * 完善classItem内容
-     */
     @Override
     public DexClassVisitor visit(int access_flags, String className, String superClass,
                                  String[] interfaceNames) {
@@ -37,7 +34,7 @@ public class CodeCollector implements DexFileVisitor {
         classItem.superName = superClass;
         classItem.fields = new ArrayList<>();
         classItem.methods = new ArrayList<>();
-        classItem.methodBodys = new HashMap<>();
+        classItem.methodMap = new HashMap<>();
 
         return new EmptyVisitor() {
 
@@ -65,7 +62,7 @@ public class CodeCollector implements DexFileVisitor {
                             @Override
                             public void visitEnd() {
                                 // TODO here maybe you can init the stringData
-                                classItem.methodBodys.put(method.toString(), writer.toString());
+                                classItem.methodMap.put(method.toString(), writer.toString());
                             }
                         };
                     }

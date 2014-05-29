@@ -1,0 +1,4 @@
+org/apache/commons/compress/archivers/zip/ZipArchiveOutputStreamHack$CurrentEntry.class
+com/googlecode/dex2jar/reader/test/BadZipEntryFlagTest.class
+org/apache/commons/compress/archivers/zip/ZipArchiveOutputStreamHack$UnicodeExtraFieldPolicy.class
+org/apache/commons/compress/archivers/zip/ZipArchiveOutputStreamHack.class

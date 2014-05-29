@@ -359,15 +359,10 @@ import static com.googlecode.dex2jar.reader.DexInternalOpcode.*;
             case OP_INVOKE_INTERFACE_JUMBO:
             case OP_INVOKE_OBJECT_INIT_JUMBO:
                 return F5rc;
-            /**
-             * 这是一个位置的操作符，说明，这个dex文件部分损坏，或者，是被修改过的，跳过，不处理。
-             */
             default:
-                System.out.println("这是一个未知的操作符" + opcode);
+                System.out.println("opcode format for " + opcode + " not found!");
                 return null;
         }
-
-
 //        throw new RuntimeException("opcode format for " + opcode + " not found!");
     }
 }

@@ -2,6 +2,7 @@ package parser.apk;
 
 import com.googlecode.dex2jar.reader.DexFileReader;
 import org.junit.Test;
+import parser.dex.DexClass;
 
 import java.io.File;
 import java.io.IOException;
@@ -117,21 +118,21 @@ public class APKTest {
 //            System.out.print("-" + classDefItem.fields.size());
 //            System.out.print("-" + classDefItem.methods.size());
 
-//            System.out.println("-" + classDefItem.methodBodys.size());
+//            System.out.println("-" + classDefItem.methodMap.size());
 //            if (classDefItem.methods.size() > 0) {
 //                for (Method mtd : classDefItem.methods) {
 //                    System.out.println("\t" + mtd.getName());
 //                }
 //            }
 //
-//            if (classDefItem.methodBodys.size() > 0) {
-//                for (String key : classDefItem.methodBodys.keySet()) {
+//            if (classDefItem.methodMap.size() > 0) {
+//                for (String key : classDefItem.methodMap.keySet()) {
 ////                    System.out.println("\t" + key);
-//                    if(classDefItem.methodBodys.get(key).contains("Lorg/apache/http/impl/client/DefaultHttpClient;.execute")) {
+//                    if(classDefItem.methodMap.get(key).contains("Lorg/apache/http/impl/client/DefaultHttpClient;.execute")) {
 //                        System.out.print(classDefItem.className);
 //                        System.out.println("\t" + key);
 
-//                        System.out.println(classDefItem.methodBodys.get(key));
+//                        System.out.println(classDefItem.methodMap.get(key));
 //                    }
 //
 //                }
@@ -147,6 +148,30 @@ public class APKTest {
 //            return name0.compareTo(name1);
 //        }
 //    }
+
+    @Test
+    public void testGetMethods() {
+        APK apk;
+        try {
+            apk = new APK("/home/lai/Work/samples/Test/Trojan-Spy.AndroidOS.Adrd/" +
+                    "2010-11-30-20599949231d472b0b9581d7277c1df39914fc4ed943ca7e6be82f80ab9a7fa4.apk");
+//            System.out.println(apk.getStrings());
+            apk.getMethods();
+            for (DexClass dexClass : apk.getCodes()) {
+                System.out.println(dexClass.methodMap);
+                break;
+            }
+
+
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+    }
 
     @Test
     public void testAPKSubAPK() {

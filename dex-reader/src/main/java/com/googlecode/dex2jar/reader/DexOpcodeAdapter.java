@@ -15,14 +15,14 @@
  */
 package com.googlecode.dex2jar.reader;
 
+import java.util.Map;
+
 import com.googlecode.dex2jar.DexException;
 import com.googlecode.dex2jar.DexLabel;
 import com.googlecode.dex2jar.Method;
 import com.googlecode.dex2jar.OdexOpcodes;
 import com.googlecode.dex2jar.visitors.DexCodeVisitor;
 import com.googlecode.dex2jar.visitors.OdexCodeVisitor;
-
-import java.util.Map;
 
 /**
  * @author <a href="mailto:pxb1988@gmail.com">Panxiaobo</a>
@@ -834,11 +834,9 @@ import java.util.Map;
             default:
                 throw new RuntimeException();
             }
-
             if (dcv instanceof OdexCodeVisitor) {
                 ((OdexCodeVisitor) dcv).visitReturnStmt(opcode, a & 0x3F, ref);
             }
-
             break;
         }
     }

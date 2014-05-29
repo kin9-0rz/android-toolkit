@@ -280,8 +280,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
             publish("总" + files.size());
             for (final File f : files) {
                 analysis(f);
-                publish("\n********************************************************************\n");
-
+                publish("———————————————————————————————————————————————————————————————————————————————————————————————————————————");
             }
         }
 
@@ -398,14 +397,12 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
                     // 证书+包名
                     if (apk.getPackageName().equals(sampleInfo.pkgName)) {
                         publish("结果：" + "CP-" + sampleInfo.varName + "|" + sampleInfo.fileName);
-                        publish("———————————————————————————————————————————————————————————————————————————————————————————————————————————");
                         return;
                     }
 
                     // 证书+应用名
                     if (apk.getLabel().equals(sampleInfo.label)) {
                         publish("结果：" + "CL-" + sampleInfo.varName + "|" + sampleInfo.fileName);
-                        publish("———————————————————————————————————————————————————————————————————————————————————————————————————————————");
                         return;
                     }
 
@@ -505,17 +502,15 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
                     }
 
 //                    publish("最终值==" + String.valueOf(value));
-//                    publish("最终值==" + String.valueOf((int)(value * 100)));
+                    publish("最终值==" + String.valueOf((int)(value * 100)));
 //                    publish(stringBuilder.toString());
 
                     if ((int) (value * 100) >= 70) {
                         publish("结果：" + "CPRSI-" + sampleInfo.varName + "|" + sampleInfo.fileName);
-//                        publish("最终值--：" + String.valueOf(value));
-//                        publish(stringBuilder.toString());
-//                        publish(sampleInfo.varName + "|" + sampleInfo.fileName);
-//                        publish(sampleInfo.toString() + "\n");
-//                        publish(likeBuilder.toString() + "\n");
-                        publish("———————————————————————————————————————————————————————————————————————————————————————————————————————————");
+                        publish(stringBuilder.toString());
+                        publish(sampleInfo.varName + "|" + sampleInfo.fileName);
+                        publish(sampleInfo.toString() + "\n");
+                        publish(likeBuilder.toString() + "\n");
                         return;
                     }
                 }
