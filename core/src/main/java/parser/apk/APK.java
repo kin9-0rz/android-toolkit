@@ -29,9 +29,8 @@ import java.util.zip.ZipInputStream;
  * </p>
  */
 public class APK {
-    private List<DexClass> codes = new ArrayList<>();
-
     HashMap<String, String> certificateInfos;
+    private List<DexClass> codes = new ArrayList<>();
     @SuppressWarnings("UnusedDeclaration")
     private String absolutePath;
     private String dexMd5 = null;
@@ -152,7 +151,7 @@ public class APK {
         }
 
         if (parseDex) {
-            dexFileReader = new DexFileReader(file);
+            initDexFileReader(file);
         }
 
         if (parseCert) {
@@ -191,9 +190,7 @@ public class APK {
         zipFile.close();
 
 
-        dexFileReader = new DexFileReader(file);
-        dexFileReader.accept(new CodeGather(codes),
-                DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+        initDexFileReader(file);
 
         // 解析清单信息
         final ManifestParser mp = new ManifestParser();
@@ -247,7 +244,8 @@ public class APK {
             throw new ZipException(e.getMessage());
         }
 
-        dexFileReader = new DexFileReader(file);
+//        dexFileReader = new DexFileReader(file);
+        initDexFileReader(file);
         certificateInfos = CertTool.getCertificateInfos(file);
     }
 
@@ -308,6 +306,12 @@ public class APK {
                 e.printStackTrace();
             }
         }
+    }
+
+    private void initDexFileReader(File file) throws IOException {
+        dexFileReader = new DexFileReader(file);
+        dexFileReader.accept(new CodeGather(codes),
+                DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
     }
 
     /**
@@ -438,13 +442,6 @@ public class APK {
         final List<DexClass> dexClasses = new ArrayList<>();
         // FIXME ClassDefItem 中的 stringData 并没有值，访问失败。
         dexFileReader.accept(new CodeGather(dexClasses));
-
-        //Test
-//        for (DexClass dexClass : codes) {
-//            dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
-//                    DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
-//
-//        }
 
         return dexClasses;
     }

@@ -2,7 +2,6 @@ package parser.apk;
 
 import com.googlecode.dex2jar.reader.DexFileReader;
 import org.junit.Test;
-import parser.dex.DexClass;
 
 import java.io.File;
 import java.io.IOException;
@@ -151,16 +150,12 @@ public class APKTest {
 
     @Test
     public void testGetMethods() {
+        String path = "/home/lai/Work/samples/Test/Trojan-Spy.AndroidOS.Adrd/" +
+                "2010-11-30-20599949231d472b0b9581d7277c1df39914fc4ed943ca7e6be82f80ab9a7fa4.apk";
         APK apk;
         try {
-            apk = new APK("/home/lai/Work/samples/Test/Trojan-Spy.AndroidOS.Adrd/" +
-                    "2010-11-30-20599949231d472b0b9581d7277c1df39914fc4ed943ca7e6be82f80ab9a7fa4.apk");
-//            System.out.println(apk.getStrings());
-            apk.getMethods();
-            for (DexClass dexClass : apk.getCodes()) {
-                System.out.println(dexClass.methodMap);
-                break;
-            }
+            apk = new APK(new File(path));
+            System.out.println(apk.getMethods());
 
 
         } catch (IOException e) {
