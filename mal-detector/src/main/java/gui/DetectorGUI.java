@@ -573,10 +573,10 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
             }
         }
 
-        HashMap<String, APK> apkHashMap = apk.getSubApkDataMap();
-        for (String name : apkHashMap.keySet()) {
+//        HashMap<String, APK> apkHashMap = apk.getSubApkDataMap();
+//        for (String name : apkHashMap.keySet()) {
 //            analysis(apkHashMap.get(name));
-        }
+//        }
 
         /**
          *  未知恶意软件分析-HRUE
@@ -608,18 +608,18 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
 
         publish("敏感权限：" + perms.toString());
 
-
-        publish("未知恶意软件分析-HRUE");
+        publish("敏感API调用分析");
         HashMap<String, String> methods = apk.getMethods();
         HashSet<String> methodSet = new HashSet<>();
         HashSet<String> callOnSet = new HashSet<>();
-
+        int value = 0;
         System.out.println(methods.toString());
 
         String systemApp = "/system";
         searchCallOn(systemApp, methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish(systemApp + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
         }
 
         callOnSet.clear();
@@ -627,6 +627,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
         searchCallOn("content://sms", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish("content://sms" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
         }
 
         callOnSet.clear();
@@ -634,6 +635,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
         searchCallOn("SmsManager;.sendTextMessage", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish("SmsManager;.sendTextMessage" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
         }
 
         callOnSet.clear();
@@ -641,6 +643,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
         searchCallOn(";.abortBroadcast()V", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish(";.abortBroadcast()V" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
         }
 
         methodSet.clear();
@@ -648,6 +651,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
         searchCallOn("TelephonyManager;.getDeviceId", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish("TelephonyManager;.getDeviceId" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
         }
 
         callOnSet.clear();
@@ -655,6 +659,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
         searchCallOn("URL;.openConnection", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish("URL;.openConnection" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
         }
 
         callOnSet.clear();
@@ -662,6 +667,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
         searchCallOn("HttpClient;.execute", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish("HttpClient;.execute" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
         }
 
         callOnSet.clear();
@@ -669,7 +675,10 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
         searchCallOn("Ljava/util/Timer;.schedule", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish("Ljava/util/Timer;.schedule" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
         }
+
+        publish("可疑度：" + value);
 
     }
 
