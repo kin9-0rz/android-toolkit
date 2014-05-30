@@ -53,7 +53,7 @@ public class DetectorGUI extends JPanel {
 
 
         filePath = new JTextField();
-        filePath.setText("/home/lai/Work/samples/Test/Trojan-SMS.AndroidOS.Raden/");
+        filePath.setText("/home/lai/Work/samples/Test/Trojan-Spy.AndroidOS.Adrd/");
         add(filePath, "2, 2, fill, fill");
 
         // -------------------------------- Button -----------------------------------
@@ -502,9 +502,13 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
                     }
 
 //                    publish("最终值==" + String.valueOf(value));
-                    publish("最终值==" + String.valueOf((int)(value * 100)));
+//                    publish("最终值==" + String.valueOf((int)(value * 100)));
 //                    publish(stringBuilder.toString());
-
+//                    publish("结果：" + "CPRSI-" + sampleInfo.varName + "|" + sampleInfo.fileName);
+//                    publish(stringBuilder.toString());
+//                    publish(sampleInfo.varName + "|" + sampleInfo.fileName);
+//                    publish(sampleInfo.toString() + "\n");
+//                    publish(likeBuilder.toString() + "\n");
                     if ((int) (value * 100) >= 70) {
                         publish("结果：" + "CPRSI-" + sampleInfo.varName + "|" + sampleInfo.fileName);
                         publish(stringBuilder.toString());
@@ -610,6 +614,8 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
         HashSet<String> methodSet = new HashSet<>();
         HashSet<String> callOnSet = new HashSet<>();
 
+        System.out.println(methods.toString());
+
         String systemApp = "/system";
         searchCallOn(systemApp, methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
@@ -653,6 +659,13 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
 
         callOnSet.clear();
         methodSet.clear();
+        searchCallOn("HttpClient;.execute", methods, methodSet, callOnSet, 0);
+        if (!callOnSet.isEmpty()) {
+            publish("HttpClient;.execute" + callOnSet.toString());
+        }
+
+        callOnSet.clear();
+        methodSet.clear();
         searchCallOn("Ljava/util/Timer;.schedule", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish("Ljava/util/Timer;.schedule" + callOnSet.toString());
@@ -662,9 +675,8 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
 
     private void searchCallOn(String method, HashMap<String, String> methods,
                               HashSet<String> methodSet, HashSet<String> callOnSet, int i) {
-
         if (methodSet.contains(method)) {
-            return;
+            return;            // 已经搜索过的调用
         }
 
         methodSet.add(method);
@@ -676,32 +688,26 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
 
         System.out.println(space + method);
         i++;
+        /**
+         * 是否找到调用标志，找到则是调用，找不到则是最终调用。
+         */
         boolean flag = true;
         for (String key : methods.keySet()) {
             String methodBody = methods.get(key);
             if (methodBody.contains(method)) {
-//                if (key.contains(".on")) {
-//                    callOnSet.add(key);
-//                    System.out.println("+" + space + key);
-//                    continue;
-//                }
-//
-//                if (key.contains("handleMessage")) {
-//                    System.out.println(space + key);
-//                    key = "Handler;.send";
-//                }
-
+                flag = false;
                 if (key.contains("$") && key.contains(";.run()V")) {
-                    searchCallOn(key, methods, methodSet, callOnSet, i);
                     key = key.split(";.")[0] + ";.<init>";
-                    searchCallOn(key, methods, methodSet, callOnSet, i);
-                    key = key.split(";.")[0] + ";.start";
                     searchCallOn(key, methods, methodSet, callOnSet, i);
                     continue;
                 }
 
+                if (key.contains("$") && key.contains(";.run()V")) {
+                    key = key.split(";.")[0] + ";.start";
+                    searchCallOn(key, methods, methodSet, callOnSet, i);
+                    continue;
+                }
                 searchCallOn(key, methods, methodSet, callOnSet, i);
-                flag = false;
             }
         }
 
