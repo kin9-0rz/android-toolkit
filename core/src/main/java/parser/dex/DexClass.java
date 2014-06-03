@@ -42,4 +42,34 @@ public class DexClass {
         public Object value;
     }
 
+    @Override
+    public String toString() {
+        return "DexClass{" +
+                "classIdx=" + classIdx +
+                ", className='" + className + '\'' +
+                ", superName='" + superName + '\'' +
+                ", fields=" + fields +
+                ", methods=" + methods +
+                ", methodMap=" + methodMap +
+                ", stringData=" + stringData +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        DexClass dexClass = (DexClass) o;
+
+        return classIdx == dexClass.classIdx && className.equals(dexClass.className);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = classIdx;
+        result = 31 * result + className.hashCode();
+        return result;
+    }
 }

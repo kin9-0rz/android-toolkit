@@ -3,7 +3,6 @@ package gui;
 import com.googlecode.dex2jar.reader.DexFileReader;
 import parser.apk.APK;
 import parser.dex.DexClass;
-import utils.ClassCollector;
 import utils.FileDrop;
 import utils.UtilLocal;
 
@@ -208,12 +207,12 @@ public class FeatureCode extends JPanel {
 
             DexFileReader dexFileReader = apk.getDexFileReader();
 
-            try {
-                dexFileReader.accept(new ClassCollector(classList));
-            } catch (Exception e) {
-                System.out.println("Accept Code Failed." + e.getMessage());
-                return;
-            }
+//            try {
+//                dexFileReader.accept(new ClassCollector(classList));
+//            } catch (Exception e) {
+//                System.out.println("Accept Code Failed." + e.getMessage());
+//                return;
+//            }
 
             //sort
             Collections.sort(classList, new ComparatorClass());

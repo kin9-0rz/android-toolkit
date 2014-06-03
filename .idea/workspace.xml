@@ -1,157 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="839d571f-b0db-4d7d-87c5-ad4c7819402f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierAnnotationV.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierClassV$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierClassV$2$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierClassV$2$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierClassV$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierClassV.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierCodeV.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierFileV$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ASMifierFileV.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/AbstractDumpDexCodeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/Annotation$Item.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/Annotation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/io/ArrayDataIn.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/ArrayOut.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/test-classes/com/googlecode/dex2jar/reader/test/BadZipEntryFlagTest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/CCZipExtractor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/Constant.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/io/DataIn.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/io/DataInWrapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/io/DataInputDataIn.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexAnnotationAble.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/DexAnnotationReader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexAnnotationVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexClassAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexClassVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexCodeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/DexCodeReader$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/DexCodeReader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexCodeVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/DexDebugInfoReader$LocalVariable.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/DexDebugInfoReader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/DexException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexFieldVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexFileAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/DexFileReader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexFileVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/DexInternalOpcode.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/DexLabel.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexMethodAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/DexMethodVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/DexOpcodeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/DexOpcodeDump.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/DexOpcodes.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/DexType.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Dump$1$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Dump$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Dump$2$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Dump$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Dump$WriterManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Dump.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/DumpDexCodeAdapter$TryCatch.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/DumpDexCodeAdapter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/EmptyVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Escape.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/Field.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/io/InputStreamDataIn.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/Method.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/Mutf8.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/OdexCodeVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/visitors/OdexFileVisitor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/OdexOpcodes.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/io/OffsetedDataIn.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/OpcodeFormat.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Out.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/io/RandomAccessFileInput.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/util/Utf8Utils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/test-classes/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStreamHack$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/test-classes/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStreamHack$CurrentEntry.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/test-classes/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStreamHack$UnicodeExtraFieldPolicy.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/test-classes/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStreamHack.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/ZipExtractor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/com/googlecode/dex2jar/reader/ZipInputStreamHack.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/test/resources/bad.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/test-classes/bad.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/dex-reader-1.15-sources.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/dex-reader-1.15.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/test/java/com/googlecode/dex2jar/reader/test/BadZipEntryFlagTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/CCZipExtractor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeGather.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/DataInputDataIn.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/FieldAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_compress_1_8_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_logging_1_0_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_objectweb_asm_3_3_1_v201105211655.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__xmlgraphics_commons_1_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/InputStreamDataIn.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/Mutf8.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/NOTICE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/RandomAccessFileInput.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/surefire-reports/TEST-com.googlecode.dex2jar.reader.test.BadZipEntryFlagTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/test/java/org/apache/commons/compress/archivers/zip/ZipArchiveOutputStreamHack.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/ZipExtractor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/ZipInputStreamHack.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/surefire-reports/com.googlecode.dex2jar.reader.test.BadZipEntryFlagTest.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/target/maven-archiver/pom.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dex-reader/pom.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__jcl_over_slf4j_1_7_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__logback_classic_1_0_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__logback_core_1_0_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__miglayout_core_4_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__slf4j_api_1_7_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassCollector.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/BeArrayDataIn.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/LeArrayDataIn.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassDefItem.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/gui/APIs.java" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/APIs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/ASMifierClassV.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/ASMifierClassV.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/ASMifierCodeV.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/ASMifierCodeV.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/ApkActionPos.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/ApkActionPos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/ArrayDataIn.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/ArrayDataIn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/utils/ClassCollector.java" afterPath="$PROJECT_DIR$/apat/src/main/java/utils/ClassCollector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mal-detector/src/main/java/utils/ClassCollector.java" afterPath="$PROJECT_DIR$/mal-detector/src/main/java/utils/ClassCollector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeCollector.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeCollector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/gui/CodeReader.java" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/CodeReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mal-detector/src/main/java/gui/DetectorGUI.java" afterPath="$PROJECT_DIR$/mal-detector/src/main/java/gui/DetectorGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexCodeAdapter.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexCodeAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexCodeReader.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexCodeReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexCodeVisitor.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexCodeVisitor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexFileReader.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexFileReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexOpcodeAdapter.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexOpcodeAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/DumpDexCodeAdapter.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/DumpDexCodeAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/EmptyVisitor.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/EmptyVisitor.java" />
+    <list default="true" id="839d571f-b0db-4d7d-87c5-ad4c7819402f" name="Default" comment="優化部分代碼">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/apat/src/main/java/utils/ClassCollector.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeGather.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeGather.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/DataInputDataIn.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/DataInputDataIn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java" afterPath="$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/resources/META-INF/NOTICE.txt" afterPath="$PROJECT_DIR$/dex-reader/src/main/resources/META-INF/NOTICE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/OpcodeFormat.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/OpcodeFormat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/Utf8Utils.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/Utf8Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/utils/UtilClass.java" afterPath="$PROJECT_DIR$/apat/src/main/java/utils/UtilClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mal-detector/src/main/java/utils/UtilClass.java" afterPath="$PROJECT_DIR$/mal-detector/src/main/java/utils/UtilClass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/InputStreamDataIn.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/InputStreamDataIn.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/LICENSE.txt" afterPath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/NOTICE.txt" afterPath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/NOTICE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/RandomAccessFileInput.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/RandomAccessFileInput.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" afterPath="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mal-detector/src/main/java/utils/UtilLocal.java" afterPath="$PROJECT_DIR$/mal-detector/src/main/java/utils/UtilLocal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build.gradle" afterPath="$PROJECT_DIR$/core/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/build.gradle" afterPath="$PROJECT_DIR$/dex-reader/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/core.iml" afterPath="$PROJECT_DIR$/core/core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/build.gradle" afterPath="$PROJECT_DIR$/apat/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/dex-reader.iml" afterPath="$PROJECT_DIR$/dex-reader/dex-reader.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/lai.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/lai.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/pom.xml" afterPath="$PROJECT_DIR$/dex-reader/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-toolkit.iws" />
@@ -233,7 +98,18 @@
     <favorites_list name="android-toolkit" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="DetectorGUI.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/DetectorGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="22.352942" vertical-offset="15941" max-vertical-offset="17917">
+              <caret line="890" column="50" selection-start-line="890" selection-start-column="50" selection-end-line="890" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -263,39 +139,11 @@
           <option name="executorId" value="Run" />
           <option name="settings">
             <ExternalSystemSettings>
-              <option name="externalProjectPath" value="$PROJECT_DIR$" />
+              <option name="externalProjectPath" value="$PROJECT_DIR$/apat" />
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
-                  <option value="clean" />
-                </list>
-              </option>
-            </ExternalSystemSettings>
-          </option>
-        </ExternalTaskExecutionInfo>
-        <ExternalTaskExecutionInfo>
-          <option name="executorId" value="Run" />
-          <option name="settings">
-            <ExternalSystemSettings>
-              <option name="externalProjectPath" value="$PROJECT_DIR$/dex-reader" />
-              <option name="externalSystemIdString" value="GRADLE" />
-              <option name="taskNames">
-                <list>
-                  <option value="buildDependents" />
-                </list>
-              </option>
-            </ExternalSystemSettings>
-          </option>
-        </ExternalTaskExecutionInfo>
-        <ExternalTaskExecutionInfo>
-          <option name="executorId" value="Run" />
-          <option name="settings">
-            <ExternalSystemSettings>
-              <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
-              <option name="externalSystemIdString" value="GRADLE" />
-              <option name="taskNames">
-                <list>
-                  <option value="buildDependents" />
+                  <option value="dist" />
                 </list>
               </option>
             </ExternalSystemSettings>
@@ -309,7 +157,7 @@
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
-                  <option value="dist" />
+                  <option value="clean" />
                 </list>
               </option>
             </ExternalSystemSettings>
@@ -333,7 +181,35 @@
           <option name="executorId" value="Run" />
           <option name="settings">
             <ExternalSystemSettings>
-              <option name="externalProjectPath" value="$PROJECT_DIR$/apat" />
+              <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
+              <option name="externalSystemIdString" value="GRADLE" />
+              <option name="taskNames">
+                <list>
+                  <option value="build" />
+                </list>
+              </option>
+            </ExternalSystemSettings>
+          </option>
+        </ExternalTaskExecutionInfo>
+        <ExternalTaskExecutionInfo>
+          <option name="executorId" value="Run" />
+          <option name="settings">
+            <ExternalSystemSettings>
+              <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
+              <option name="externalSystemIdString" value="GRADLE" />
+              <option name="taskNames">
+                <list>
+                  <option value="buildDependents" />
+                </list>
+              </option>
+            </ExternalSystemSettings>
+          </option>
+        </ExternalTaskExecutionInfo>
+        <ExternalTaskExecutionInfo>
+          <option name="executorId" value="Run" />
+          <option name="settings">
+            <ExternalSystemSettings>
+              <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
@@ -351,7 +227,7 @@
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
-                  <option value="jar" />
+                  <option value="clean" />
                 </list>
               </option>
             </ExternalSystemSettings>
@@ -1009,12 +885,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/ir/ts/Transformer.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ir/stmt/TableSwitchStmt.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ir/stmt/BaseSwitchStmt.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ir/stmt/StmtList.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ir/LocalVar.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/ir/Trap.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/ir/IrMethod.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3InnerClzGather.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/IrMethod.java" />
@@ -1051,15 +921,21 @@
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java" />
         <option value="$PROJECT_DIR$/apat/src/main/java/gui/CodeReader.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/DexMethodAdapter.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" />
-        <option value="$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java" />
-        <option value="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" />
         <option value="$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java" />
-        <option value="$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/gui/APIs.java" />
+        <option value="$PROJECT_DIR$/mal-detector/src/main/java/detect/Main.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" />
-        <option value="$PROJECT_DIR$/apat/src/main/java/gui/APIs.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/gui/Main.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/gui/PkgList.java" />
+        <option value="$PROJECT_DIR$/apat/build.gradle" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java" />
+        <option value="$PROJECT_DIR$/mal-detector/src/main/java/gui/DetectorGUI.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/gui/StringSearcher.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java" />
       </list>
     </option>
   </component>
@@ -1067,10 +943,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
     <option name="y" value="41" />
-    <option name="width" value="1370" />
-    <option name="height" value="729" />
+    <option name="width" value="1366" />
+    <option name="height" value="727" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -1083,7 +958,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -1106,6 +981,494 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="android-toolkit" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mal-detector" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mal-detector" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mal-detector" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mal-detector" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DetectorGUI.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dex-reader" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apk" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dex" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apat" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apat" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apat" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apat" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apat" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tree" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apat" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gui" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apat" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1143,16 +1506,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../dex2jar" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="parser.utils" />
       <recent name="com.htjf.kvtool.vscan.deamon" />
       <recent name="com.htjf.kvtool.vscan.gui" />
       <recent name="parser.elf" />
       <recent name="reader" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="junit.framework.TestCase" />
-      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="parser.dex" />
@@ -1162,16 +1525,20 @@
       <recent name="com.htjf.kvtool.vscan.deamon" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/apat/src/main/java/gui" />
       <recent name="$PROJECT_DIR$/core/src/main/java" />
       <recent name="$PROJECT_DIR$/core/src/main/java/parser/dex" />
       <recent name="$PROJECT_DIR$/core/src/main/java/parser/utils" />
       <recent name="$PROJECT_DIR$/apat/src/main/java/tree" />
-      <recent name="$PROJECT_DIR$/apat/src/main/java/gui" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="parser.dex" />
       <recent name="parser.apk" />
       <recent name="tree" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.htjf.kvtool.vscan" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/mal-detector/src/main/java" />
@@ -1179,12 +1546,8 @@
       <recent name="$PROJECT_DIR$/scanner" />
       <recent name="$PROJECT_DIR$/dex-reader/src" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-      <recent name="com.htjf.kvtool.vscan" />
-    </key>
   </component>
-  <component name="RunManager" selected="Gradle.android-toolkit [clean]">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" singleton="true" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.Main" />
       <option name="VM_PARAMETERS" value="" />
@@ -1201,9 +1564,9 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="android-toolkit:core [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration default="false" name="android-toolkit:apat [dist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apat" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -1211,7 +1574,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="buildDependents" />
+            <option value="dist" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1220,9 +1583,9 @@
       <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="android-toolkit:dex-reader [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration default="false" name="android-toolkit:apat [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/dex-reader" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apat" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -1230,7 +1593,26 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="buildDependents" />
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <RunnerSettings RunnerId="ExternalSystemTaskRunner" />
+      <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="android-toolkit:apat [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apat" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1257,33 +1639,8 @@
       </option>
       <envs />
       <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="android-toolkit [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <RunnerSettings RunnerId="ExternalSystemTaskRunner" />
-      <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1441,18 +1798,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.android-toolkit:core [buildDependents]" />
-      <item index="2" class="java.lang.String" itemvalue="Gradle.android-toolkit:dex-reader [buildDependents]" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.APKTest.testGetMethods" />
-      <item index="4" class="java.lang.String" itemvalue="Gradle.android-toolkit [clean]" />
+      <item index="1" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [dist]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [build]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [clean]" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.APKTest.testGetMethods" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gradle.android-toolkit [clean]" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.APKTest.testGetMethods" />
-        <item index="3" class="java.lang.String" itemvalue="Gradle.android-toolkit:dex-reader [buildDependents]" />
-        <item index="4" class="java.lang.String" itemvalue="Gradle.android-toolkit:core [buildDependents]" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [dist]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [clean]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [build]" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.APKTest.testGetMethods" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1467,7 +1824,7 @@
     </option>
   </component>
   <component name="StructureViewFactory">
-    <option name="ACTIVE_ACTIONS" value="SHOW_NON_PUBLIC,,ALPHA_COMPARATOR,SHOW_FIELDS" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR,SHOW_FIELDS" />
   </component>
   <component name="SvnConfiguration" myUseAcceleration="nothing">
     <configuration />
@@ -1478,6 +1835,47 @@
       <created>1386148467689</created>
       <updated>1386148467689</updated>
     </task>
+    <task id="LOCAL-00001" summary="update some logic">
+      <created>1401356879250</created>
+      <updated>1401356879250</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix APK getMethods">
+      <created>1401417397681</created>
+      <updated>1401417397681</updated>
+    </task>
+    <task id="LOCAL-00003" summary="函数调用检测更新">
+      <created>1401420255302</created>
+      <updated>1401420255302</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add pkg list">
+      <created>1401444152847</created>
+      <updated>1401444152848</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update some code ...">
+      <created>1401444258896</created>
+      <updated>1401444258896</updated>
+    </task>
+    <task id="LOCAL-00006" summary="update some code ...">
+      <created>1401444290224</created>
+      <updated>1401444290224</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fix some bug">
+      <created>1401784336573</created>
+      <updated>1401784336573</updated>
+    </task>
+    <task id="LOCAL-00008" summary="優化代碼調用搜索邏輯">
+      <created>1401784543636</created>
+      <updated>1401784543636</updated>
+    </task>
+    <task id="LOCAL-00009" summary="優化部分代碼">
+      <created>1401784594502</created>
+      <updated>1401784594502</updated>
+    </task>
+    <task id="LOCAL-00010" summary="更新">
+      <created>1401784660586</created>
+      <updated>1401784660586</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1501,28 +1899,28 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="41" width="1370" height="729" extended-state="6" />
+    <frame x="0" y="41" width="1366" height="727" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.90686274" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22809668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64379084" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64379084" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.75816995" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6813725" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.74509805" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.74509805" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5007874" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32352942" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32189542" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32779455" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="465" y="99" width="435" height="612" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46732026" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35993487" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.4992126" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869694" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2666163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53104573" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="21" y="258" width="1324" height="293" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2666163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5294118" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="21" y="258" width="1324" height="293" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="141" width="1166" height="527" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1547,6 +1945,16 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="update some logic" />
+    <MESSAGE value="fix APK getMethods" />
+    <MESSAGE value="函数调用检测更新" />
+    <MESSAGE value="add pkg list" />
+    <MESSAGE value="update some code ..." />
+    <MESSAGE value="fix some bug" />
+    <MESSAGE value="優化代碼調用搜索邏輯" />
+    <MESSAGE value="優化部分代碼" />
+    <MESSAGE value="更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1561,11 +1969,60 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/DetectorGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17993">
+          <caret line="672" column="74" selection-start-line="672" selection-start-column="26" selection-end-line="672" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/PkgList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2987" max-vertical-offset="4161">
+          <caret line="172" column="46" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3363" max-vertical-offset="3857">
+          <caret line="177" column="58" selection-start-line="177" selection-start-column="2" selection-end-line="177" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1273" max-vertical-offset="1539">
+          <caret line="67" column="48" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2964" max-vertical-offset="4294">
+          <caret line="156" column="24" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2185" max-vertical-offset="11172">
+          <caret line="115" column="11" selection-start-line="115" selection-start-column="11" selection-end-line="115" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexCodeVisitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5343" max-vertical-offset="5966">
           <caret line="312" column="0" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1573,7 +2030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2539" max-vertical-offset="4788">
           <caret line="169" column="8" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1581,7 +2037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34991118" vertical-offset="1950" max-vertical-offset="2907">
           <caret line="151" column="19" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1589,7 +2044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="42" max-vertical-offset="4237">
           <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1597,7 +2051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1605,7 +2058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="11" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1613,7 +2065,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1045">
           <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1621,7 +2072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="836">
           <caret line="18" column="68" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1629,7 +2079,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1637,10 +2086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1235">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding>
-            <element signature="e#1451#1452#0" expanded="false" />
-            <element signature="e#1517#1518#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1648,34 +2093,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22912966" vertical-offset="897" max-vertical-offset="1482">
           <caret line="61" column="61" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6680162" vertical-offset="2761" max-vertical-offset="4256">
-          <caret line="161" column="22" selection-start-line="161" selection-start-column="22" selection-end-line="161" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/FieldAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="90" max-vertical-offset="722">
-          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/CodeReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3479021" vertical-offset="3582" max-vertical-offset="5643">
-          <caret line="225" column="40" selection-start-line="225" selection-start-column="40" selection-end-line="225" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1691,41 +2108,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22051282" vertical-offset="4" max-vertical-offset="1159">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <marker date="1401354942410" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1401354942410" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4318182" vertical-offset="3534" max-vertical-offset="5491">
           <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1948718" vertical-offset="0" max-vertical-offset="1957">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42222223" vertical-offset="0" max-vertical-offset="3306">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding>
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#689#690#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1745,26 +2132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.114529915" vertical-offset="1453" max-vertical-offset="2698">
           <caret line="112" column="31" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ApkActionPos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1993007" vertical-offset="57" max-vertical-offset="3439">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61025643" vertical-offset="213" max-vertical-offset="874">
-          <caret line="35" column="29" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="e#562#746#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1776,51 +2143,176 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ApkActionPos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.4965157" vertical-offset="741" max-vertical-offset="3439">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/CodeCollector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5178876" vertical-offset="228" max-vertical-offset="1349">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/FieldAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5144804" vertical-offset="135" max-vertical-offset="722">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/detect/MD5Detector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2923077" vertical-offset="0" max-vertical-offset="585">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/detect/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3897436" vertical-offset="0" max-vertical-offset="950">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/DelDetectorMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16239317" vertical-offset="0" max-vertical-offset="1786">
+          <caret line="9" column="51" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/APKInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6078" max-vertical-offset="6650">
+          <caret line="374" column="14" selection-start-line="165" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="802" max-vertical-offset="1387">
+          <caret line="67" column="48" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/PkgList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2987" max-vertical-offset="4161">
+          <caret line="172" column="46" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="836">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="1957">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <caret line="10" column="66" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="4180">
+          <caret line="141" column="51" selection-start-line="141" selection-start-column="51" selection-end-line="141" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Application/jdk1.7/jre/lib/rt.jar!/com/sun/xml/internal/ws/org/objectweb/asm/Opcodes.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05811966" vertical-offset="61" max-vertical-offset="4066">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="1330">
+          <caret line="12" column="68" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#811#812#0" expanded="false" />
+            <element signature="e#865#866#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31643358" vertical-offset="3790" max-vertical-offset="5643">
-          <caret line="235" column="31" selection-start-line="235" selection-start-column="31" selection-end-line="235" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.21678321" vertical-offset="2707" max-vertical-offset="5054">
+          <caret line="174" column="61" selection-start-line="174" selection-start-column="7" selection-end-line="174" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5979021" vertical-offset="4655" max-vertical-offset="5757">
-          <caret line="288" column="33" selection-start-line="288" selection-start-column="33" selection-end-line="288" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.5314685" vertical-offset="323" max-vertical-offset="6023">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <element signature="e#2024#4701#0" expanded="true" />
-            <element signature="e#4690#4691#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="7690" max-vertical-offset="10241">
-          <caret line="463" column="35" selection-start-line="463" selection-start-column="35" selection-end-line="463" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="109" max-vertical-offset="10070">
+          <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="53" />
           <folding>
-            <element signature="e#824#862#0" expanded="true" />
-            <element signature="e#10116#10154#0" expanded="true" />
-            <element signature="e#11742#11780#0" expanded="true" />
-            <element signature="e#12318#12319#0" expanded="true" />
-            <element signature="e#12346#12347#0" expanded="true" />
-            <element signature="e#13766#13804#0" expanded="true" />
-            <element signature="e#14915#14916#0" expanded="true" />
-            <element signature="e#14965#14966#0" expanded="true" />
-            <element signature="e#15330#15331#0" expanded="true" />
-            <element signature="e#15370#15371#0" expanded="true" />
-            <element signature="e#15377#15415#0" expanded="true" />
-            <element signature="e#15469#15470#0" expanded="true" />
-            <element signature="e#15510#15511#0" expanded="true" />
+            <element signature="e#7473#7474#0" expanded="true" />
+            <element signature="e#7509#7510#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/CodeCollector.java">
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/StringSearcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42564103" vertical-offset="492" max-vertical-offset="1292">
-          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.13636364" vertical-offset="3722" max-vertical-offset="4807">
+          <caret line="217" column="29" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.06495727" vertical-offset="0" max-vertical-offset="3534">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/DetectorGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.352942" vertical-offset="15941" max-vertical-offset="17917">
+          <caret line="890" column="50" selection-start-line="890" selection-start-column="50" selection-end-line="890" selection-end-column="50" />
           <folding />
         </state>
       </provider>

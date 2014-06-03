@@ -7,14 +7,13 @@ import com.googlecode.dex2jar.visitors.DexAnnotationAble;
 import com.googlecode.dex2jar.visitors.DexAnnotationVisitor;
 import com.googlecode.dex2jar.visitors.DexCodeVisitor;
 import com.googlecode.dex2jar.visitors.DexMethodVisitor;
-import com.sun.xml.internal.ws.org.objectweb.asm.Opcodes;
+import org.objectweb.asm.Opcodes;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-/**
- * Created by lai on 14-5-29.
- */
+//import com.sun.xml.internal.ws.org.objectweb.asm.Opcodes;
+
 public class MethodAdapter implements DexMethodVisitor, Opcodes {
 
 
