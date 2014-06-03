@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class StringSearcher extends JPanel {
 
@@ -118,7 +119,9 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
             APK apk = new APK(filePath);
             HashMap<String, String> methods = apk.getMethods();
 //            DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode(method);
-            this.methodTree.setModel(new DefaultTreeModel(createNodes(method, methods)));
+//            this.methodTree.setModel(new DefaultTreeModel(createNodes(method, methods)));
+            HashSet<String> methodSet = new HashSet<>();
+            this.methodTree.setModel(new DefaultTreeModel(createNodes(method, methods, methodSet)));
             count = 0;
             id =0;
         } catch (Exception e) {
@@ -155,7 +158,7 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
      * @param methods 方法Map
      * @return rootNode DefaultMutableTreeNode
      */
-    private DefaultMutableTreeNode createNodes(String method, HashMap<String, String> methods) {
+    private DefaultMutableTreeNode createNodes0(String method, HashMap<String, String> methods) {
         DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode(method);
         String methodBody;
 
@@ -202,7 +205,7 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
             methodBody = methods.get(key);
             if (methodBody.contains(method) && !key.equals(method)) {
                 elderList.add(str);
-                rootNode.add(createNodes(key, methods));
+                rootNode.add(createNodes0(key, methods));
             }
         }
 
@@ -210,6 +213,47 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
 
         return rootNode;
     }
+
+    /**
+     * 以递归的方式创建节点。
+     *
+     * @param method  方法名
+     * @param methods 方法Map
+     * @param methodSet 已搜索過的方法集合
+     * @return rootNode DefaultMutableTreeNode
+     */
+    private DefaultMutableTreeNode createNodes(String method,
+                                               HashMap<String, String> methods, HashSet<String> methodSet) {
+
+        DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode(method);
+        if (methodSet.contains(method)) {
+            return rootNode;
+        }
+
+        /**
+         * 是否找到调用标志，找到则是调用，找不到则是最终调用。
+         */
+        for (String key : methods.keySet()) {
+            String methodBody = methods.get(key);
+            if (methodBody.contains(method)) {
+                if (key.contains("$") && key.contains(";.run()V")) {
+                    key = key.split(";.")[0] + ";.<init>";
+                    rootNode.add(createNodes(key, methods, methodSet));
+                    continue;
+                }
+
+                if (key.contains("$") && key.contains(";.run()V")) {
+                    key = key.split(";.")[0] + ";.start";
+                    rootNode.add(createNodes(key, methods, methodSet));
+                    continue;
+                }
+                rootNode.add(createNodes(key, methods, methodSet));
+            }
+        }
+
+        return rootNode;
+    }
+
 
     @Override
     protected void done() {
