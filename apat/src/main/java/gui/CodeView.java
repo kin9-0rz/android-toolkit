@@ -3,7 +3,6 @@ package gui;
 import com.googlecode.dex2jar.reader.DexFileReader;
 import parser.apk.APK;
 import parser.dex.DexClass;
-import utils.ClassCollector;
 import utils.FileDrop;
 import utils.UtilLocal;
 
@@ -193,19 +192,7 @@ public class CodeView extends JPanel {
             DefaultMutableTreeNode fileNode = new FileNode(apk.getDexFileReader(), file.getAbsolutePath());
             rootNode.add(fileNode);
 
-            // initialize class List, and sort them.
-            final List<DexClass> classList = new ArrayList<>();
-
-            DexFileReader dexFileReader = apk.getDexFileReader();
-
-            try {
-                dexFileReader.accept(new ClassCollector(classList));
-            } catch (Exception e) {
-                System.out.println("Accept Code Failed." + e.getMessage());
-                return;
-            }
-
-            //sort
+            List<DexClass> classList = apk.getCodes();
             Collections.sort(classList, new ComparatorClass());
 
             for (final DexClass dexClass : classList) {
@@ -228,13 +215,6 @@ public class CodeView extends JPanel {
                 for (int i = 0; i < len - 1; i++) {
                     pkgNode = findOrAddNode(new TreePath(pkgNode), strings[i]);
                 }
-
-//                if (dexClass.fields == null && dexClass.methods == null) {
-//                    dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
-//                            DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
-//                    dexFileReader.visitClass(new ApkActionPos(dexClass), dexClass.classIdx,
-//                            DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
-//                }
 
                 ClassNode classNode = new ClassNode(dexClass);
 
@@ -260,18 +240,6 @@ public class CodeView extends JPanel {
         }
     }
 
-//    class PackageNode {
-//        String packageName;
-//
-//        PackageNode(String packageName) {
-//            this.packageName = packageName;
-//        }
-//
-//        @Override
-//        public String toString() {
-//            return packageName;
-//        }
-//    }
 
     class ClassNode extends DefaultMutableTreeNode {
         String className;
