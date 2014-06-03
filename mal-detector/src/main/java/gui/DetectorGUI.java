@@ -682,6 +682,14 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
 
     }
 
+    /**
+     *
+     * @param method    方法
+     * @param methods   apk 的方法集
+     * @param methodSet 已搜索過的調用方法集合
+     * @param callOnSet 最終調用集合
+     * @param i         搜索層/次數計數器
+     */
     private void searchCallOn(String method, HashMap<String, String> methods,
                               HashSet<String> methodSet, HashSet<String> callOnSet, int i) {
         if (methodSet.contains(method)) {
