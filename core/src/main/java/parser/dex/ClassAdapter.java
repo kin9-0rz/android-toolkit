@@ -7,16 +7,14 @@ import com.googlecode.dex2jar.visitors.DexClassVisitor;
 import com.googlecode.dex2jar.visitors.DexFieldVisitor;
 import com.googlecode.dex2jar.visitors.DexMethodVisitor;
 
-import java.util.Map;
-
 /**
- * Created by lai on 14-5-28.
+ * Created by SlowMan on 14-5-28.
+ * 對類進行解析。
+ *
  */
 public class ClassAdapter implements DexClassVisitor {
 
     protected int access_flags;
-    protected Map<String, Object> annotationDefaults;
-    protected boolean build = false;
     protected String className;
     protected int config;
     protected String file;
@@ -58,6 +56,11 @@ public class ClassAdapter implements DexClassVisitor {
         tField.field = field;
         tField.value = value;
         dexClass.fields.add(tField);
+
+        if (null != value) {
+            dexClass.stringData.add(field.getName());
+            dexClass.stringData.add(value.toString());
+        }
 //        System.out.println("成员：" + tField.toString());
         return new FieldAdapter(accessFlags, field, value, tField);
     }
@@ -65,6 +68,7 @@ public class ClassAdapter implements DexClassVisitor {
     @Override
     public DexMethodVisitor visitMethod(int accessFlags, final Method method) {
         dexClass.methods.add(method);
+        dexClass.stringData.add(method.getName());
 //        System.out.println("方法：" + method);
         return new MethodAdapter(accessFlags, method, dexClass);
     }

@@ -18,6 +18,12 @@ public class FieldAdapter  implements DexFieldVisitor {
         this.field = field;
         this.value = value;
         this.accessFlags = accessFlags;
+
+//        if (value != null) {
+//            classItem.stringData.add(field.getName());
+////                	classItem.stringData.add(field.getType());
+//            classItem.stringData.add(value.toString());
+//        }
     }
 
     @Override

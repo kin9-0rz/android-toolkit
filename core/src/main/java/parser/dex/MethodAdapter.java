@@ -2,7 +2,6 @@ package parser.dex;
 
 import com.googlecode.dex2jar.DexOpcodes;
 import com.googlecode.dex2jar.Method;
-import com.googlecode.dex2jar.util.DumpDexCodeAdapter;
 import com.googlecode.dex2jar.visitors.DexAnnotationAble;
 import com.googlecode.dex2jar.visitors.DexAnnotationVisitor;
 import com.googlecode.dex2jar.visitors.DexCodeVisitor;
@@ -17,8 +16,8 @@ import java.io.StringWriter;
 public class MethodAdapter implements DexMethodVisitor, Opcodes {
 
 
-    protected int accessFlags;
     final protected Method method;
+    protected int accessFlags;
     protected int config;
     protected DexClass dexClass;
 
@@ -39,16 +38,7 @@ public class MethodAdapter implements DexMethodVisitor, Opcodes {
     @Override
     public DexCodeVisitor visitCode() {
         final StringWriter writer = new StringWriter(1024 * 10);
-        return new DumpDexCodeAdapter((accessFlags & DexOpcodes.ACC_STATIC) != 0,
-                method,
-                new PrintWriter(writer)) {
-            @Override
-            public void visitEnd() {
-                // TODO here maybe you can init the stringData
-//                System.out.println("方法内容：" + writer.toString());
-                dexClass.methodMap.put(method.toString(), writer.toString());
-            }
-        };
+        return new CodeAdapter((accessFlags & DexOpcodes.ACC_STATIC) != 0, method, writer, dexClass);
     }
 
     @Override

@@ -10,16 +10,16 @@ import java.util.List;
 /**
  * 收集 dex 的class
  */
-public class CodeGather implements DexFileVisitor {
+public class DexFileAdapter implements DexFileVisitor {
     protected List<DexClass> dexClassList;
     protected int classIdx = 0;
     protected int config;
 
-    public CodeGather(List<DexClass> dexClasses) {
+    public DexFileAdapter(List<DexClass> dexClasses) {
         this.dexClassList = dexClasses;
     }
 
-    public CodeGather(List<DexClass> dexClasses, int config) {
+    public DexFileAdapter(List<DexClass> dexClasses, int config) {
         this.dexClassList = dexClasses;
         this.config = config;
     }
