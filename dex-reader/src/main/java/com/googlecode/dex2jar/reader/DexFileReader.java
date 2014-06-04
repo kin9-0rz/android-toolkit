@@ -325,6 +325,48 @@ public class DexFileReader {
         dexFileVisitor.visitEnd();
     }
 
+    public void visitClass(DexFileVisitor dv, int cid, int config) {
+        DataIn in = this.in;
+        int idxOffset = this.class_defs_off + cid * 32;
+        in.pushMove(idxOffset);
+        String className;
+        try {
+            className = this.getType(in.readUIntx());
+            int access_flags = in.readUIntx();
+            int superclass_idx = in.readUIntx();
+            String superClassName = superclass_idx == -1 ? null : this.getType(superclass_idx);
+            // 获取接口
+            String[] interfaceNames = null;
+            {
+                int interfaces_off = in.readUIntx();
+                if (interfaces_off != 0) {
+                    in.pushMove(interfaces_off);
+                    try {
+                        int size = in.readUIntx();
+                        interfaceNames = new String[size];
+                        for (int i = 0; i < size; i++) {
+                            interfaceNames[i] = getType(in.readUShortx());
+                        }
+                    } finally {
+                        in.pop();
+                    }
+                }
+            }
+            DexClassVisitor dcv = dv.visit(access_flags, className, superClassName, interfaceNames);
+            // 不处理
+            if (dcv != null) {
+                try {
+                    acceptClass(dv, dcv, className, config);
+//                    acceptClass(dcv, className, config);
+                } catch (Exception e) {
+                    System.out.println("Can't Skip Class!!!!");
+                }
+            }
+        } finally {
+            in.pop();
+        }
+    }
+
     private void acceptClass(DexFileVisitor dexFileVisitor, DexClassVisitor dexClassVisitor,
                              String className, int config) {
         DataIn in = this.in;
@@ -565,6 +607,8 @@ public class DexFileReader {
         }
     }
 
+
+
     private static final Charset UTF8 = Charset.forName("UTF-8");
 
     /* default */
@@ -743,5 +787,6 @@ public class DexFileReader {
     public final int getClassSize() {
         return class_defs_size;
     }
+
 
 }

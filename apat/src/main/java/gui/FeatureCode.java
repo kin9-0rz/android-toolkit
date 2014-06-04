@@ -2,6 +2,7 @@ package gui;
 
 import com.googlecode.dex2jar.reader.DexFileReader;
 import parser.apk.APK;
+import parser.dex.ApkActionPos;
 import parser.dex.DexClass;
 import utils.FileDrop;
 import utils.UtilLocal;
@@ -94,30 +95,30 @@ public class FeatureCode extends JPanel {
 
 
                 //get the current lead path
-//                final TreePath newPath = treeSelectionEvent.getNewLeadSelectionPath();
-//                if (newPath == null)
-//                    return;
-//                final DefaultMutableTreeNode selectNode = (DefaultMutableTreeNode) newPath.getLastPathComponent();
-//                if (selectNode.getUserObject() instanceof DexFileReader) {
-//                    final DexFileReader dexFile = (DexFileReader) selectNode.getUserObject();
-//                    System.out.println("dexFile.getClassSize : " + dexFile.getClassSize());
-//                } else if (selectNode.getUserObject() instanceof ClassDefItem) {
-//                    ClassDefItem classDefItem = (ClassDefItem) selectNode.getUserObject();
-//
-////                    System.out.println("StringData : " + classDefItem.stringData);
-//                    StringBuilder sb = new StringBuilder();
-//                    List<String> strList = classDefItem.stringData;
-//                    Collections.sort(strList);
-//                    for (String str : strList) {
-//                        sb.append("<i>").append(str).append("</i>").append('\n');
-//                    }
-//                    stringList.setText(sb.toString());
-//                } else {
-////                    System.out.println(selectNode.depthFirstEnumeration().toString());
-////                    System.out.println(selectNode.getChildCount());
-//
-//                    stringList.setText(getStrings(getClassNodes(selectNode)).replace("[<i>", "<i>").replace(", <i>", "<i>"));
-//                }
+                final TreePath newPath = treeSelectionEvent.getNewLeadSelectionPath();
+                if (newPath == null)
+                    return;
+                final DefaultMutableTreeNode selectNode = (DefaultMutableTreeNode) newPath.getLastPathComponent();
+                if (selectNode.getUserObject() instanceof DexFileReader) {
+                    final DexFileReader dexFile = (DexFileReader) selectNode.getUserObject();
+                    System.out.println("dexFile.getClassSize : " + dexFile.getClassSize());
+                } else if (selectNode.getUserObject() instanceof DexClass) {
+                    DexClass classDefItem = (DexClass) selectNode.getUserObject();
+
+//                    System.out.println("StringData : " + classDefItem.stringData);
+                    StringBuilder sb = new StringBuilder();
+                    List<String> strList = classDefItem.stringData;
+                    Collections.sort(strList);
+                    for (String str : strList) {
+                        sb.append("<i>").append(str).append("</i>").append('\n');
+                    }
+                    stringList.setText(sb.toString());
+                } else {
+//                    System.out.println(selectNode.depthFirstEnumeration().toString());
+//                    System.out.println(selectNode.getChildCount());
+
+                    stringList.setText(getStrings(getClassNodes(selectNode)).replace("[<i>", "<i>").replace(", <i>", "<i>"));
+                }
 
 
             }
@@ -203,9 +204,10 @@ public class FeatureCode extends JPanel {
             rootNode.add(fileNode);
 
             // initialize class List, and sort them.
-            final List<DexClass> classList = new ArrayList<>();
+//            final List<DexClass> classList = new ArrayList<>();
+            final List<DexClass> classList = apk.getCodes();
 
-            DexFileReader dexFileReader = apk.getDexFileReader();
+//            DexFileReader dexFileReader = apk.getDexFileReader();
 
 //            try {
 //                dexFileReader.accept(new ClassCollector(classList));
@@ -236,6 +238,13 @@ public class FeatureCode extends JPanel {
                 DefaultMutableTreeNode pkgNode = fileNode;
                 for (int i = 0; i < len - 1; i++) {
                     pkgNode = findOrAddNode(new TreePath(pkgNode), strings[i]);
+                }
+
+                if (dexClass.fields == null && dexClass.methods == null) {
+//                    dexFileReader.visitClass(new CodeCollector(classDefItem), classDefItem.classIdx,
+//                            DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+                    apk.getDexFileReader().visitClass(new ApkActionPos(dexClass), dexClass.classIdx,
+                            DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
                 }
 
                 ClassNode classNode = new ClassNode(dexClass);

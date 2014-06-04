@@ -155,8 +155,9 @@ public class APKTest {
         APK apk;
         try {
             apk = new APK(new File(path));
-            System.out.println(apk.getMethods());
+//            System.out.println(apk.getMethods());
 
+            System.out.println(apk.getStringsMap());
 
         } catch (IOException e) {
             System.out.println(e.getMessage());

@@ -4,7 +4,7 @@ import com.googlecode.dex2jar.reader.DexFileReader;
 import org.apache.commons.io.IOUtils;
 import parser.axml.ManifestInfo;
 import parser.axml.ManifestParser;
-import parser.dex.CodeGather;
+import parser.dex.DexFileAdapter;
 import parser.dex.DexClass;
 import parser.elf.Elf;
 import parser.utils.CertTool;
@@ -310,7 +310,7 @@ public class APK {
 
     private void initDexFileReader(File file) throws IOException {
         dexFileReader = new DexFileReader(file);
-        dexFileReader.accept(new CodeGather(codes),
+        dexFileReader.accept(new DexFileAdapter(codes),
                 DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
     }
 
@@ -441,7 +441,7 @@ public class APK {
     public List<DexClass> getClassDefItems() {
         final List<DexClass> dexClasses = new ArrayList<>();
         // FIXME ClassDefItem 中的 stringData 并没有值，访问失败。
-        dexFileReader.accept(new CodeGather(dexClasses));
+        dexFileReader.accept(new DexFileAdapter(dexClasses));
 
         return dexClasses;
     }
@@ -510,17 +510,15 @@ public class APK {
         HashMap<String, HashSet<String>> stringMap = new HashMap<>();
 
         final List<DexClass> dexClasses = new ArrayList<>();
-        dexFileReader.accept(new CodeGather(dexClasses));
 
         try {
-
-
             for (DexClass dexClass : dexClasses) {
 //                dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
 //                        DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
 
 //                dexFileReader.visitClass(new ApkActionPos(dexClass), dexClass.classIdx, DexFileReader.SKIP_DEBUG
 //                        | DexFileReader.SKIP_ANNOTATION);
+
 
                 stringMap.put(dexClass.className, new HashSet<>(dexClass.stringData));
             }
