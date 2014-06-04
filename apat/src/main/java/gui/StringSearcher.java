@@ -227,6 +227,7 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
 
         DefaultMutableTreeNode rootNode = new DefaultMutableTreeNode(method);
         if (methodSet.contains(method)) {
+            System.out.println(method);
             return rootNode;
         }
 
@@ -236,13 +237,14 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
         for (String key : methods.keySet()) {
             String methodBody = methods.get(key);
             if (methodBody.contains(method)) {
+                methodSet.add(method);
                 if (key.contains(";.handleMessage")) {
                     key = "Handler;.send";
                     rootNode.add(createNodes(key, methods, methodSet));
                     continue;
                 }
 
-                if (key.contains("$") && key.contains(";.run()V")) {
+                if (key.contains("$")) {
                     key = key.split(";.")[0] + ";.<init>";
                     rootNode.add(createNodes(key, methods, methodSet));
                     continue;
@@ -253,9 +255,13 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
                     rootNode.add(createNodes(key, methods, methodSet));
                     continue;
                 }
+
                 rootNode.add(createNodes(key, methods, methodSet));
             }
         }
+
+        System.out.println(method);
+
 
         return rootNode;
     }
