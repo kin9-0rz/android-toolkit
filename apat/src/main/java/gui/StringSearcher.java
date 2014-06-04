@@ -236,6 +236,12 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
         for (String key : methods.keySet()) {
             String methodBody = methods.get(key);
             if (methodBody.contains(method)) {
+                if (key.contains(";.handleMessage")) {
+                    key = "Handler;.send";
+                    rootNode.add(createNodes(key, methods, methodSet));
+                    continue;
+                }
+
                 if (key.contains("$") && key.contains(";.run()V")) {
                     key = key.split(";.")[0] + ";.<init>";
                     rootNode.add(createNodes(key, methods, methodSet));
