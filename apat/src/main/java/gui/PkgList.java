@@ -89,7 +89,7 @@ class PkgListTask extends SwingWorker<HashMap<Byte, String>, String> {
     }
 
 
-    private HashMap<Byte, String> getAPKInfo() throws Exception {
+    private HashMap<Byte, String> doIt() throws Exception {
         APK apk = new APK(filePath, true, true, false);
 
         List<DexClass> dexClasses1 = apk.getCodes();
@@ -106,6 +106,7 @@ class PkgListTask extends SwingWorker<HashMap<Byte, String>, String> {
                 for (String member : tmpFamily) {
                     if (dexClass2.toString().contains(member)) {
                         tmpFamily.add(dexClass2.className);
+
                         break;
                     }
                 }
@@ -131,15 +132,24 @@ class PkgListTask extends SwingWorker<HashMap<Byte, String>, String> {
             }
         }
 
+//        for (HashSet<String> family : familySet) {
+//            System.out.println(family);
+//        }
+
 
         publish("[包列表]");
         HashSet<HashSet<String>> groupSet = new HashSet<>();
         for (HashSet<String> family : familySet) {
             tmpFlag = false;
+
             HashSet<String> newGroup = new HashSet<>();
             for (String member : family) {
-                int index = member.lastIndexOf("/");
-                newGroup.add(member.substring(0, index));
+                if (member.contains("/")) {
+                   int index = member.lastIndexOf("/");
+                    newGroup.add(member.substring(0, index));
+                } else {
+                    newGroup.add("L");
+                }
             }
 
             for (HashSet<String> group : groupSet) {
@@ -162,8 +172,8 @@ class PkgListTask extends SwingWorker<HashMap<Byte, String>, String> {
             }
         }
 
-        for (HashSet<String> family : groupSet) {
-            ArrayList<String> arrayList = new ArrayList<>(family);
+        for (HashSet<String> group : groupSet) {
+            ArrayList<String> arrayList = new ArrayList<>(group);
             Collections.sort(arrayList);
             for (String str : arrayList) {
                 publish(str);
@@ -193,7 +203,7 @@ class PkgListTask extends SwingWorker<HashMap<Byte, String>, String> {
 
     @Override
     public HashMap<Byte, String> doInBackground() throws Exception {
-        return getAPKInfo();
+        return doIt();
     }
 
 
