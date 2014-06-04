@@ -713,6 +713,12 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
             String methodBody = methods.get(key);
             if (methodBody.contains(method)) {
                 flag = false;
+                if (key.contains(";.handleMessage")) {
+                    key = "Handler;.send";
+                    searchCallOn(key, methods, methodSet, callOnSet, i);
+                    continue;
+                }
+
                 if (key.contains("$") && key.contains(";.run()V")) {
                     key = key.split(";.")[0] + ";.<init>";
                     searchCallOn(key, methods, methodSet, callOnSet, i);
