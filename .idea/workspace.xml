@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="839d571f-b0db-4d7d-87c5-ad4c7819402f" name="Default" comment="update">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/gui/APIs.java" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/APIs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/utils/CertTool.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/utils/CertTool.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java" />
+    <list default="true" id="839d571f-b0db-4d7d-87c5-ad4c7819402f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/DataInputDataIn.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/DataInputDataIn.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexFileAdapter.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexFileAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/FieldAdapter.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/FieldAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/InputStreamDataIn.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/InputStreamDataIn.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/LICENSE.txt" afterPath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/NOTICE.txt" afterPath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/NOTICE.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/RandomAccessFileInput.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/RandomAccessFileInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" afterPath="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/apat.iml" afterPath="$PROJECT_DIR$/apat/apat.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/build.gradle" afterPath="$PROJECT_DIR$/apat/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/lai.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/lai.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/pom.xml" afterPath="$PROJECT_DIR$/dex-reader/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -2076,7 +2064,11 @@
       <created>1403263314960</created>
       <updated>1403263314960</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="update">
+      <created>1403263371400</created>
+      <updated>1403263371400</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -2425,6 +2417,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2979094" vertical-offset="0" max-vertical-offset="836">
           <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
