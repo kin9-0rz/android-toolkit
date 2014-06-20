@@ -24,6 +24,7 @@ public class CodeAdapter extends DumpDexCodeAdapter {
     }
 
 
+    // FIXME 這部分代碼會影響對方法的收集，丟失字符串部分。需要手工從方法體內，提取字符串。
 //    @Override
 //    public void visitConstStmt(int opcode, int toReg, Object value, int xt) {
 //        switch (opcode) {
