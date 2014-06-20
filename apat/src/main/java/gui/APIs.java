@@ -34,7 +34,7 @@ import java.util.regex.Pattern;
  * Time: 10:47 AM
  */
 public class APIs extends JPanel {
-//    private final JTextField jTextFieldFilePath;
+    //    private final JTextField jTextFieldFilePath;
     JTextArea jTextAreaSMS = null;
     JTextArea jTextAreaInternet = null;
     JTextArea jTextAreaShell = null;
@@ -167,7 +167,6 @@ public class APIs extends JPanel {
 
 class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, String>> {
 
-
     final Byte FLAG_SMS = 0;
     final Byte FLAG_NETWORK = 1;
     final Byte FLAG_SHELL = 2;
@@ -188,6 +187,7 @@ class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, 
     String filePath;
     // api configure
     String API_PATH = "conf/apis.xml";
+
     /**
      * 存放 apis.xml 解析出来的敏感 api  :
      * <code>
@@ -242,10 +242,13 @@ class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, 
             APK apk = new APK(filePath);
 
             // TODO 这里也许使用 getCodes() 比较统一点好。
+            // TODO 還需要增加 field 位置字符串的處理。
             HashMap<String, String> methods = apk.getMethods();
 
             HashMap<String, ArrayList<String>> contentMap = new HashMap<>();
             ArrayList<String> uriList = new ArrayList<>();
+
+            Pattern pattern = Pattern.compile("[A-Za-z]+://[A-Za-z0-9./?=:&-_%]+", Pattern.CASE_INSENSITIVE);
 
             String methodBody;
             for (String key : methods.keySet()) {
@@ -261,19 +264,16 @@ class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, 
                                 arrayList.add(key + " [ " + api + " ]\n");
                                 contentMap.put(type, arrayList);
                             }
-
                         }
                     }
                 }
 
-                // 解析存在的所有的URI
-                Pattern pattern = Pattern.compile("[A-Za-z]+://[A-Za-z0-9./?=:&-_%]+", Pattern.CASE_INSENSITIVE);
                 Matcher matcher = pattern.matcher(methodBody);
                 while (matcher.find()) {
                     uriList.add(key + " [ " + matcher.group() + " ]\n");
                 }
-            }
 
+            }
 
             if (UtilLocal.DEBUG) {
                 System.out.println("匹配的结果：");
@@ -426,7 +426,7 @@ class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, 
                 e.printStackTrace();
             }
 
-        }  finally {
+        } finally {
             jButtonAnalysis.setEnabled(true);
         }
     }

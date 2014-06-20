@@ -10,8 +10,8 @@ import com.googlecode.dex2jar.visitors.DexMethodVisitor;
 /**
  * Created by SlowMan on 14-5-28.
  * 對類進行解析。
- *
  */
+
 public class ClassAdapter implements DexClassVisitor {
 
     protected int access_flags;
@@ -61,15 +61,15 @@ public class ClassAdapter implements DexClassVisitor {
             dexClass.stringData.add(field.getName());
             dexClass.stringData.add(value.toString());
         }
-//        System.out.println("成员：" + tField.toString());
-        return new FieldAdapter(accessFlags, field, value, tField);
+
+        return null;
     }
 
     @Override
     public DexMethodVisitor visitMethod(int accessFlags, final Method method) {
         dexClass.methods.add(method);
         dexClass.stringData.add(method.getName());
-//        System.out.println("方法：" + method);
+
         return new MethodAdapter(accessFlags, method, dexClass);
     }
 

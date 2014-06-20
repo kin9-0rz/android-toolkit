@@ -114,6 +114,7 @@ public class CertTool {
                     while (jis.read(readBuffer, 0, 1024 * 8) != -1) {
                         baos.write(readBuffer, 0, 1024 * 8);
                     }
+
                     PKCS7 pkcs7 = new PKCS7(baos.toByteArray());
                     certs = pkcs7.getCertificates();
                     for (Certificate cert : certs) {

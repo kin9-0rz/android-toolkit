@@ -1,15 +1,10 @@
 package com.googlecode.dex2jar.reader.io;
 
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
+import org.apache.xmlgraphics.image.codec.util.MemoryCacheSeekableStream;
+
+import java.io.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-
-import org.apache.xmlgraphics.image.codec.util.MemoryCacheSeekableStream;
 
 public class InputStreamDataIn extends DataInputDataIn implements Closeable {
     public static InputStreamDataIn open(InputStream in) {

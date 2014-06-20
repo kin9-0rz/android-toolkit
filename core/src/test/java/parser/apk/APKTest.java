@@ -150,8 +150,7 @@ public class APKTest {
 
     @Test
     public void testGetMethods() {
-        String path = "/home/lai/Work/samples/Test/Trojan-Spy.AndroidOS.Adrd/" +
-                "2010-11-30-20599949231d472b0b9581d7277c1df39914fc4ed943ca7e6be82f80ab9a7fa4.apk";
+        String path = "/home/lai/Work/test.apk";
         APK apk;
         try {
             apk = new APK(new File(path));
@@ -177,7 +176,7 @@ public class APKTest {
 
         APK apk;
         try {
-            apk = new APK("/home/lai/Work/samples/Exploit.AndroidOS.DroidDream/Test/2011-02-17-f49410d96e93822e44dfa1a45b55e250abca233a43f4afb0237a1a0f76b62e67.apk_FILES/assets/sqlite.db");
+            apk = new APK("/home/lai/Work/test.apk");
             System.out.println(apk.getCertificateInfos());
 
             apk = new APK("/home/lai/Work/samples/Exploit.AndroidOS.DroidDream/Test/" +

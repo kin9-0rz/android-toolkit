@@ -8,7 +8,6 @@ import com.googlecode.dex2jar.visitors.DexCodeVisitor;
 import com.googlecode.dex2jar.visitors.DexMethodVisitor;
 import org.objectweb.asm.Opcodes;
 
-import java.io.PrintWriter;
 import java.io.StringWriter;
 
 //import com.sun.xml.internal.ws.org.objectweb.asm.Opcodes;
@@ -38,6 +37,14 @@ public class MethodAdapter implements DexMethodVisitor, Opcodes {
     @Override
     public DexCodeVisitor visitCode() {
         final StringWriter writer = new StringWriter(1024 * 10);
+//        final PrintWriter printWriter = new PrintWriter(writer);
+//        return new DumpDexCodeAdapter((accessFlags & DexOpcodes.ACC_STATIC) != 0, method, printWriter) {
+//            @Override
+//            public void visitEnd() {
+//                dexClass.methodMap.put(method.toString(), writer.toString());
+//                printWriter.close();
+//            }
+//        };
         return new CodeAdapter((accessFlags & DexOpcodes.ACC_STATIC) != 0, method, writer, dexClass);
     }
 
