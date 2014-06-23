@@ -131,8 +131,8 @@ public class CodeView extends JPanel {
     /**
      * 获取类节点
      *
-     * @param selectNode
-     * @return
+     * @param selectNode 类节点
+     * @return 类节点包含的节点列表
      */
     ArrayList<ClassNode> getClassNodes(DefaultMutableTreeNode selectNode) {
         ArrayList<ClassNode> classNodes = new ArrayList<>();
@@ -150,22 +150,6 @@ public class CodeView extends JPanel {
         }
 
         return classNodes;
-    }
-
-    String getStrings(ArrayList<ClassNode> classNodes) {
-        HashSet<String> hashSet = new HashSet<>();
-        for (ClassNode classNode : classNodes) {
-            List<String> strList = classNode.dexClass.stringData;
-            for (String str : strList) {
-                hashSet.add("<i>" + str + "</i>" + '\n');
-            }
-
-        }
-
-        ArrayList<String> arrayList = new ArrayList<>(hashSet);
-        Collections.sort(arrayList);
-
-        return arrayList.toString();
     }
 
     /**
@@ -192,7 +176,7 @@ public class CodeView extends JPanel {
             DefaultMutableTreeNode fileNode = new FileNode(apk.getDexFileReader(), file.getAbsolutePath());
             rootNode.add(fileNode);
 
-            List<DexClass> classList = apk.getCodes();
+            List<DexClass> classList = apk.getDexClasses();
             Collections.sort(classList, new ComparatorClass());
 
             for (final DexClass dexClass : classList) {
