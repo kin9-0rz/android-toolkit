@@ -244,30 +244,4 @@ public class CodeView extends JPanel {
         }
     }
 
-    /**
-     * 比较两个 ClassDefItem 对象（排序）。
-     */
-    class ComparatorClass implements Comparator<DexClass> {
-        @Override
-        public int compare(DexClass arg0, DexClass arg1) {
-            final String name0 = arg0.className;
-            final String name1 = arg1.className;
-
-            if (name0.contains("/")) {
-                if (name1.contains("/")) {
-                    return name0.compareTo(name1);
-                } else {
-                    return "".compareTo(name0);
-                }
-            }
-
-            if (name1.contains("/")) {
-                return name1.compareTo("");
-            } else {
-                return name0.compareTo(name1);
-            }
-        }
-
-    }
-
 }
