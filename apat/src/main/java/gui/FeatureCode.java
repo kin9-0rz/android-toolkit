@@ -3,6 +3,7 @@ package gui;
 import com.googlecode.dex2jar.reader.DexFileReader;
 import parser.apk.APK;
 import parser.dex.DexClass;
+import parser.dex.DexFileAdapter;
 import utils.FileDrop;
 import utils.UtilLocal;
 
@@ -144,12 +145,18 @@ public class FeatureCode extends JPanel {
         return nodeCls;
     }
 
+
+    /**
+     * 获取类节点
+     *
+     * @param selectNode 节点
+     * @return 类节点列表
+     */
     ArrayList<ClassNode> getClassNodes(DefaultMutableTreeNode selectNode) {
         ArrayList<ClassNode> classNodes = new ArrayList<>();
 
         for (final Enumeration ee = selectNode.children(); ee.hasMoreElements(); ) {
             final DefaultMutableTreeNode n = (DefaultMutableTreeNode) ee.nextElement();
-//            System.out.println(n.toString() + " : " + n.isLeaf());
 
             if (n.isLeaf()) {
                 classNodes.add((ClassNode) n);
@@ -162,7 +169,13 @@ public class FeatureCode extends JPanel {
         return classNodes;
     }
 
-    String getStrings(ArrayList<ClassNode> classNodes) {
+    /**
+     * 获取字符串
+     *
+     * @param classNodes 节点列表
+     * @return 字符串
+     */
+    private String getStrings(ArrayList<ClassNode> classNodes) {
         HashSet<String> hashSet = new HashSet<>();
         for (ClassNode classNode : classNodes) {
             List<String> strList = classNode.dexClass.stringData;
@@ -188,32 +201,31 @@ public class FeatureCode extends JPanel {
         APK apk;
         // 1.parse files
         for (final File file : files) {
+            DexFileReader dexFileReader;
             try {
-                apk = new APK(file);
+                dexFileReader = new DexFileReader(file);
             } catch (IOException e) {
                 e.printStackTrace();
                 continue;
             }
 
-            if (apk.getDexFileReader() == null)
-                continue;
-
             // 创建根节点.
-            DefaultMutableTreeNode fileNode = new FileNode(apk.getDexFileReader(), file.getAbsolutePath());
+            DefaultMutableTreeNode fileNode = new FileNode(dexFileReader, file.getAbsolutePath());
             rootNode.add(fileNode);
 
             // initialize class List, and sort them.
-//            final List<DexClass> classList = new ArrayList<>();
-            final List<DexClass> classList = apk.getCodes();
+            final List<DexClass> classList = new ArrayList<>();
+//            final List<DexClass> classList = apk.getDexClasses();
 
 //            DexFileReader dexFileReader = apk.getDexFileReader();
 
-//            try {
-//                dexFileReader.accept(new ClassCollector(classList));
-//            } catch (Exception e) {
-//                System.out.println("Accept Code Failed." + e.getMessage());
-//                return;
-//            }
+            try {
+                dexFileReader.accept(new DexFileAdapter(classList),
+                        DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+            } catch (Exception e) {
+                System.out.println("Accept Code Failed." + e.getMessage());
+                return;
+            }
 
             //sort
             Collections.sort(classList, new ComparatorClass());
@@ -298,7 +310,7 @@ public class FeatureCode extends JPanel {
     /**
      * 比较两个 ClassDefItem 对象（排序）。
      */
-    class ComparatorClass implements Comparator<DexClass> {
+    public class ComparatorClass implements Comparator<DexClass> {
         @Override
         public int compare(DexClass arg0, DexClass arg1) {
             final String name0 = arg0.className;
