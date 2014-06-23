@@ -22,19 +22,8 @@ public class ClassAdapter implements DexClassVisitor {
     protected String superClass;
     protected DexClass dexClass;
 
-
-    public ClassAdapter(int access_flags, String className, String superClass,
-                        String[] interfaceNames, int config) {
-        super();
-        this.access_flags = access_flags;
-        this.className = className;
-        this.superClass = superClass;
-        this.interfaceNames = interfaceNames;
-        this.config = config;
-    }
-
-    public ClassAdapter(int access_flags, String className, String superClass,
-                        String[] interfaceNames, int config, DexClass dexClass) {
+    public ClassAdapter(int access_flags, String className, String superClass, String[] interfaceNames,
+                        int config, DexClass dexClass) {
         super();
         this.access_flags = access_flags;
         this.className = className;
@@ -59,7 +48,9 @@ public class ClassAdapter implements DexClassVisitor {
 
         if (null != value) {
             dexClass.stringData.add(field.getName());
-            dexClass.stringData.add(value.toString());
+            if (value instanceof String) {
+                dexClass.stringData.add(value.toString());
+            }
         }
 
         return null;
