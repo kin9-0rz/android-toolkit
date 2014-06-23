@@ -92,8 +92,8 @@ class PkgListTask extends SwingWorker<HashMap<Byte, String>, String> {
     private HashMap<Byte, String> doIt() throws Exception {
         APK apk = new APK(filePath, true, true, false);
 
-        List<DexClass> dexClasses1 = apk.getCodes();
-        List<DexClass> dexClasses2 = apk.getCodes();
+        List<DexClass> dexClasses1 = apk.getDexClasses();
+        List<DexClass> dexClasses2 = apk.getDexClasses();
         ArrayList<HashSet<String>> familySet = new ArrayList<>();
 
         boolean tmpFlag;

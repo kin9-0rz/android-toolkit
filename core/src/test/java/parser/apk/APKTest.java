@@ -89,7 +89,7 @@ public class APKTest {
 //            System.out.println(set.get(cls));
 //        }
 
-//        List<ClassDefItem> classDefItems = apk.getClassDefItems();
+//        List<ClassDefItem> classDefItems = apk.getDexClasses();
 //
 //        System.out.println(classDefItems.get(3).stringData);
 
@@ -147,6 +147,7 @@ public class APKTest {
 //            return name0.compareTo(name1);
 //        }
 //    }
+
 
     @Test
     public void testGetMethods() {

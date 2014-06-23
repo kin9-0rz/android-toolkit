@@ -58,7 +58,10 @@ public class DumpDexCodeAdapter extends AbstractDumpDexCodeAdapter {
     private boolean isStatic;
 
     /**
-     * @param dcv
+     *
+     * @param isStatic
+     * @param m
+     * @param out
      */
     public DumpDexCodeAdapter(boolean isStatic, Method m, PrintWriter out) {
         this.method = m;

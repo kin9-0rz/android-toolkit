@@ -26,7 +26,6 @@ public class DexClass {
      */
     public Map<String, String> methodMap;
 
-    // TODO 这个还没有收集
     public List<String> stringData = new ArrayList<String>() {
         @Override
         public boolean add(String a) {
