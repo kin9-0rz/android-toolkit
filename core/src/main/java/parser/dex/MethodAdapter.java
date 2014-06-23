@@ -10,7 +10,6 @@ import org.objectweb.asm.Opcodes;
 
 import java.io.StringWriter;
 
-//import com.sun.xml.internal.ws.org.objectweb.asm.Opcodes;
 
 public class MethodAdapter implements DexMethodVisitor, Opcodes {
 
