@@ -10,6 +10,7 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import parser.apk.APK;
+import parser.dex.DexClass;
 import utils.UtilLocal;
 
 import javax.swing.*;
@@ -23,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -240,40 +242,57 @@ class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, 
 
         try {
             APK apk = new APK(filePath);
+            List<DexClass> dexClasses = apk.getDexClasses();
+            // 用来匹配 URI
+            Pattern pattern = Pattern.compile("[\\w]+://[\\w\\d.:/?&=\\-_%]+", Pattern.CASE_INSENSITIVE);
 
-            // TODO 这里也许使用 getCodes() 比较统一点好。
-            // TODO 還需要增加 field 位置字符串的處理。
-            HashMap<String, String> methods = apk.getMethods();
-
+            // 临时存放检索到的 API
             HashMap<String, ArrayList<String>> contentMap = new HashMap<>();
+            // 临时存放检索到的 URI
             ArrayList<String> uriList = new ArrayList<>();
 
-            Pattern pattern = Pattern.compile("[A-Za-z]+://[A-Za-z0-9./?=:&-_%]+", Pattern.CASE_INSENSITIVE);
-
             String methodBody;
-            for (String key : methods.keySet()) {
-                methodBody = methods.get(key);
+            for (DexClass dexClass : dexClasses) {
+                if (dexClass.methodMap.size() > 0) {
+                    for (String key : dexClass.methodMap.keySet()) {
+                        methodBody = dexClass.methodMap.get(key);
 
-                for (String type : apisMap.keySet()) {
-                    for (String api : apisMap.get(type)) {
-                        if (methodBody.contains(api)) {
-                            if (contentMap.keySet().contains(type)) {
-                                contentMap.get(type).add(key + " [ " + api + " ]\n");
-                            } else {
-                                ArrayList<String> arrayList = new ArrayList<>();
-                                arrayList.add(key + " [ " + api + " ]\n");
-                                contentMap.put(type, arrayList);
+                        // API 检索
+                        for (String type : apisMap.keySet()) {
+                            for (String api : apisMap.get(type)) {
+                                if (methodBody.contains(api)) {
+                                    if (contentMap.keySet().contains(type)) {
+                                        contentMap.get(type).add(key + " [ " + api + " ]\n");
+                                    } else {
+                                        ArrayList<String> arrayList = new ArrayList<>();
+                                        arrayList.add(key + " [ " + api + " ]\n");
+                                        contentMap.put(type, arrayList);
+                                    }
+                                }
                             }
+                        }
+
+                        Matcher matcher = pattern.matcher(methodBody);
+                        while (matcher.find()) {
+                            uriList.add(key + " [ " + matcher.group() + " ]\n");
                         }
                     }
                 }
-
-                Matcher matcher = pattern.matcher(methodBody);
-                while (matcher.find()) {
-                    uriList.add(key + " [ " + matcher.group() + " ]\n");
-                }
-
             }
+
+
+            // 对 field 位置字符串的匹配
+            for (DexClass dexClass : dexClasses) {
+                for (DexClass.TField tField : dexClass.fields) {
+                    if (tField.value instanceof String) {
+                        Matcher matcher = pattern.matcher(tField.value.toString());
+                        while (matcher.find()) {
+                            uriList.add(tField.field + " [ " + matcher.group() + " ]\n");
+                        }
+                    }
+                }
+            }
+
 
             if (UtilLocal.DEBUG) {
                 System.out.println("匹配的结果：");
@@ -283,7 +302,7 @@ class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, 
             }
 
 
-            // --------------------------------------------- Display ---------------------------------------------------
+            // --------------------------------------------- Display --------------------------------------------------
 
             StringBuilder sb = new StringBuilder();
             ArrayList<String> tmpList;
