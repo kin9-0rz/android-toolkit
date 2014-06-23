@@ -13,15 +13,9 @@ import java.util.List;
 public class DexFileAdapter implements DexFileVisitor {
     protected List<DexClass> dexClassList;
     protected int classIdx = 0;
-    protected int config;
 
     public DexFileAdapter(List<DexClass> dexClasses) {
         this.dexClassList = dexClasses;
-    }
-
-    public DexFileAdapter(List<DexClass> dexClasses, int config) {
-        this.dexClassList = dexClasses;
-        this.config = config;
     }
 
     @Override
@@ -36,7 +30,7 @@ public class DexFileAdapter implements DexFileVisitor {
         dexClass.methodMap = new HashMap<>();
         dexClassList.add(dexClass);
 
-        return new ClassAdapter(access_flags,  className,  superClass, interfaceNames, config, dexClass);
+        return new ClassAdapter(access_flags,  className,  superClass, interfaceNames, dexClass);
     }
 
     @Override
