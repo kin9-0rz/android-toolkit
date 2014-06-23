@@ -30,7 +30,7 @@ import java.util.zip.ZipInputStream;
  */
 public class APK {
     HashMap<String, String> certificateInfos;
-    private List<DexClass> codes = new ArrayList<>();
+    private List<DexClass> dexClasses = new ArrayList<>();
     @SuppressWarnings("UnusedDeclaration")
     private String absolutePath;
     private String dexMd5 = null;
@@ -103,14 +103,15 @@ public class APK {
         zipInputStream.close();
         bis.close();
         inputStream.close();
-
-
     }
 
+
     /**
-     * 构造函数
      *
-     * @param filePath 文件路径
+     * @param filePath  文件路径
+     * @param parseAXML 是否解析 AndroidManifest.xml
+     * @param parseDex  是否解析 Dex
+     * @param parseCert 是否解析证书
      * @throws IOException
      */
     public APK(String filePath, boolean parseAXML, boolean parseDex, boolean parseCert)
@@ -224,7 +225,6 @@ public class APK {
         absolutePath = file.getAbsolutePath();
         fileName = file.getName();
 
-
         ZipFile zipFile = new ZipFile(file);
         ZipEntry zipEntry = zipFile.getEntry("classes.dex");
 
@@ -235,16 +235,13 @@ public class APK {
         initSubFileList(zipFile);
         zipFile.close();
 
-        // 解析清单信息
         final ManifestParser mp = new ManifestParser();
-
         try {
             manifestInfo = mp.parse(file);
         } catch (IOException e) {
             throw new ZipException(e.getMessage());
         }
 
-//        dexFileReader = new DexFileReader(file);
         initDexFileReader(file);
         certificateInfos = CertTool.getCertificateInfos(file);
     }
@@ -310,7 +307,7 @@ public class APK {
 
     private void initDexFileReader(File file) throws IOException {
         dexFileReader = new DexFileReader(file);
-        dexFileReader.accept(new DexFileAdapter(codes),
+        dexFileReader.accept(new DexFileAdapter(dexClasses),
                 DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
     }
 
@@ -432,25 +429,9 @@ public class APK {
         return manifestInfo.activities;
     }
 
-    /**
-     * 获取 ClassDefItem
-     *
-     * @return ClassDefItem 列表
-     */
-    @SuppressWarnings("UnusedDeclaration")
-    public List<DexClass> getClassDefItems() {
-        final List<DexClass> dexClasses = new ArrayList<>();
-        // FIXME ClassDefItem 中的 stringData 并没有值，访问失败。
-        dexFileReader.accept(new DexFileAdapter(dexClasses));
-
+    public List<DexClass> getDexClasses() {
         return dexClasses;
     }
-
-
-    public List<DexClass> getCodes() {
-        return codes;
-    }
-
 
     /**
      * 获取所有类/方法/内容
@@ -461,36 +442,13 @@ public class APK {
     public HashMap<String, String> getMethods() {
         HashMap<String, String> methods = new HashMap<>();
 
-
-        for (DexClass dexClass : codes) {
+        for (DexClass dexClass : dexClasses) {
             if (dexClass.methodMap.size() > 0) {
                 for (String key : dexClass.methodMap.keySet()) {
                     methods.put(key, dexClass.methodMap.get(key));
                 }
             }
         }
-
-
-//        dexFileReader.accept(new ClassCollector(classDefItems));
-
-//        for (DexClass dexClass : codes) {
-//            System.out.println("-------------->>>>>>>>>>>>>>>>" + dexClass.className);
-//            System.out.println("-------------->>>>>>>>>>>>>>>>" + dexClass.methodMap);
-//            System.out.println("-------------->>>>>>>>>>>>>>>>" + dexClass.methods);
-//        }
-
-
-//        int count = 0;
-//        for (DexClass dexClass : codes) {
-//            dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
-//                    DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
-//
-//            if (dexClass.methodMap.size() > 0) {
-//                for (String key : dexClass.methodMap.keySet()) {
-//                    methods.put(key, dexClass.methodMap.get(key));
-//                }
-//            }
-//        }
 
         return methods;
     }
@@ -513,13 +471,6 @@ public class APK {
 
         try {
             for (DexClass dexClass : dexClasses) {
-//                dexFileReader.visitClass(new CodeCollector(dexClass), dexClass.classIdx,
-//                        DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
-
-//                dexFileReader.visitClass(new ApkActionPos(dexClass), dexClass.classIdx, DexFileReader.SKIP_DEBUG
-//                        | DexFileReader.SKIP_ANNOTATION);
-
-
                 stringMap.put(dexClass.className, new HashSet<>(dexClass.stringData));
             }
         } catch (java.lang.OutOfMemoryError error) {
