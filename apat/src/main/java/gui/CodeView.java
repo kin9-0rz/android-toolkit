@@ -19,12 +19,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: lai
- * Date: 8/5/13
- * Time: 9:53 AM
- */
+
 public class CodeView extends JPanel {
     final JTextArea stringList;
     JTree treePkg;
