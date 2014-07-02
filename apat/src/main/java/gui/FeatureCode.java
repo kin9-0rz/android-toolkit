@@ -4,6 +4,7 @@ import com.googlecode.dex2jar.reader.DexFileReader;
 import parser.apk.APK;
 import parser.dex.DexClass;
 import parser.dex.DexFileAdapter;
+import utils.ComparatorClass;
 import utils.FileDrop;
 import utils.UtilLocal;
 

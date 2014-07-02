@@ -181,7 +181,7 @@ public class Main {
         jTabbedPane.addTab("APIs", null, new APIs(), null);
         jTabbedPane.addTab("Search String", null, new StringSearcher(), null);
         jTabbedPane.addTab("FeatureCode", null, new FeatureCode(), null);
-        jTabbedPane.addTab("CodeView", null, new CodeView(), null);
+//        jTabbedPane.addTab("CodeView", null, new CodeView(), null);
         jTabbedPane.addTab("Elf Info", null, new ElfInfo(), null);
     }
 

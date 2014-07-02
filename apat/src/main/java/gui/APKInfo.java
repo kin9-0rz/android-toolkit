@@ -38,6 +38,7 @@ public class APKInfo extends JPanel {
     private JTextArea jTextAreaReceivers = null;
     private JTextArea jTextAreaServices = null;
     private JTextArea jTextAreaPermissions = null;
+    private JTextArea jTextAreaMetaData = null;
 
 
     public APKInfo() {
@@ -108,6 +109,11 @@ public class APKInfo extends JPanel {
         jTextAreaPermissions = new JTextArea();
         scrollPanePermissions.setViewportView(jTextAreaPermissions);
 
+        final JScrollPane scrollPaneMetaData = new JScrollPane();
+        tabbedPane.addTab("meta-data", null, scrollPaneMetaData, null);
+        jTextAreaMetaData = new JTextArea();
+        scrollPaneMetaData.setViewportView(jTextAreaMetaData);
+
 
         // ----------------------------------------------- Event -------------------------------------------------------
 /*
@@ -141,7 +147,7 @@ public class APKInfo extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 final AnalysisTask task = new AnalysisTask(Main.filePath, jTextAreaInfos, jTextAreaCertificate,
-                        jTextAreaActivities, jTextAreaReceivers, jTextAreaServices, jTextAreaPermissions, jButtonAnalysis);
+                        jTextAreaActivities, jTextAreaReceivers, jTextAreaServices, jTextAreaPermissions, jTextAreaMetaData , jButtonAnalysis);
                 task.execute();
 
                 jButtonAnalysis.setEnabled(false);
@@ -157,6 +163,7 @@ public class APKInfo extends JPanel {
                 jTextAreaReceivers.setText("");
                 jTextAreaServices.setText("");
                 jTextAreaPermissions.setText("");
+                jTextAreaMetaData.setText("");
             }
         });
     }
@@ -172,6 +179,8 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
     private final Byte FLAG_RECEIVERS = 3;
     private final Byte FLAG_SERVICES = 4;
     private final Byte FLAG_PERMISSIONS = 5;
+    private final Byte FLAG_METADATA = 6;
+
     private final JButton jButtonAnalysis;
     private JTextArea jTextAreaInfos = null;
     private JTextArea jTextAreaCertificate = null;
@@ -179,6 +188,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
     private JTextArea jTextAreaReceivers = null;
     private JTextArea jTextAreaServices = null;
     private JTextArea jTextAreaPermissions = null;
+    private JTextArea jTextAreaMetaData = null;
     private final String filePath;
 
     // permission configure
@@ -191,7 +201,8 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
 
     public AnalysisTask(String text, JTextArea jTextAreaInfos, JTextArea jTextAreaCertificate,
                         JTextArea jTextAreaActivities, JTextArea jTextAreaReceivers,
-                        JTextArea jTextAreaServices, JTextArea jTextAreaPermissions, JButton jButtonAnalysis) {
+                        JTextArea jTextAreaServices, JTextArea jTextAreaPermissions,
+                        JTextArea jTextAreaMetaData, JButton jButtonAnalysis) {
         this.filePath = text;
         this.jTextAreaInfos = jTextAreaInfos;
         this.jTextAreaCertificate = jTextAreaCertificate;
@@ -199,6 +210,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
         this.jTextAreaReceivers = jTextAreaReceivers;
         this.jTextAreaServices = jTextAreaServices;
         this.jTextAreaPermissions = jTextAreaPermissions;
+        this.jTextAreaMetaData = jTextAreaMetaData;
         this.jButtonAnalysis = jButtonAnalysis;
 
         initPermissionXML();
@@ -335,6 +347,14 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
         sb.append("\n");
         hashMap.put(FLAG_PERMISSIONS, sb.toString());
 
+
+        sb.delete(0, sb.length());
+        for (String key : apk.getMetaDatas().keySet()) {
+            sb.append(key).append(" : ").append(apk.getMetaDatas().get(key)).append("\n");
+        }
+        sb.append("\n");
+        hashMap.put(FLAG_METADATA, sb.toString());
+
         return hashMap;
     }
 
@@ -360,6 +380,8 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
                     jTextAreaServices.append(get().get(FLAG_SERVICES));
                 } else if (key.equals(FLAG_PERMISSIONS)) {
                     jTextAreaPermissions.append(get().get(FLAG_PERMISSIONS));
+                }else if (key.equals(FLAG_METADATA)) {
+                    jTextAreaMetaData.append(get().get(FLAG_METADATA));
                 }
             }
 

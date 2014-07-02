@@ -3,9 +3,9 @@ package parser.apk;
 import com.googlecode.dex2jar.reader.DexFileReader;
 import org.apache.commons.io.IOUtils;
 import parser.axml.ManifestInfo;
-import parser.axml.ManifestParser;
-import parser.dex.DexFileAdapter;
+import parser.axml.Parser;
 import parser.dex.DexClass;
+import parser.dex.DexFileAdapter;
 import parser.elf.Elf;
 import parser.utils.CertTool;
 import parser.utils.FileTypesDetector;
@@ -14,7 +14,6 @@ import parser.utils.HashTool;
 import java.io.*;
 import java.util.*;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
@@ -43,6 +42,7 @@ public class APK {
     private HashMap<String, APK> subApkDataMap;
     private HashMap<String, String> subFileHash256Map;
     private HashMap<String, String> subAPKHash256Map;
+    private HashMap<String, String> metaDatas;
 
     public APK(InputStream inputStream) throws IOException {
         BufferedInputStream bis = new BufferedInputStream(inputStream);
@@ -57,6 +57,7 @@ public class APK {
         ByteArrayOutputStream byteArrayOutputStream;
         InputStream amInputStream = null;
         byte[] arscBytes = null;
+        byte[] axmlBytes = null;
 
 
         while ((entry = zipInputStream.getNextEntry()) != null) {
@@ -78,9 +79,9 @@ public class APK {
                 while ((size = zipInputStream.read(buffer, 0, buffer.length)) != -1) {
                     byteArrayOutputStream.write(buffer, 0, size);
                 }
-                byte[] bytes = byteArrayOutputStream.toByteArray();
+                axmlBytes = byteArrayOutputStream.toByteArray();
                 byteArrayOutputStream.close();
-                amInputStream = new ByteArrayInputStream(bytes);
+//                amInputStream = new ByteArrayInputStream(bytes);
                 continue;
             }
 
@@ -95,10 +96,14 @@ public class APK {
 
         }
 
-        if (amInputStream != null) {
-            final ManifestParser mp = new ManifestParser();
-            manifestInfo = mp.parse(amInputStream, arscBytes);
-        }
+
+        Parser parser = new Parser(axmlBytes, arscBytes);
+        manifestInfo = parser.getManifestInfo();
+
+//        if (amInputStream != null) {
+//            final ManifestParser mp = new ManifestParser();
+//            manifestInfo = mp.parse(amInputStream, arscBytes);
+//        }
 
         zipInputStream.close();
         bis.close();
@@ -138,13 +143,17 @@ public class APK {
 
         if (parseAXML) {
             // 解析清单信息
-            final ManifestParser mp = new ManifestParser();
 
-            try {
-                manifestInfo = mp.parse(file);
-            } catch (IOException e) {
-                throw new ZipException(e.getMessage());
-            }
+            Parser parser = new Parser(file);
+            manifestInfo = parser.getManifestInfo();
+
+//            final ManifestParser mp = new ManifestParser();
+//
+//            try {
+//                manifestInfo = mp.parse(file);
+//            } catch (IOException e) {
+//                throw new ZipException(e.getMessage());
+//            }
 
             if (manifestInfo == null) {
                 throw new FileNotFoundException("No AndroidManifest.xml");
@@ -194,13 +203,15 @@ public class APK {
         initDexFileReader(file);
 
         // 解析清单信息
-        final ManifestParser mp = new ManifestParser();
+        Parser parser = new Parser(file);
+        ManifestInfo manifestInfo = parser.getManifestInfo();
+//        final ManifestParser mp = new ManifestParser();
 
-        try {
-            manifestInfo = mp.parse(file);
-        } catch (IOException e) {
-            throw new Exception(e.getMessage());
-        }
+//        try {
+//            manifestInfo = mp.parse(file);
+//        } catch (IOException e) {
+//            throw new Exception(e.getMessage());
+//        }
 
         if (manifestInfo == null) {
             throw new Exception("No AndroidManifest.xml");
@@ -235,12 +246,16 @@ public class APK {
         initSubFileList(zipFile);
         zipFile.close();
 
-        final ManifestParser mp = new ManifestParser();
-        try {
-            manifestInfo = mp.parse(file);
-        } catch (IOException e) {
-            throw new ZipException(e.getMessage());
-        }
+
+        Parser parser = new Parser(file);
+        manifestInfo = parser.getManifestInfo();
+
+//        final ManifestParser mp = new ManifestParser();
+//        try {
+//            manifestInfo = mp.parse(file);
+//        } catch (IOException e) {
+//            throw new ZipException(e.getMessage());
+//        }
 
         initDexFileReader(file);
         certificateInfos = CertTool.getCertificateInfos(file);
@@ -507,6 +522,14 @@ public class APK {
     @SuppressWarnings("UnusedDeclaration")
     public ArrayList<String> getSubFileHash256List() {
         return subFileHash256List;
+    }
+
+
+    public HashMap<String, String> getMetaDatas() {
+        if (metaDatas == null) {
+            metaDatas = manifestInfo.metaData;
+        }
+        return metaDatas;
     }
 
     public class ElfData {

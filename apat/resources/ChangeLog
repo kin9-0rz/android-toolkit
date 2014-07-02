@@ -65,3 +65,6 @@ Fix a bug that api info tab will give misleading message in some case.
 2014-5-15 ----
 调试开关放到配置中么
 
+2014-6-23
+修正URL的BUG, 增加field部分内容匹配.
+

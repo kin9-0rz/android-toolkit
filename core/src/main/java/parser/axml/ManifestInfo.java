@@ -6,6 +6,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * 清单信息
@@ -31,7 +32,8 @@ public class ManifestInfo {
     /**
      * 权限 - 由AndroidManifest.xml 中的 uses-permission 标签所定义。
      */
-    public ArrayList<String> requestedPermissions;
+    public ArrayList<String> requestedPermissions = new ArrayList<>();
+    public HashSet<String> permissions = new HashSet<>();
 //    public String[] requestedPermissions;
     /**
      * 是否有 Activity，默认没有（false）。
@@ -46,15 +48,17 @@ public class ManifestInfo {
      */
     public String[] revs;
     // key : receiver, value : action
-    public HashMap<String, ArrayList<String>> receivers;
+    public HashMap<String, ArrayList<String>> receivers = new HashMap<>();
     public JSONObject jsonObjectRec = new JSONObject();
     // key : activity, value : action
-    public HashMap<String, ArrayList<String>> activities;
+    public HashMap<String, ArrayList<String>> activities = new HashMap<>();
     /**
      * 是否存在服务，默认不存在（False）。
      */
     public String[] servs;
-    public ArrayList<String> services;
+    public ArrayList<String> services = new ArrayList<>();
+
+    public HashMap<String, String> metaData = new HashMap<>();
     public String[] acts;
     /**
      * AndroidManifest.xml
@@ -65,6 +69,7 @@ public class ManifestInfo {
      */
     public boolean back;
 
+
     @Override
     public String toString() {
         return "ManifestInfo{" +
@@ -74,6 +79,7 @@ public class ManifestInfo {
                 ", label='" + label + '\'' +
                 ", labelId=" + labelId +
                 ", requestedPermissions=" + requestedPermissions +
+                ", permissions=" + permissions +
                 ", eActivity=" + eActivity +
                 ", eIcon=" + eIcon +
                 ", revs=" + Arrays.toString(revs) +
@@ -83,8 +89,8 @@ public class ManifestInfo {
                 ", servs=" + Arrays.toString(servs) +
                 ", services=" + services +
                 ", acts=" + Arrays.toString(acts) +
-//                ", xml='" + xml + '\'' +
-//                ", back=" + back +
+                ", xml='" + xml + '\'' +
+                ", back=" + back +
                 '}';
     }
 }

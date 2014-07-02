@@ -3,6 +3,7 @@ package gui;
 import com.googlecode.dex2jar.reader.DexFileReader;
 import parser.apk.APK;
 import parser.dex.DexClass;
+import utils.ComparatorClass;
 import utils.FileDrop;
 import utils.UtilLocal;
 
@@ -20,8 +21,10 @@ import java.util.*;
 import java.util.List;
 
 
+// TODO 考虑增加 field 节点, method 节点, Fix native 方面没有解析的情况.
+// MARK 发现如果是阅读代码工具的话,可能需要针对性,去写一个,而不是这么简陋的一个东西
 public class CodeView extends JPanel {
-    final JTextArea stringList;
+    final JTextArea jTextArea;
     JTree treePkg;
 
     public CodeView() {
@@ -39,14 +42,14 @@ public class CodeView extends JPanel {
         JScrollPane jScrollPaneLeft = new JScrollPane(treePkg);
         splitPane.setLeftComponent(jScrollPaneLeft);
 
-        stringList = new JTextArea();
-        stringList.setText("功能：提取类的字符串。\n" +
+        jTextArea = new JTextArea();
+        jTextArea.setText("功能：提取类的字符串。\n" +
                 "\n" +
                 "使用方法：\n" +
                 "将 APK 文件拉入左边的框即可。\n" +
                 "点击相应的类，则可以显示该类中出现的字符串。");
-        JScrollPane jScrollPaneRight = new JScrollPane(stringList);
-        jScrollPaneRight.setViewportView(stringList);
+        JScrollPane jScrollPaneRight = new JScrollPane(jTextArea);
+        jScrollPaneRight.setViewportView(jTextArea);
         splitPane.setRightComponent(jScrollPaneRight);
 
         //监听拖动文件
@@ -71,31 +74,22 @@ public class CodeView extends JPanel {
                     return;
                 }
 
-//                ArrayList<ClassNode> classNodes = new ArrayList<>();
-                stringList.setText("");
-
-//                for (TreePath treePath : treePaths) {
-//                    final DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
-//                    if (treeNode.getUserObject() instanceof ClassDefItem) {
-//                        classNodes.add((ClassNode) treeNode);
-//                    } else {
-//                        classNodes.addAll(getClassNodes(treeNode));
-//                    }
-//                }
+                jTextArea.setText("");
 
 //                get the current lead path
                 final TreePath treeSelectionPath = treeSelectionEvent.getNewLeadSelectionPath();
                 if (treeSelectionPath == null)
                     return;
-                final DefaultMutableTreeNode selectNode = (DefaultMutableTreeNode) treeSelectionPath.getLastPathComponent();
+                final DefaultMutableTreeNode selectNode =
+                        (DefaultMutableTreeNode) treeSelectionPath.getLastPathComponent();
 
                 if (selectNode.getUserObject() instanceof DexClass) {
                     DexClass dexClass = (DexClass) selectNode.getUserObject();
 
                     for (String method : dexClass.methodMap.keySet()) {
-                        stringList.append(method + "\n");
-                        stringList.append(dexClass.methodMap.get(method).replace("|     |", "") + "\n");
-                        stringList.append("\n");
+                        jTextArea.append("--->>> " + method + "\n");
+                        jTextArea.append(dexClass.methodMap.get(method).replace("|     |", "") + "\n");
+                        jTextArea.append("\n");
                     }
 
                 }
@@ -134,7 +128,6 @@ public class CodeView extends JPanel {
 
         for (final Enumeration ee = selectNode.children(); ee.hasMoreElements(); ) {
             final DefaultMutableTreeNode n = (DefaultMutableTreeNode) ee.nextElement();
-//            System.out.println(n.toString() + " : " + n.isLeaf());
 
             if (n.isLeaf()) {
                 classNodes.add((ClassNode) n);

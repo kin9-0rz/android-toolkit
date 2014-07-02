@@ -1,6 +1,6 @@
 dependencies {
 	compile project(':dex-reader')
-//	compile project(':core')
+	compile project(':axml')
 
     compile 'org.json:json:20090211'
 	compile 'org.xerial.thirdparty:jdbc-api:1.+'

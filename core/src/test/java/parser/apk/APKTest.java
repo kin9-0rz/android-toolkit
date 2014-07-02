@@ -150,15 +150,15 @@ public class APKTest {
 
 
     @Test
-    public void testGetMethods() {
-        String path = "/home/lai/Work/test.apk";
+    public void test360() {
+        String path = "/home/lai/Work/360卫士.apk";
         APK apk;
         try {
             apk = new APK(new File(path));
-//            System.out.println(apk.getMethods());
-
-            System.out.println(apk.getStringsMap());
-
+//            System.out.println(apk.getStringsMap());
+            System.out.println(apk.getPackageName());
+            System.out.println(apk.getCertificateInfos());
+            System.out.println(apk.getPermissions());
         } catch (IOException e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {

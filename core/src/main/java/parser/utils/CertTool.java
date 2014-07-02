@@ -115,6 +115,8 @@ public class CertTool {
                         baos.write(readBuffer, 0, 1024 * 8);
                     }
 
+//                    System.out.println(entry.getName());
+
                     PKCS7 pkcs7 = new PKCS7(baos.toByteArray());
                     certs = pkcs7.getCertificates();
                     for (Certificate cert : certs) {
@@ -126,7 +128,8 @@ public class CertTool {
         } catch (NullPointerException e) {
             return hashMap;
         } catch (IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+            return hashMap;
         }
 
         return hashMap;

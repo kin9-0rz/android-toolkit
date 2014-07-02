@@ -3,6 +3,7 @@ package parser.utils;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
@@ -242,10 +243,14 @@ public final class FileTypesDetector {
                 }
             }
 
-        } catch (IOException e) {
+        }
+        catch (ZipException e) {
+//            System.out.println("It's a encrypted ZIP.");
+            return false;
+        }  catch (IOException e) {
             e.printStackTrace();
             return false;
-        }   finally {
+        }  finally {
             try {
                 zipInputStream.close();
             } catch (IOException e) {

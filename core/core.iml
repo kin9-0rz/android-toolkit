@@ -25,6 +25,7 @@
     <orderEntry type="library" exported="" name="Gradle: junit-4.7" level="project" />
     <orderEntry type="library" exported="" name="Gradle: jakarta-regexp-1.4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.objectweb.asm-3.3.1.v201105211655" level="project" />
+    <orderEntry type="module" module-name="axml" exported="" />
   </component>
 </module>
 
