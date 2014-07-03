@@ -96,9 +96,10 @@ public class APK {
 
         }
 
-
-        Parser parser = new Parser(axmlBytes, arscBytes);
-        manifestInfo = parser.getManifestInfo();
+        if (axmlBytes != null) {
+            Parser parser = new Parser(axmlBytes, arscBytes);
+            manifestInfo = parser.getManifestInfo();
+        }
 
 //        if (amInputStream != null) {
 //            final ManifestParser mp = new ManifestParser();
@@ -304,6 +305,7 @@ public class APK {
                 String hash = HashTool.getSHA256(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
                 if (fileType.contains("APK") || fileType.contains("ZIP")
                         && FileTypesDetector.isAPK(zipFile.getInputStream(zipEntry))) {
+                    System.out.println(zipEntry.getName());
                     APK apk = new APK(zipFile.getInputStream(zipEntry));
 
                     subAPKHash256Map.put(name, hash);
