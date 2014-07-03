@@ -11,7 +11,7 @@ import java.util.Enumeration;
 
 public class UtilLocal {
 
-    public static boolean DEBUG = true;
+    public static boolean DEBUG = false;
 
     public static String getPackageName(DexClass clsDef) {
         final String className = clsDef.className;
