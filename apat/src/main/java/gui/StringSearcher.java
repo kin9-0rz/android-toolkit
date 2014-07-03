@@ -5,6 +5,8 @@ import com.jgoodies.forms.layout.ColumnSpec;
 import com.jgoodies.forms.layout.FormLayout;
 import com.jgoodies.forms.layout.RowSpec;
 import parser.apk.APK;
+import parser.dex.DEX;
+import parser.utils.FileTypesDetector;
 import tree.TreeNode;
 
 import javax.swing.*;
@@ -12,6 +14,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -87,9 +90,18 @@ class StringSearcherTask extends SwingWorker<Void, Void> {
 
     @Override
     public Void doInBackground() {
+        HashMap<String, String> methods;
+        File file = new File(filePath);
         try {
-            APK apk = new APK(filePath);
-            HashMap<String, String> methods = apk.getMethods();
+            if (FileTypesDetector.isAPK(file)) {
+                APK apk = new APK(file);
+                methods = apk.getMethods();
+            } else if (FileTypesDetector.isDEX(file)) {
+                DEX dex = new DEX(file);
+                methods = dex.getMethods();
+            } else {
+                return null;
+            }
             HashSet<String> methodSet = new HashSet<>();
             this.methodTree.setModel(new DefaultTreeModel(createNodes(method, methods, methodSet)));
             count = 0;
