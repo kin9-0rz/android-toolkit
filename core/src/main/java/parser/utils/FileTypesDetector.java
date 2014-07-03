@@ -318,4 +318,14 @@ public final class FileTypesDetector {
     }
 
 
+    public static boolean isDEX(File pFile) {
+        String fileType;
+        try {
+            fileType = FileTypesDetector.getType(pFile.getAbsolutePath());
+        } catch (IOException e) {
+            return false;
+        }
+
+        return fileType.contains("DEX");
+    }
 }
