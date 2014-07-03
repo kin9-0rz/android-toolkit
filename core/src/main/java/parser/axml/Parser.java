@@ -47,8 +47,20 @@ public class Parser {
         zipFile.close();
     }
 
+    /**
+     * Notice : axml not NULL.
+     *
+     * @param axmlBytes It's not null.
+     * @param arscBytes resource.arsc
+     * @throws IOException
+     */
     public Parser(byte[] axmlBytes, byte[] arscBytes) throws IOException {
-        readArsc(arscBytes);
+        if (axmlBytes == null) {
+            throw new IOException();
+        }
+        if (arscBytes != null) {
+            readArsc(arscBytes);
+        }
         readAxml(axmlBytes);
     }
 

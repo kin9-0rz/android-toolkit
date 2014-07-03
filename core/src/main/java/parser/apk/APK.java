@@ -97,6 +97,7 @@ public class APK {
         }
 
         if (axmlBytes != null) {
+            System.out.println(axmlBytes.toString());
             Parser parser = new Parser(axmlBytes, arscBytes);
             manifestInfo = parser.getManifestInfo();
         }

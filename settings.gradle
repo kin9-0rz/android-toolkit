@@ -1,2 +1,4 @@
 
 include "core", "dex-reader", "apat", "mal-detector"
+include 'axml'
+
