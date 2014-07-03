@@ -10,7 +10,9 @@ import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 import parser.apk.APK;
+import parser.dex.DEX;
 import parser.dex.DexClass;
+import parser.utils.FileTypesDetector;
 import utils.UtilLocal;
 
 import javax.swing.*;
@@ -19,6 +21,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -239,10 +242,21 @@ class APIsAnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, 
     @Override
     public HashMap<Byte, String> doInBackground() {
         HashMap<Byte, String> hashMap = new HashMap<>();
+        List<DexClass> dexClasses;
+        File file = new File(filePath);
 
         try {
-            APK apk = new APK(filePath);
-            List<DexClass> dexClasses = apk.getDexClasses();
+            if (FileTypesDetector.isAPK(file)) {
+                APK apk = new APK(file);
+                dexClasses = apk.getDexClasses();
+            } else if (FileTypesDetector.isDEX(file)) {
+                DEX dex = new DEX(file);
+                dexClasses = dex.getDexClasses();
+            } else {
+                hashMap.put(FLAG_SMS, "Not a apk or dex/odex.");
+                return hashMap;
+            }
+
             // 用来匹配 URI
             Pattern pattern = Pattern.compile("[\\w]+://[\\w\\d.:/?&=\\-_%]+", Pattern.CASE_INSENSITIVE);
 
