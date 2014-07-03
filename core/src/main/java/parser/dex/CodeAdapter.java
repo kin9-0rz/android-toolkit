@@ -16,10 +16,18 @@ public class CodeAdapter extends DumpDexCodeAdapter {
         this.dexClass = dexClass;
         this.method = method;
         this.writer = writer;
+
     }
 
     @Override
     public void visitEnd() {
+        for (String str : writer.toString().split("\n")) {
+            if (str.contains("CONST_STRING")) {
+                String tmp = str.split("=\"")[1];
+                int len = tmp.length();
+                dexClass.stringData.add(tmp.substring(0, len - 1));
+            }
+        }
         dexClass.methodMap.put(method.toString(), writer.toString());
     }
 }
