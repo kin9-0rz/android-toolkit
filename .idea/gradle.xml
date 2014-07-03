@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/apat" />
+            <option value="$PROJECT_DIR$/axml" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/dex-reader" />
             <option value="$PROJECT_DIR$/mal-detector" />

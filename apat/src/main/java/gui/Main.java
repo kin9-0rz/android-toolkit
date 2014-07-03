@@ -179,8 +179,8 @@ public class Main {
         jTabbedPane.addTab("APK Infos", null, new APKInfo(), null);
         jTabbedPane.addTab("Pkg List", null, new PkgList(), null);
         jTabbedPane.addTab("APIs", null, new APIs(), null);
-        jTabbedPane.addTab("Search String", null, new StringSearcher(), null);
-        jTabbedPane.addTab("FeatureCode", null, new FeatureCode(), null);
+        jTabbedPane.addTab("Search Ref", null, new StringSearcher(), null);
+        jTabbedPane.addTab("Stings", null, new FeatureCode(), null);
 //        jTabbedPane.addTab("CodeView", null, new CodeView(), null);
         jTabbedPane.addTab("Elf Info", null, new ElfInfo(), null);
     }

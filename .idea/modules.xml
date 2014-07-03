@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android-toolkit.iml" filepath="$PROJECT_DIR$/android-toolkit.iml" />
       <module fileurl="file://$PROJECT_DIR$/apat/apat.iml" filepath="$PROJECT_DIR$/apat/apat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/axml/axml.iml" filepath="$PROJECT_DIR$/axml/axml.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/dex-reader/dex-reader.iml" filepath="$PROJECT_DIR$/dex-reader/dex-reader.iml" />
       <module fileurl="file://$PROJECT_DIR$/mal-detector/mal-detector.iml" filepath="$PROJECT_DIR$/mal-detector/mal-detector.iml" />

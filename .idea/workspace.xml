@@ -2,19 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="839d571f-b0db-4d7d-87c5-ad4c7819402f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/ComparatorClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" afterPath="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/DataInputDataIn.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/DataInputDataIn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/DumpDexCodeAdapter.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/DumpDexCodeAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/InputStreamDataIn.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/InputStreamDataIn.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/LICENSE.txt" afterPath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/NOTICE.txt" afterPath="$PROJECT_DIR$/dex-reader/target/classes/META-INF/NOTICE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/gui/PkgList.java" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/PkgList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/RandomAccessFileInput.java" afterPath="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/RandomAccessFileInput.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java" afterPath="$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/gui/Main.java" afterPath="$PROJECT_DIR$/apat/src/main/java/gui/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/main/java/parser/axml/Parser.java" afterPath="$PROJECT_DIR$/core/src/main/java/parser/axml/Parser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/axml/src/test/java/pxb/android/axml/test/Test4.java" afterPath="$PROJECT_DIR$/axml/src/test/java/pxb/android/axml/test/Test4.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" afterPath="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/dex-reader.iml" afterPath="$PROJECT_DIR$/dex-reader/dex-reader.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/lai.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/lai.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dex-reader/pom.xml" afterPath="$PROJECT_DIR$/dex-reader/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="android-toolkit.iws" />
@@ -93,8 +91,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -102,21 +100,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="APIs.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/APIs.java">
+      <file leaf-file-name="FeatureCode.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3418" max-vertical-offset="6816">
-              <caret line="256" column="69" selection-start-line="256" selection-start-column="68" selection-end-line="256" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComparatorClass.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/ComparatorClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="592">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1344" max-vertical-offset="4624">
+              <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,11 +112,74 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodeView.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="15.058824" vertical-offset="0" max-vertical-offset="3504">
-              <caret line="33" column="56" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2183" max-vertical-offset="2768">
+              <caret line="181" column="60" selection-start-line="181" selection-start-column="51" selection-end-line="181" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StringSearcher.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/StringSearcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2352">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="896">
+              <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CodeAdapter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/CodeAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="10.666667" vertical-offset="0" max-vertical-offset="560">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="APKTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2016" max-vertical-offset="3536">
+              <caret line="136" column="61" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/axml/Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="4896">
+              <caret line="46" column="85" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+              <folding>
+                <element signature="e#1788#1789#0" expanded="true" />
+                <element signature="e#1823#1824#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="APK.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="8064">
+              <caret line="78" column="77" selection-start-line="78" selection-start-column="77" selection-end-line="78" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -143,6 +194,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="tasksExpandState">
@@ -164,11 +220,25 @@
           <option name="executorId" value="Run" />
           <option name="settings">
             <ExternalSystemSettings>
+              <option name="externalProjectPath" value="$PROJECT_DIR$" />
+              <option name="externalSystemIdString" value="GRADLE" />
+              <option name="taskNames">
+                <list>
+                  <option value="clean" />
+                </list>
+              </option>
+            </ExternalSystemSettings>
+          </option>
+        </ExternalTaskExecutionInfo>
+        <ExternalTaskExecutionInfo>
+          <option name="executorId" value="Run" />
+          <option name="settings">
+            <ExternalSystemSettings>
               <option name="externalProjectPath" value="$PROJECT_DIR$/apat" />
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
-                  <option value="build" />
+                  <option value="dist" />
                 </list>
               </option>
             </ExternalSystemSettings>
@@ -196,7 +266,7 @@
               <option name="externalSystemIdString" value="GRADLE" />
               <option name="taskNames">
                 <list>
-                  <option value="dist" />
+                  <option value="build" />
                 </list>
               </option>
             </ExternalSystemSettings>
@@ -244,20 +314,6 @@
             </ExternalSystemSettings>
           </option>
         </ExternalTaskExecutionInfo>
-        <ExternalTaskExecutionInfo>
-          <option name="executorId" value="Run" />
-          <option name="settings">
-            <ExternalSystemSettings>
-              <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
-              <option name="externalSystemIdString" value="GRADLE" />
-              <option name="taskNames">
-                <list>
-                  <option value="clean" />
-                </list>
-              </option>
-            </ExternalSystemSettings>
-          </option>
-        </ExternalTaskExecutionInfo>
       </list>
     </option>
     <option name="availableProjects">
@@ -271,6 +327,10 @@
           </key>
           <value>
             <list>
+              <ExternalProjectPojo>
+                <option name="name" value=":axml" />
+                <option name="path" value="$PROJECT_DIR$/axml" />
+              </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value=":dex-reader" />
                 <option name="path" value="$PROJECT_DIR$/dex-reader" />
@@ -352,6 +412,10 @@
                 <option name="name" value="javadoc" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dist" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Assembles and tests this project." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="build" />
@@ -360,10 +424,6 @@
                 <option name="description" value="Assembles and tests this project and all projects that depend on it." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildDependents" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="dist" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Assembles a jar archive containing the main classes." />
@@ -394,6 +454,11 @@
                 <option name="description" value="Uploads all artifacts belonging to configuration ':mal-detector:archives'" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="uploadArchives" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs the 'archives' artifacts into the local Maven repository." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="install" />
               </ExternalTaskPojo>
             </list>
           </value>
@@ -484,6 +549,92 @@
                 <option name="description" value="Uploads all artifacts belonging to configuration ':apat:archives'" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/apat" />
                 <option name="name" value="uploadArchives" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/axml">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'main'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'main:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles Java source 'test:java'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Installs the 'archives' artifacts into the local Maven repository." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="install" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes resources 'main:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes resources 'test:resources'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles classes 'test'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/axml" />
+                <option name="name" value="testClasses" />
               </ExternalTaskPojo>
             </list>
           </value>
@@ -753,7 +904,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="8394572212162" />
+        <entry key="$PROJECT_DIR$" value="9804668391220" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -774,6 +925,13 @@
                     <value>
                       <ExternalModuleBuildClasspathPojo>
                         <option name="path" value="$PROJECT_DIR$/apat" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                  <entry key="$PROJECT_DIR$/axml">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="path" value="$PROJECT_DIR$/axml" />
                       </ExternalModuleBuildClasspathPojo>
                     </value>
                   </entry>
@@ -910,41 +1068,18 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/RefExpr.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/CastExpr.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/FieldExpr.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/UnopExpr.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/TypeExpr.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/ArrayExpr.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/BinopExpr.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/FilledArrayExpr.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ir/expr/Exprs.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/v3/DexExceptionHandlerImpl.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/v3/IrMethod2AsmMethod.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3MethodAdapter.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3CodeAdapter.java" />
-        <option value="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexCodeVisitor.java" />
-        <option value="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/EmptyVisitor.java" />
-        <option value="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/ASMifierCodeV.java" />
-        <option value="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexCodeAdapter.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/v3/V3ClassAdapter.java" />
         <option value="$PROJECT_DIR$/dex-reader/build.gradle" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClassAdapter.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClassGather.java" />
         <option value="$PROJECT_DIR$/apat/src/main/java/gui/CodeReader.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/DexMethodAdapter.java" />
-        <option value="$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java" />
         <option value="$PROJECT_DIR$/mal-detector/src/main/java/detect/Main.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ApkActionPos.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeCollector.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeGather.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/utils/XMLString.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/utils/CertTool.java" />
         <option value="$PROJECT_DIR$/mal-detector/src/main/java/gui/DetectorGUI.java" />
         <option value="$PROJECT_DIR$/apat/src/main/java/gui/PkgList.java" />
-        <option value="$PROJECT_DIR$/apat/build.gradle" />
-        <option value="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" />
-        <option value="$PROJECT_DIR$/apat/src/main/java/gui/Main.java" />
         <option value="$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/DexFileReader.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/FieldAdapter.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/DexClass.java" />
@@ -953,14 +1088,37 @@
         <option value="$PROJECT_DIR$/apat/src/main/java/gui/APIs.java" />
         <option value="$PROJECT_DIR$/apat/src/main/java/gui/StringSearcher.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java" />
-        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeAdapter.java" />
         <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/DexFileAdapter.java" />
-        <option value="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" />
         <option value="$PROJECT_DIR$/apat/src/main/java/gui/ComparatorClass.java" />
         <option value="$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java" />
+        <option value="$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java" />
         <option value="$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java" />
+        <option value="$PROJECT_DIR$/apat/resources/ChangeLog" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/axml/res/AXMLParser.java" />
+        <option value="$PROJECT_DIR$/axml/src/main/java/pxb/android/Example.java" />
+        <option value="$PROJECT_DIR$/core/build.gradle" />
+        <option value="$PROJECT_DIR$/axml/src/test/java/pxb/android/arsc/test/Test1.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/axml/ManifestParser.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/axml/AXMLItem.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/axml/AXMLInfo.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/axml/ManifestInfo.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/parser/axml/ParserTest.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/parser/utils/CertToolTest.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/utils/CertTool.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/utils/FileTypesDetector.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/gui/APKInfo.java" />
+        <option value="$PROJECT_DIR$/apat/build.gradle" />
+        <option value="$PROJECT_DIR$/axml/src/main/java/pxb/android/arsc/ArscDumper.java" />
+        <option value="$PROJECT_DIR$/axml/build.gradle" />
+        <option value="$PROJECT_DIR$/axml/src/main/java/pxb/android/axml/AxmlParser.java" />
+        <option value="$PROJECT_DIR$/axml/src/test/java/pxb/android/axml/test/Test4.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java" />
+        <option value="$PROJECT_DIR$/apat/src/main/java/gui/Main.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/axml/Parser.java" />
+        <option value="$PROJECT_DIR$/core/src/main/java/parser/dex/CodeAdapter.java" />
       </list>
     </option>
   </component>
@@ -968,9 +1126,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-2" />
     <option name="y" value="41" />
-    <option name="width" value="1366" />
-    <option name="height" value="727" />
+    <option name="width" value="1370" />
+    <option name="height" value="729" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -980,14 +1139,138 @@
             <id />
           </State>
           <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Annotations verifyingGroovy</id>
+          </State>
+          <State>
+            <id>Assignment issues</id>
+          </State>
+          <State>
+            <id>Assignment issuesGroovy</id>
+          </State>
+          <State>
+            <id>Bitwise operation issues</id>
+          </State>
+          <State>
+            <id>Class structure</id>
+          </State>
+          <State>
+            <id>Code maturity issues</id>
+          </State>
+          <State>
+            <id>Code style issues</id>
+          </State>
+          <State>
+            <id>Compiler issues</id>
+          </State>
+          <State>
+            <id>Concurrency annotation issues</id>
+          </State>
+          <State>
+            <id>Control FlowGroovy</id>
+          </State>
+          <State>
+            <id>Control flow issues</id>
+          </State>
+          <State>
+            <id>Data flow issues</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Dependency issues</id>
+          </State>
+          <State>
+            <id>Encapsulation issues</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>Error handlingGroovy</id>
+          </State>
+          <State>
+            <id>GPath inspectionsGroovy</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Imports</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JUnit issues</id>
+          </State>
+          <State>
+            <id>Javadoc issues</id>
+          </State>
+          <State>
+            <id>Language Injection</id>
+          </State>
+          <State>
+            <id>Manifest</id>
+          </State>
+          <State>
+            <id>Naming conventions</id>
+          </State>
+          <State>
+            <id>Packaging issues</id>
+          </State>
+          <State>
+            <id>Performance issues</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
+          </State>
+          <State>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
             <id>Resource management issues</id>
           </State>
-        </expanded-state>
-        <selected-state>
           <State>
-            <id>AutoCloseableResource</id>
+            <id>Threading issues</id>
           </State>
-        </selected-state>
+          <State>
+            <id>Threading issuesGroovy</id>
+          </State>
+          <State>
+            <id>UI Form Problems</id>
+          </State>
+          <State>
+            <id>Visibility issues</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
       </profile-state>
     </entry>
   </component>
@@ -1002,7 +1285,12 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="1" />
+  </component>
+  <component name="ProjectStructureProblems">
+    <ignored-problems>
+      <problem id="invalid-module-dependency(module:dex-reader,commons-lite)" />
+    </ignored-problems>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -1064,6 +1352,52 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="android-toolkit" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apk" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1183,7 +1517,7 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="apk" />
+              <option name="myItemId" value="axml" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1265,104 +1599,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android-toolkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android-toolkit" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apat" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tree" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android-toolkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android-toolkit" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apat" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StringSearcher.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android-toolkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android-toolkit" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="apat" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PkgList.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1397,8 +1633,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1410,7 +1646,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="LayoutCode.rearrangeEntriesGroovy" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="LayoutCode.rearrangeEntriesJava" value="true" />
@@ -1423,7 +1659,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="LayoutCode.rearrangeEntriesXML" value="false" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -1432,39 +1668,35 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../copy of android-toolkit111" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="junit.framework.TestCase" />
-      <recent name="" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="parser.utils" />
+      <recent name="parser.axml" />
       <recent name="com.htjf.kvtool.vscan.deamon" />
       <recent name="com.htjf.kvtool.vscan.gui" />
       <recent name="parser.elf" />
-      <recent name="reader" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="junit.framework.TestCase" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="parser.axml" />
       <recent name="parser.dex" />
       <recent name="com.htjf.kvtool.vscan.pub" />
       <recent name="gui" />
       <recent name="utils" />
-      <recent name="com.htjf.kvtool.vscan.deamon" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/axml" />
       <recent name="$PROJECT_DIR$/apat/src/main/java/gui" />
       <recent name="$PROJECT_DIR$/core/src/main/java" />
       <recent name="$PROJECT_DIR$/core/src/main/java/parser/dex" />
       <recent name="$PROJECT_DIR$/core/src/main/java/parser/utils" />
-      <recent name="$PROJECT_DIR$/apat/src/main/java/tree" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="parser.dex" />
       <recent name="parser.apk" />
       <recent name="tree" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-      <recent name="com.htjf.kvtool.vscan" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/mal-detector/src/main/java" />
@@ -1472,31 +1704,70 @@
       <recent name="$PROJECT_DIR$/scanner" />
       <recent name="$PROJECT_DIR$/dex-reader/src" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="com.htjf.kvtool.vscan" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration default="false" name="Main" type="Application" factoryName="Application" singleton="true" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.Main" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    <configuration default="false" name="APKTest.test360" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="core" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="parser.apk" />
+      <option name="MAIN_CLASS_NAME" value="parser.apk.APKTest" />
+      <option name="METHOD_NAME" value="test360" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="apat" />
       <envs />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="android-toolkit:apat [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration default="false" name="android-toolkit [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <RunnerSettings RunnerId="ExternalSystemTaskRunner" />
+      <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="android-toolkit:apat [dist]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/apat" />
         <option name="externalSystemIdString" value="GRADLE" />
@@ -1506,7 +1777,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="dist" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -1515,76 +1786,29 @@
       <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="APKTest.testGetMethods" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="core" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="parser.apk" />
-      <option name="MAIN_CLASS_NAME" value="parser.apk.APKTest" />
-      <option name="METHOD_NAME" value="testGetMethods" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+    <configuration default="false" name="android-toolkit:apat [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/apat" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <RunnerSettings RunnerId="ExternalSystemTaskRunner" />
+      <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="APKTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="core" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="parser.apk" />
-      <option name="MAIN_CLASS_NAME" value="parser.apk.APKTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="APKTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="core" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="parser.apk" />
-      <option name="MAIN_CLASS_NAME" value="parser.apk.APKTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
@@ -1594,12 +1818,6 @@
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$" />
       <setting name="debug" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -1646,19 +1864,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1684,6 +1889,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -1741,19 +1959,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [build]" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.APKTest.testGetMethods" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.APKTest.test" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.APKTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.APKTest.test360" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.android-toolkit [clean]" />
+      <item index="3" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [dist]" />
+      <item index="4" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [clean]" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.APKTest.test" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.APKTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.APKTest.testGetMethods" />
-        <item index="4" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [build]" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.APKTest.test360" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.android-toolkit [clean]" />
+        <item index="3" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [dist]" />
+        <item index="4" class="java.lang.String" itemvalue="Gradle.android-toolkit:apat [clean]" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1935,7 +2153,27 @@
       <created>1403510375223</created>
       <updated>1403510375223</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="update">
+      <created>1403510401826</created>
+      <updated>1403510401826</updated>
+    </task>
+    <task id="LOCAL-00041" summary="fixed some bug in parsing some bad AndroidManifest.xml">
+      <created>1404294963373</created>
+      <updated>1404294963373</updated>
+    </task>
+    <task id="LOCAL-00042" summary="fixed some bug">
+      <created>1404295068786</created>
+      <updated>1404295068786</updated>
+    </task>
+    <task id="LOCAL-00043" summary="fix bug when parsing a apk without axml">
+      <created>1404376866025</created>
+      <updated>1404376866025</updated>
+    </task>
+    <task id="LOCAL-00044" summary="collect strings">
+      <created>1404378990221</created>
+      <updated>1404378990221</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1959,7 +2197,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="41" width="1366" height="727" extended-state="6" />
+    <frame x="-2" y="41" width="1370" height="729" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1967,26 +2205,26 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22809668" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.64379084" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.75816995" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6797386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.74509805" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.78431374" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5007874" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32189542" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32131147" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32779455" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="465" y="99" width="435" height="612" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39869282" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30438066" sideWeight="0.4992126" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30438066" sideWeight="0.4992126" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32869694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2666163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8366013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="21" y="258" width="1324" height="293" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26586103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.59477127" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" x="21" y="258" width="1324" height="293" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="100" y="141" width="1166" height="527" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.75816995" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3970588" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2024,7 +2262,11 @@
     <MESSAGE value="uri 增加 field 检索, 优化代码" />
     <MESSAGE value="value 只有 String 类型才添加" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="fixed some bug in parsing some bad AndroidManifest.xml" />
+    <MESSAGE value="fixed some bug" />
+    <MESSAGE value="fix bug when parsing a apk without axml" />
+    <MESSAGE value="collect strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="collect strings" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2035,227 +2277,14 @@
           <properties class="gui.CertImportTask" method="prepareDb" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="437">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="11" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mal-detector/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1045">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/CCZipExtractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="836">
-          <caret line="18" column="68" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="608">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4318182" vertical-offset="3534" max-vertical-offset="5491">
-          <caret line="224" column="0" selection-start-line="224" selection-start-column="0" selection-end-line="224" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/ArrayDataIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.114529915" vertical-offset="1453" max-vertical-offset="2698">
-          <caret line="112" column="31" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/detect/MD5Detector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2923077" vertical-offset="0" max-vertical-offset="585">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/detect/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3897436" vertical-offset="0" max-vertical-offset="950">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/DelDetectorMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16239317" vertical-offset="0" max-vertical-offset="1786">
-          <caret line="9" column="51" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/APKInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6078" max-vertical-offset="6650">
-          <caret line="374" column="14" selection-start-line="165" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="10" column="66" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Application/jdk1.7/jre/lib/rt.jar!/com/sun/xml/internal/ws/org/objectweb/asm/Opcodes.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05811966" vertical-offset="61" max-vertical-offset="4066">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/OdexCodeVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06495727" vertical-offset="0" max-vertical-offset="1140">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexMethodVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22735043" vertical-offset="0" max-vertical-offset="585">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexClassVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2923077" vertical-offset="0" max-vertical-offset="627">
-          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexAnnotationVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51965815" vertical-offset="0" max-vertical-offset="1482">
-          <caret line="44" column="47" selection-start-line="44" selection-start-column="47" selection-end-line="44" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexFieldVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22735043" vertical-offset="0" max-vertical-offset="585">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/OdexOpcodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2923077" vertical-offset="0" max-vertical-offset="585">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/OdexFileVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25982907" vertical-offset="0" max-vertical-offset="585">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/EmptyVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4788">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/visitors/DexCodeVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40497336" vertical-offset="0" max-vertical-offset="5928">
-          <caret line="28" column="54" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/util/AbstractDumpDexCodeAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="10317">
-          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/utils/XMLString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/reader/io/InputStreamDataIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032478634" vertical-offset="0" max-vertical-offset="1102">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/resources/ChangeLog">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1111112" vertical-offset="802" max-vertical-offset="1387">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/utils/CertTool.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2027972" vertical-offset="4330" max-vertical-offset="5073">
-          <caret line="246" column="38" selection-start-line="246" selection-start-column="9" selection-end-line="246" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/DetectorGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62891984" vertical-offset="13357" max-vertical-offset="18620">
-          <caret line="722" column="52" selection-start-line="722" selection-start-column="52" selection-end-line="722" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2979094" vertical-offset="0" max-vertical-offset="836">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1957">
-          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="931" max-vertical-offset="3857">
-          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dex-reader/src/main/java/com/googlecode/dex2jar/DexOpcodes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31965813" vertical-offset="51" max-vertical-offset="2091">
           <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2277,9 +2306,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5362319" vertical-offset="440" max-vertical-offset="2688">
           <caret line="60" column="59" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2294,7 +2320,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33274338" vertical-offset="3188" max-vertical-offset="9328">
           <caret line="234" column="12" selection-start-line="234" selection-start-column="12" selection-end-line="234" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2302,7 +2327,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48727274" vertical-offset="948" max-vertical-offset="3312">
           <caret line="94" column="41" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2310,18 +2334,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.3272727" vertical-offset="0" max-vertical-offset="19392">
           <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/StringSearcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32" vertical-offset="1680" max-vertical-offset="2400">
-          <caret line="129" column="48" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding>
-            <element signature="e#1881#2246#0" expanded="true" />
-            <element signature="e#2235#2236#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2329,110 +2341,330 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3410302" vertical-offset="0" max-vertical-offset="1200">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-          <folding>
-            <element signature="e#542#726#0" expanded="true" />
-            <element signature="e#719#720#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java">
+    <entry file="file://$PROJECT_DIR$/dex-reader/target/classes/META-INF/LICENSE.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1705151" vertical-offset="0" max-vertical-offset="7760">
-          <caret line="22" column="60" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="e#832#870#0" expanded="true" />
-            <element signature="e#7512#7513#0" expanded="true" />
-            <element signature="e#7548#7549#0" expanded="true" />
-            <element signature="e#7608#7609#0" expanded="true" />
-            <element signature="e#7647#7648#0" expanded="true" />
-            <element signature="e#10289#10327#0" expanded="true" />
-            <element signature="e#11876#11877#0" expanded="true" />
-            <element signature="e#11909#11910#0" expanded="true" />
-            <element signature="e#12464#12502#0" expanded="true" />
-            <element signature="e#13200#13201#0" expanded="true" />
-            <element signature="e#13250#13251#0" expanded="true" />
-            <element signature="e#13662#13700#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/CodeAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39786857" vertical-offset="0" max-vertical-offset="563">
-          <caret line="18" column="81" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#593#594#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5314685" vertical-offset="144" max-vertical-offset="896">
-          <caret line="38" column="33" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
-          <folding />
+        <state vertical-scroll-proportion="0.2735043" vertical-offset="0" max-vertical-offset="3344">
+          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/APIs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3418" max-vertical-offset="6816">
+        <state vertical-scroll-proportion="0.26223776" vertical-offset="3418" max-vertical-offset="6816">
           <caret line="256" column="69" selection-start-line="256" selection-start-column="68" selection-end-line="256" selection-end-column="68" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48034188" vertical-offset="519" max-vertical-offset="1104">
+          <caret line="55" column="63" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/DexFileAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34358975" vertical-offset="7" max-vertical-offset="640">
-          <caret line="18" column="52" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.6837607" vertical-offset="0" max-vertical-offset="608">
+          <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/utils/UtilClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92991453" vertical-offset="0" max-vertical-offset="1168">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/utils/ComparatorClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.64444447" vertical-offset="7" max-vertical-offset="592">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mal-detector/src/main/java/gui/FeatureCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.774359" vertical-offset="0" max-vertical-offset="4048">
+          <caret line="138" column="29" selection-start-line="138" selection-start-column="29" selection-end-line="138" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/resources/ChangeLog">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8632479" vertical-offset="583" max-vertical-offset="1216">
+          <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="400" max-vertical-offset="3664">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/axml/res/IntReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1063" max-vertical-offset="2032">
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Application/jdk1.7/src.zip!/java/io/File.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5072727" vertical-offset="3641" max-vertical-offset="34208">
+          <caret line="280" column="46" selection-start-line="280" selection-start-column="5" selection-end-line="280" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/src/test/java/pxb/android/axml/test/Test2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5399645" vertical-offset="0" max-vertical-offset="563">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/src/main/java/pxb/android/axml/Axml.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17948718" vertical-offset="23" max-vertical-offset="2000">
+          <caret line="23" column="101" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/axml/res/AXMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0955752" vertical-offset="3563" max-vertical-offset="4704">
+          <caret line="186" column="31" selection-start-line="186" selection-start-column="30" selection-end-line="186" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.081771724" vertical-offset="0" max-vertical-offset="587">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/src/main/java/pxb/android/arsc/Pkg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="720">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/src/test/java/pxb/android/arsc/test/Test1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="384">
+          <caret line="19" column="67" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/src/main/java/pxb/android/arsc/ArscWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5346359" vertical-offset="1389" max-vertical-offset="6032">
+          <caret line="93" column="70" selection-start-line="93" selection-start-column="58" selection-end-line="93" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Application/jdk1.7/src.zip!/java/util/HashSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="886" max-vertical-offset="4400">
+          <caret line="86" column="13" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/axml/ManifestParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.598579" vertical-offset="0" max-vertical-offset="7728">
+          <caret line="221" column="22" selection-start-line="221" selection-start-column="22" selection-end-line="221" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/utils/FileTypesDetector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42" vertical-offset="3657" max-vertical-offset="5152">
+          <caret line="248" column="41" selection-start-line="248" selection-start-column="25" selection-end-line="248" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/parser/utils/CertToolTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08525755" vertical-offset="0" max-vertical-offset="563">
+          <caret line="3" column="62" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/utils/CertTool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1599" max-vertical-offset="4320">
+          <caret line="118" column="61" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/axml/ManifestInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="733" max-vertical-offset="1632">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
           <folding>
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java">
+    <entry file="file://$PROJECT_DIR$/axml/src/main/java/pxb/android/axml/AxmlParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.0" vertical-offset="48" max-vertical-offset="3536">
-          <caret line="152" column="29" selection-start-line="152" selection-start-column="29" selection-end-line="152" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="3824">
+          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3385013" vertical-offset="13" max-vertical-offset="400">
+          <caret line="9" column="90" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/src/main/java/pxb/android/arsc/ArscDumper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="599" max-vertical-offset="1376">
+          <caret line="70" column="76" selection-start-line="70" selection-start-column="61" selection-end-line="70" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/axml.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="572">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/parser/axml/ParserTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21447028" vertical-offset="109" max-vertical-offset="496">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="704">
+          <caret line="3" column="93" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/utils/UtilLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16466552" vertical-offset="0" max-vertical-offset="1648">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/src/test/java/pxb/android/axml/test/Test4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10977702" vertical-offset="0" max-vertical-offset="704">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/APKInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23499142" vertical-offset="2983" max-vertical-offset="5952">
+          <caret line="223" column="44" selection-start-line="223" selection-start-column="41" selection-end-line="223" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/FeatureCode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4923077" vertical-offset="0" max-vertical-offset="4608">
-          <caret line="18" column="56" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/ClassAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21880342" vertical-offset="0" max-vertical-offset="1104">
-          <caret line="13" column="51" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/ComparatorClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="7" max-vertical-offset="592">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1344" max-vertical-offset="4624">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/CodeView.java">
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="15.058824" vertical-offset="0" max-vertical-offset="3504">
-          <caret line="33" column="56" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2183" max-vertical-offset="2768">
+          <caret line="181" column="60" selection-start-line="181" selection-start-column="51" selection-end-line="181" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apat/src/main/java/gui/StringSearcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2352">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/MethodAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="896">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/apk/APK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="887" max-vertical-offset="8064">
+          <caret line="78" column="77" selection-start-line="78" selection-start-column="77" selection-end-line="78" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/axml/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="4896">
+          <caret line="46" column="85" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+          <folding>
+            <element signature="e#1788#1789#0" expanded="true" />
+            <element signature="e#1823#1824#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/axml/src/main/java/pxb/android/arsc/ArscParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0" vertical-offset="1223" max-vertical-offset="5232">
+          <caret line="136" column="39" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="39" />
+          <folding>
+            <element signature="e#3247#3248#0" expanded="true" />
+            <element signature="e#3322#3323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/parser/apk/APKTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2016" max-vertical-offset="3536">
+          <caret line="136" column="61" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/main/java/parser/dex/CodeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.666667" vertical-offset="0" max-vertical-offset="560">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -2489,7 +2721,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>mal-detector</last-edited>
+          <last-edited>axml</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2514,7 +2746,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Gradle: jcl-over-slf4j-1.7.5</last-edited>
+          <last-edited>Gradle: aopalliance-1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

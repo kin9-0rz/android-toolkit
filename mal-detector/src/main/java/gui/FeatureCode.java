@@ -4,6 +4,7 @@ import com.googlecode.dex2jar.reader.DexFileReader;
 import parser.apk.APK;
 import parser.dex.DexClass;
 import utils.ClassCollector;
+import utils.ComparatorClass;
 import utils.UtilLocal;
 
 import javax.swing.*;
@@ -26,7 +27,7 @@ import java.util.List;
  * Time: 9:53 AM
  */
 public class FeatureCode extends JPanel {
-    final JTextArea stringList;
+    final JTextArea jTextArea;
     JTree treePkg;
 
     public FeatureCode() {
@@ -44,14 +45,14 @@ public class FeatureCode extends JPanel {
         JScrollPane jScrollPaneLeft = new JScrollPane(treePkg);
         splitPane.setLeftComponent(jScrollPaneLeft);
 
-        stringList = new JTextArea();
-        stringList.setText("功能：提取类的字符串。\n" +
+        jTextArea = new JTextArea();
+        jTextArea.setText("功能：提取类的字符串。\n" +
                 "\n" +
                 "使用方法：\n" +
                 "将 APK 文件拉入左边的框即可。\n" +
                 "点击相应的类，则可以显示该类中出现的字符串。");
-        JScrollPane jScrollPaneRight = new JScrollPane(stringList);
-        jScrollPaneRight.setViewportView(stringList);
+        JScrollPane jScrollPaneRight = new JScrollPane(jTextArea);
+        jScrollPaneRight.setViewportView(jTextArea);
         splitPane.setRightComponent(jScrollPaneRight);
 
         //监听拖动文件
@@ -75,55 +76,18 @@ public class FeatureCode extends JPanel {
                 }
 
                 ArrayList<ClassNode> classNodes = new ArrayList<>();
-                stringList.setText("");
+                jTextArea.setText("");
 
                 for (TreePath treePath : treePaths) {
                     final DefaultMutableTreeNode treeNode = (DefaultMutableTreeNode) treePath.getLastPathComponent();
                     if (treeNode.getUserObject() instanceof DexClass) {
                         classNodes.add((ClassNode) treeNode);
-//                        ClassDefItem classDefItem = (ClassDefItem) treeNode.getUserObject();
-//                        StringBuilder sb = new StringBuilder();
-//                        List<String> strList = classDefItem.stringData;
-//                        Collections.sort(strList);
-//                        for (String str : strList) {
-//                            sb.append("<i>").append(str).append("</i>").append('\n');
-//                        }
-//                        stringList.append(sb.toString());
                     } else {
                         classNodes.addAll(getClassNodes(treeNode));
                     }
                 }
 
-                stringList.append(getStrings(classNodes).replace("[<i>", "<i>").replace(", <i>", "<i>"));
-
-
-                //get the current lead path
-//                final TreePath newPath = treeSelectionEvent.getNewLeadSelectionPath();
-//                if (newPath == null)
-//                    return;
-//                final DefaultMutableTreeNode selectNode = (DefaultMutableTreeNode) newPath.getLastPathComponent();
-//                if (selectNode.getUserObject() instanceof DexFileReader) {
-//                    final DexFileReader dexFile = (DexFileReader) selectNode.getUserObject();
-//                    System.out.println("dexFile.getClassSize : " + dexFile.getClassSize());
-//                } else if (selectNode.getUserObject() instanceof ClassDefItem) {
-//                    ClassDefItem classDefItem = (ClassDefItem) selectNode.getUserObject();
-//
-////                    System.out.println("StringData : " + classDefItem.stringData);
-//                    StringBuilder sb = new StringBuilder();
-//                    List<String> strList = classDefItem.stringData;
-//                    Collections.sort(strList);
-//                    for (String str : strList) {
-//                        sb.append("<i>").append(str).append("</i>").append('\n');
-//                    }
-//                    stringList.setText(sb.toString());
-//                } else {
-////                    System.out.println(selectNode.depthFirstEnumeration().toString());
-////                    System.out.println(selectNode.getChildCount());
-//
-//                    stringList.setText(getStrings(getClassNodes(selectNode)).replace("[<i>", "<i>").replace(", <i>", "<i>"));
-//                }
-
-
+                jTextArea.append(getStrings(classNodes).replace("[<i>", "<i>").replace(", <i>", "<i>"));
             }
         });
 
@@ -134,7 +98,6 @@ public class FeatureCode extends JPanel {
 
         for (final Enumeration ee = selectNode.children(); ee.hasMoreElements(); ) {
             final DefaultMutableTreeNode n = (DefaultMutableTreeNode) ee.nextElement();
-//            System.out.println(n.toString() + " : " + n.isLeaf());
 
             if (n.isLeaf()) {
                 classNodes.add((ClassNode) n);
@@ -154,7 +117,6 @@ public class FeatureCode extends JPanel {
             for (String str : strList) {
                 hashSet.add("<i>" + str + "</i>" + '\n');
             }
-
         }
 
         ArrayList<String> arrayList = new ArrayList<>(hashSet);
@@ -174,6 +136,7 @@ public class FeatureCode extends JPanel {
         // 1.parse files
         for (final File file : files) {
             try {
+                // Fixme 需要增加
                 apk = new APK(file);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -211,7 +174,7 @@ public class FeatureCode extends JPanel {
                 if (UtilLocal.DEBUG) {
                     System.out.print(className + " ");
                     for (String name : strings) {
-                        System.out.print(name + " ");
+                        System.out.print("FeatureCode :" + name + " ");
                     }
                     System.out.println();
                 }
@@ -265,19 +228,6 @@ public class FeatureCode extends JPanel {
         }
     }
 
-//    class PackageNode {
-//        String packageName;
-//
-//        PackageNode(String packageName) {
-//            this.packageName = packageName;
-//        }
-//
-//        @Override
-//        public String toString() {
-//            return packageName;
-//        }
-//    }
-
     class ClassNode extends DefaultMutableTreeNode {
         String className;
         DexClass dexClass;
@@ -296,17 +246,4 @@ public class FeatureCode extends JPanel {
             return className;
         }
     }
-
-    /**
-     * 比较两个 ClassDefItem 对象（排序）。
-     */
-    class ComparatorClass implements Comparator<DexClass> {
-        @Override
-        public int compare(DexClass arg0, DexClass arg1) {
-            final String name0 = arg0.className;
-            final String name1 = arg1.className;
-            return name0.compareTo(name1);
-        }
-    }
-
 }
