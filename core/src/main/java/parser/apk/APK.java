@@ -6,7 +6,6 @@ import parser.axml.ManifestInfo;
 import parser.axml.Parser;
 import parser.dex.DexClass;
 import parser.dex.DexFileAdapter;
-import parser.elf.Elf;
 import parser.utils.CertTool;
 import parser.utils.FileTypesDetector;
 import parser.utils.HashTool;
@@ -298,8 +297,6 @@ public class APK {
         subFileHash256List = new ArrayList<>();
         subFileHash256Map = new HashMap<>();
         subAPKHash256Map = new HashMap<>();
-//        elfHashMap = new HashMap<>();
-//        elfStringsMap = new HashMap<>();
         elfDataHashMap = new HashMap<>();
         subApkDataMap = new HashMap<>();
 
@@ -311,15 +308,17 @@ public class APK {
 
             try {
 
-                String fileType = FileTypesDetector.getType(zipFile.getInputStream(zipEntry));
-                if (fileType.contains("ELF")) {
-                    String hash = HashTool.getSHA256(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
-                    Elf elf = new Elf(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
-                    List<String> strings = elf.loadStrings();
 
-                    elfDataHashMap.put(name, new ElfData(hash, strings));
-                    continue;
-                }
+                String fileType = FileTypesDetector.getType(zipFile.getInputStream(zipEntry));
+                // FIXME elf got some bug.
+//                if (fileType.contains("ELF")) {
+//                    String hash = HashTool.getSHA256(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
+//                    Elf elf = new Elf(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
+//                    List<String> strings = elf.loadStrings();
+//
+//                    elfDataHashMap.put(name, new ElfData(hash, strings));
+//                    continue;
+//                }
 
                 String hash = HashTool.getSHA256(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
                 if (fileType.contains("APK") || fileType.contains("ZIP")
@@ -330,7 +329,6 @@ public class APK {
                     subAPKHash256Map.put(name, hash);
                     subApkDataMap.put(name, apk);
                     continue;
-//                    }
                 }
 
 
