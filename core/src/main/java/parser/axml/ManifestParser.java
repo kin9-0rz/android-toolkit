@@ -244,7 +244,7 @@ public class ManifestParser {
                             parseTagManifest(parser, manifestInfo);
                             break;
                         case "application":
-                            parseTagApplciation(parser, manifestInfo);
+                            parseTagApplication(parser, manifestInfo);
                             break;
                         case "uses-permission":
                             parseTagPermission(parser, permissionsSet);
@@ -334,20 +334,24 @@ public class ManifestParser {
         for (int i = 0; i != parser.getAttributeCount(); ++i) {
             final String attributeValue = makeAttributeValue(parser, i);
             final String attribute = getNamespacePrefix(parser.getAttributePrefix(i)) + parser.getAttributeName(i);
-            if ("android:versionName".equals(attribute)) {
-                manifestInfo.versionName = attributeValue;
-            } else if ("package".equals(attribute)) {
-                manifestInfo.packageName = attributeValue;
-            } else if ("android:versionCode".equals(attribute)) {
-                manifestInfo.versionCode = attributeValue;
+            switch (attribute) {
+                case "android:versionName":
+                    manifestInfo.versionName = attributeValue;
+                    break;
+                case "package":
+                    manifestInfo.packageName = attributeValue;
+                    break;
+                case "android:versionCode":
+                    manifestInfo.versionCode = attributeValue;
+                    break;
             }
         }
     }
 
     /**
-     * 解析applciation标签属性值，获取label(appname)
+     * 解析 application 标签属性值，获取label(appName)
      */
-    private void parseTagApplciation(AXMLParser parser, ManifestInfo pkgInfo) {
+    private void parseTagApplication(AXMLParser parser, ManifestInfo pkgInfo) {
         for (int i = 0; i != parser.getAttributeCount(); ++i) {
             final String v = makeAttributeValue(parser, i);
             final String attr = getNamespacePrefix(parser.getAttributePrefix(i)) + parser.getAttributeName(i);
@@ -384,8 +388,8 @@ public class ManifestParser {
     /**
      * 解析 service 标签
      *
-     * @param parser
-     * @param services
+     * @param parser 解析器
+     * @param services 服务
      */
     private void parseTagService(AXMLParser parser, ArrayList<String> services) {
         StringBuilder nullValue = new StringBuilder();
@@ -408,9 +412,9 @@ public class ManifestParser {
     }
 
     /**
-     * 解析 reveiver 标签
+     * 解析 receiver 标签
      *
-     * @param parser
+     * @param parser 解析器
      */
     private String parseTagReceiver(AXMLParser parser) {
         StringBuilder nullValue = new StringBuilder();

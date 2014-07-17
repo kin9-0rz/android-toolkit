@@ -2,3 +2,7 @@
 include "core", "dex-reader", "apat", "mal-detector"
 include 'axml'
 
+include 'scanner'
+
+include 'sis-reader'
+
