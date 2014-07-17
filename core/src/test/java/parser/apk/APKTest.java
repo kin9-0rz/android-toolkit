@@ -151,14 +151,14 @@ public class APKTest {
 
     @Test
     public void test360() {
-        String path = "/home/lai/Work/360卫士.apk";
+        String path = "/home/lai/Public/20140708001244405088000114.apk";
         APK apk;
         try {
-            apk = new APK(new File(path));
+//            apk = new APK(new File(path));
+            apk = new APK(path);
 //            System.out.println(apk.getStringsMap());
-            System.out.println(apk.getPackageName());
-            System.out.println(apk.getCertificateInfos());
-            System.out.println(apk.getPermissions());
+            DexFileReader dexFileReader = apk.getDexFileReader();
+            System.out.println(apk.getStrings());
         } catch (IOException e) {
             System.out.println(e.getMessage());
         } catch (Exception e) {
@@ -177,7 +177,9 @@ public class APKTest {
 
         APK apk;
         try {
-            apk = new APK("/home/lai/Work/test.apk");
+            apk = new APK("/home/lai/Work/a.rogue.yaoyan/a.rouge.yaoyan.a_001.apk");
+            System.out.println("???");
+            System.out.println(apk.getLabel());
             System.out.println(apk.getCertificateInfos());
 
             apk = new APK("/home/lai/Work/samples/Exploit.AndroidOS.DroidDream/Test/" +
@@ -191,7 +193,7 @@ public class APKTest {
                 System.out.println(hashMap.get(str).getPermissions());
 
             }
-
+//
 
         } catch (IOException e) {
             System.out.println(e.getMessage());

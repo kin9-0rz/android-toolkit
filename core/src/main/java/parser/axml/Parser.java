@@ -273,6 +273,7 @@ public class Parser {
             String attrName = parser.getAttrName(i);
             String attrValue = getValue(parser.getAttrValue(i));
 
+
             if (attrName.contains("label")) {
                 String tmp = resources.get(attrValue);
                 if (tmp != null) {

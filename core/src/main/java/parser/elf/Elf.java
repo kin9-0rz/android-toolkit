@@ -55,19 +55,6 @@ public class Elf {
     public Elf(byte[] data) {
         ByteBuffer elf = ByteBuffer.wrap(data);
         elf.order(ByteOrder.LITTLE_ENDIAN);
-//            System.out.println("type:\t"+elf.getShort(E_TYPE));
-//            System.out.println("machine:\t"+elf.getShort(E_MACHINE));
-//            System.out.println("version:\t"+elf.getShort(E_VERSION));
-//            System.out.println("entry:\t"+elf.getInt(E_ENTRY));
-//            System.out.println("phoff:\t"+elf.getInt(E_PHOFF));
-//            System.out.println("shoff:\t"+Integer.toHexString(elf.getInt(E_SHOFF)));
-//            System.out.println("flages:\t"+elf.getInt(E_FLAGES));
-//            System.out.println("ehsize:\t"+elf.getShort(E_EHSIZE));
-//            System.out.println("phentsize:\t"+elf.getShort(E_PHENTSIZE));
-//            System.out.println("phnum:\t"+elf.getShort(E_PHNUM));
-//            System.out.println("shentsize:\t"+elf.getShort(E_SHENTSIZE));
-//            System.out.println("shnum:\t"+elf.getShort(E_SHNUM));
-//            System.out.println("shstrndx:\t"+elf.getShort(E_SHSTRNDX));
         type = elf.getShort(E_TYPE);
         entry = elf.getInt(E_ENTRY);
         phoff = elf.getInt(E_PHOFF);
@@ -77,6 +64,10 @@ public class Elf {
         shentsize = elf.getShort(E_SHENTSIZE);
         shnum = elf.getShort(E_SHNUM);
         shstrndx = elf.getShort(E_SHSTRNDX);
+        //FixME    这个arm 下的elf解析会出错
+//        at parser.elf.Dynamic.<init>(Dynamic.java:23)
+//        at parser.elf.Sections.<init>(Sections.java:116)
+//        at parser.elf.Elf.<init>(Elf.java:80)
         Sections sec = new Sections(elf, shoff, shentsize, shnum, shstrndx);
         roDataString = sec.getRoDataStrings();
         symbols = sec.getSymbols();
