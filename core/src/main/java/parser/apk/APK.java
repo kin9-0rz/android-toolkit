@@ -114,7 +114,6 @@ public class APK {
 
 
     /**
-     *
      * @param filePath  文件路径
      * @param parseAXML 是否解析 AndroidManifest.xml
      * @param parseDex  是否解析 Dex
@@ -149,14 +148,48 @@ public class APK {
             Parser parser = new Parser(file);
             manifestInfo = parser.getManifestInfo();
 
-//            final ManifestParser mp = new ManifestParser();
-//
-//            try {
-//                manifestInfo = mp.parse(file);
-//            } catch (IOException e) {
-//                throw new ZipException(e.getMessage());
-//            }
+            if (manifestInfo == null) {
+                throw new FileNotFoundException("No AndroidManifest.xml");
+            }
+        }
 
+        if (parseDex) {
+            initDexFileReader(file);
+        }
+
+        if (parseCert) {
+            certificateInfos = CertTool.getCertificateInfos(file);
+        }
+
+    }
+
+    /**
+     * @param file      文件
+     * @param parseAXML 是否解析 AndroidManifest.xml
+     * @param parseDex  是否解析 Dex
+     * @param parseCert 是否解析证书
+     * @throws IOException
+     */
+    public APK(File file, boolean parseAXML, boolean parseDex, boolean parseCert)
+            throws IOException {
+
+        absolutePath = file.getAbsolutePath();
+        fileName = file.getName();
+
+        if (!FileTypesDetector.isAPK(file)) {
+            throw new IOException("IT IS NOT A APK FILE.");
+        }
+
+        ZipFile zipFile = new ZipFile(file);
+        ZipEntry zipEntry = zipFile.getEntry("classes.dex");
+        if (zipEntry != null) {
+            dexMd5 = HashTool.getSHA256(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
+        }
+        zipFile.close();
+
+        if (parseAXML) {
+            Parser parser = new Parser(file);
+            manifestInfo = parser.getManifestInfo();
             if (manifestInfo == null) {
                 throw new FileNotFoundException("No AndroidManifest.xml");
             }
@@ -201,19 +234,11 @@ public class APK {
         initSubFileList(zipFile);
         zipFile.close();
 
-
         initDexFileReader(file);
 
         // 解析清单信息
         Parser parser = new Parser(file);
-        ManifestInfo manifestInfo = parser.getManifestInfo();
-//        final ManifestParser mp = new ManifestParser();
-
-//        try {
-//            manifestInfo = mp.parse(file);
-//        } catch (IOException e) {
-//            throw new Exception(e.getMessage());
-//        }
+        manifestInfo = parser.getManifestInfo();
 
         if (manifestInfo == null) {
             throw new Exception("No AndroidManifest.xml");
@@ -251,13 +276,6 @@ public class APK {
 
         Parser parser = new Parser(file);
         manifestInfo = parser.getManifestInfo();
-
-//        final ManifestParser mp = new ManifestParser();
-//        try {
-//            manifestInfo = mp.parse(file);
-//        } catch (IOException e) {
-//            throw new ZipException(e.getMessage());
-//        }
 
         initDexFileReader(file);
         certificateInfos = CertTool.getCertificateInfos(file);
