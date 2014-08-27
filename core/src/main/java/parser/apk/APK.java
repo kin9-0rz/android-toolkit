@@ -43,6 +43,12 @@ public class APK {
     private HashMap<String, String> subAPKHash256Map;
     private HashMap<String, String> metaDatas;
 
+    public HashMap<String, String> getSubFilesMap() {
+        return subFilesMap;
+    }
+
+    private HashMap<String, String> subFilesMap;
+
     public APK(InputStream inputStream) throws IOException {
         BufferedInputStream bis = new BufferedInputStream(inputStream);
         bis.mark(bis.available());
@@ -299,6 +305,7 @@ public class APK {
         subAPKHash256Map = new HashMap<>();
         elfDataHashMap = new HashMap<>();
         subApkDataMap = new HashMap<>();
+        subFilesMap = new HashMap<>();
 
         ZipEntry zipEntry;
         Enumeration enumeration = zipFile.entries();
@@ -310,6 +317,9 @@ public class APK {
 
 
                 String fileType = FileTypesDetector.getType(zipFile.getInputStream(zipEntry));
+
+                subFilesMap.put(name, fileType);
+                
                 // FIXME elf got some bug.
 //                if (fileType.contains("ELF")) {
 //                    String hash = HashTool.getSHA256(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
@@ -323,7 +333,6 @@ public class APK {
                 String hash = HashTool.getSHA256(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
                 if (fileType.contains("APK") || fileType.contains("ZIP")
                         && FileTypesDetector.isAPK(zipFile.getInputStream(zipEntry))) {
-                    System.out.println(zipEntry.getName());
                     APK apk = new APK(zipFile.getInputStream(zipEntry));
 
                     subAPKHash256Map.put(name, hash);
