@@ -245,7 +245,7 @@ public final class FileTypesDetector {
 
         }
         catch (ZipException e) {
-//            System.out.println("It's a encrypted ZIP.");
+            System.out.println("It's a encrypted ZIP.");
             return false;
         }  catch (IOException e) {
             e.printStackTrace();
@@ -274,6 +274,7 @@ public final class FileTypesDetector {
         try {
             fileType = FileTypesDetector.getType(pFile.getAbsolutePath());
         } catch (IOException e) {
+            System.out.println(e.getLocalizedMessage());
             return false;
         }
 
