@@ -221,7 +221,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
         FileInputStream fileInputStream = null;
         try {
             if (UtilLocal.DEBUG) {
-                PERMISSION_PATH = "/home/lai/Work/svn/08个人目录/lyb/project/android-toolkit/apat/resources/conf/permissions.xml";
+                PERMISSION_PATH = "./apat/resources/conf/permissions.xml";
             }
             fileInputStream = new FileInputStream(PERMISSION_PATH);
             final DocumentBuilderFactory factory = DocumentBuilderFactory
@@ -337,6 +337,7 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
         sb.delete(0, sb.length());
 
         for (String perm : apk.getPermissions()) {
+            perm = perm.replace("android.permission.", "");
             sb.append(perm);
             if (permissionsMap.keySet().contains(perm)) {
                 sb.append(" [ ").append(permissionsMap.get(perm)).append(" ] ");

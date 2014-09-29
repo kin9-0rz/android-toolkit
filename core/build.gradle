@@ -3,8 +3,8 @@ dependencies {
 	compile project(':axml')
 
     compile 'org.json:json:20090211'
-	compile 'org.xerial.thirdparty:jdbc-api:1.+'
-	compile 'org.xerial.thirdparty:nestedvm:1.+'
+	compile 'org.xerial.thirdparty:jdbc-api:1.4'
+	compile 'org.xerial.thirdparty:nestedvm:1.0'
     compile 'org.ogce:xpp3:1.1.6'
     compile 'org.xerial:sqlite-jdbc:3.7.15-M1'
     compile 'org.eclipse.jetty.orbit:org.objectweb.asm:3.3.1.v201105211655'
