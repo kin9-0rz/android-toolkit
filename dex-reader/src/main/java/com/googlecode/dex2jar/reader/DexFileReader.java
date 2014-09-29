@@ -668,6 +668,7 @@ public class DexFileReader {
                     try {
                         DexAnnotationReader.accept(this, in, dfv);
                     } catch (Exception e) {
+                        System.out.println("while accept annotation in field:%s." + field.toString());
                         throw new DexException(e, "while accept annotation in field:%s.", field.toString());
                     } finally {
                         in.pop();
@@ -750,10 +751,8 @@ public class DexFileReader {
                                     return -1;
                                 }
                             } catch (Exception e) {
-//                                e.printStackTrace();
                                 System.out.println("while accept code in method : " + method.toString());
                                 return -1;
-//                                throw new DexException(e, "while accept code in method:[%s]", method.toString());
                             }
                         }
                     } finally {
@@ -763,7 +762,6 @@ public class DexFileReader {
                 dmv.visitEnd();
             }
         } catch (Exception e) {
-//            e.printStackTrace();
             System.out.println("acgmohu - while accept method : " + method.toString());
             return -1;
 //            throw new DexException(e, "while accept method:[%s]", method.toString());

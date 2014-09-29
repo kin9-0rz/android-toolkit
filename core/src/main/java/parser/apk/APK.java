@@ -42,11 +42,6 @@ public class APK {
     private HashMap<String, String> subFileHash256Map;
     private HashMap<String, String> subAPKHash256Map;
     private HashMap<String, String> metaDatas;
-
-    public HashMap<String, String> getSubFilesMap() {
-        return subFilesMap;
-    }
-
     private HashMap<String, String> subFilesMap;
 
     public APK(InputStream inputStream) throws IOException {
@@ -117,15 +112,14 @@ public class APK {
         inputStream.close();
     }
 
-
     /**
-     * @param filePath  文件路径
-     * @param parseAXML 是否解析 AndroidManifest.xml
-     * @param parseDex  是否解析 Dex
-     * @param parseCert 是否解析证书
+     * @param filePath    文件路径
+     * @param parseAXML   是否解析 AndroidManifest.xml
+     * @param isParseCode 是否解析 Dex 中的代码，解析代码会比较耗时
+     * @param parseCert   是否解析证书
      * @throws IOException
      */
-    public APK(String filePath, boolean parseAXML, boolean parseDex, boolean parseCert)
+    public APK(String filePath, boolean parseAXML, boolean isParseCode, boolean parseCert)
             throws IOException {
 
 
@@ -158,9 +152,7 @@ public class APK {
             }
         }
 
-        if (parseDex) {
-            initDexFileReader(file);
-        }
+        initDexFileReader(file, isParseCode);
 
         if (parseCert) {
             certificateInfos = CertTool.getCertificateInfos(file);
@@ -168,14 +160,15 @@ public class APK {
 
     }
 
+
     /**
-     * @param file      文件
-     * @param parseAXML 是否解析 AndroidManifest.xml
-     * @param parseDex  是否解析 Dex
-     * @param parseCert 是否解析证书
+     * @param file        文件
+     * @param parseAXML   是否解析 AndroidManifest.xml
+     * @param isParseCode 是否解析 Dex
+     * @param parseCert   是否解析证书
      * @throws IOException
      */
-    public APK(File file, boolean parseAXML, boolean parseDex, boolean parseCert)
+    public APK(File file, boolean parseAXML, boolean isParseCode, boolean parseCert)
             throws IOException {
 
         absolutePath = file.getAbsolutePath();
@@ -200,16 +193,13 @@ public class APK {
             }
         }
 
-        if (parseDex) {
-            initDexFileReader(file);
-        }
+        initDexFileReader(file, isParseCode);
 
         if (parseCert) {
             certificateInfos = CertTool.getCertificateInfos(file);
         }
 
     }
-
 
     /**
      * 构造函数
@@ -253,6 +243,7 @@ public class APK {
         certificateInfos = CertTool.getCertificateInfos(file);
     }
 
+
     /**
      * 构造函数
      *
@@ -284,6 +275,10 @@ public class APK {
 
         initDexFileReader(file);
         certificateInfos = CertTool.getCertificateInfos(file);
+    }
+
+    public HashMap<String, String> getSubFilesMap() {
+        return subFilesMap;
     }
 
     public HashMap<String, APK> getSubApkDataMap() {
@@ -319,7 +314,7 @@ public class APK {
                 String fileType = FileTypesDetector.getType(zipFile.getInputStream(zipEntry));
 
                 subFilesMap.put(name, fileType);
-                
+
                 // FIXME elf got some bug.
 //                if (fileType.contains("ELF")) {
 //                    String hash = HashTool.getSHA256(IOUtils.toByteArray(zipFile.getInputStream(zipEntry)));
@@ -348,10 +343,27 @@ public class APK {
         }
     }
 
+    /**
+     * 初始化DexFileReader，默认解析Code（解析比较耗时）
+     *
+     * @param file 文件
+     * @throws IOException
+     */
     private void initDexFileReader(File file) throws IOException {
+        initDexFileReader(file, true);
+    }
+
+    /**
+     * @param file        文件
+     * @param isParseCode 是否解析代码
+     * @throws IOException
+     */
+    private void initDexFileReader(File file, Boolean isParseCode) throws IOException {
         dexFileReader = new DexFileReader(file);
-        dexFileReader.accept(new DexFileAdapter(dexClasses),
-                DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+        if (isParseCode) {
+            dexFileReader.accept(new DexFileAdapter(dexClasses),
+                    DexFileReader.SKIP_DEBUG | DexFileReader.SKIP_ANNOTATION);
+        }
     }
 
     /**

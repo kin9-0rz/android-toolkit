@@ -40,6 +40,8 @@ public class ClassAdapter implements DexClassVisitor {
         tField.value = value;
         dexClass.fields.add(tField);
 
+        System.out.println("field : " + field + "=" + value);
+
         if (null != value) {
             dexClass.stringData.add(field.getName());
             if (value instanceof String) {
@@ -54,6 +56,8 @@ public class ClassAdapter implements DexClassVisitor {
     public DexMethodVisitor visitMethod(int accessFlags, final Method method) {
         dexClass.methods.add(method);
         dexClass.stringData.add(method.getName());
+
+        System.out.println("field : " + method.getName());
 
         return new MethodAdapter(accessFlags, method, dexClass);
     }

@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class Test1 {
-    @Test
+//    @Test
     public void test() throws IOException {
         for (File file : new File("/home/lai/Work/360卫士/").listFiles()) {
             if (file.getName().endsWith(".arsc")) {

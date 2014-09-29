@@ -4,9 +4,9 @@ import junit.framework.TestCase;
 
 import java.io.File;
 
-//import parser.dex.ClassCollector;
-//import parser.dex.ClassDefItem;
-//import parser.dex.CodeCollector;
+import org.junit.Before;
+import org.junit.Test;
+
 //
 
 /**
@@ -15,13 +15,13 @@ import java.io.File;
 public class DexFileReaderTest extends TestCase {
     DexFileReader dexFileReader;
 
-//    @Before
+    @Before
     public void setUp() throws Exception {
-        String dexFilePath = "/home/lai/Project/android-toolkit/dexs/classes2.dex";
+        String dexFilePath = "/Users/bin/Downloads/error.apk";
         dexFileReader = new DexFileReader(new File(dexFilePath));
     }
 
-//    @Test
+    @Test
     public void testLoadStrings() throws Exception {
         dexFileReader.loadStrings();
 

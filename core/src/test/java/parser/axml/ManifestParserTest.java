@@ -12,7 +12,7 @@ public class ManifestParserTest {
         final ManifestParser mp = new ManifestParser();
 
         try {
-            ManifestInfo manifestInfo = mp.parse(new File("/home/lai/Public/error-apk/error1.apk"));
+            ManifestInfo manifestInfo = mp.parse(new File("/Users/bin/Downloads/error.apk"));
             System.out.println(manifestInfo);
         } catch (IOException e) {
             e.printStackTrace();

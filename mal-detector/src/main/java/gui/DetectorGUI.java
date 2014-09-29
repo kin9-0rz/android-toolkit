@@ -387,11 +387,17 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
 
         // 基于证书的样本近似分析
         // FIXME 找出证书一样的样本，然后，找出清单近似的样本。（可能需要持续完善）
+        SampleInfo displayInfo = null;
+        StringBuilder displayString = null;
+        StringBuilder displayLike = null;
         for (String key : apk.getCertificateInfos().keySet()) {
             ArrayList<SampleInfo> sampleInfos = querySampleByCertMD5(key);
             if (sampleInfos != null) {
+                int maxValue = 0;
                 for (SampleInfo sampleInfo : sampleInfos) {
+                    // type
                     StringBuilder stringBuilder = new StringBuilder("cert|");
+                    // detail
                     StringBuilder likeBuilder = new StringBuilder();
 
                     // 证书+包名
@@ -489,8 +495,6 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
                     stringBuilder.append(count).append("/").
                             append(intents).append("intents|");
 
-//                    publish(apk.toString());
-//                    publish(sampleInfo.receivers);
                     if (recs != 0) {
                         value += (float) recCount / (float) recs * RECV_WEIGHT;
                     } else if (sampleInfo.receivers.length() == 0) {
@@ -509,14 +513,27 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
 //                    publish(sampleInfo.varName + "|" + sampleInfo.fileName);
 //                    publish(sampleInfo.toString() + "\n");
 //                    publish(likeBuilder.toString() + "\n");
-                    if ((int) (value * 100) >= 70) {
-                        publish("结果：" + "CPRSI-" + sampleInfo.varName + "|" + sampleInfo.fileName);
-                        publish(stringBuilder.toString());
-                        publish(sampleInfo.varName + "|" + sampleInfo.fileName);
-                        publish(sampleInfo.toString() + "\n");
-                        publish(likeBuilder.toString() + "\n");
-                        return;
+                    if (value * 100 > maxValue ) {
+                        displayInfo = sampleInfo;
+                        displayString = stringBuilder;
+                        displayLike = likeBuilder;
                     }
+//                    if ((int) (value * 100) >= 70) {
+//                        publish("结果：" + value * 100 + " CPRSI- " + sampleInfo.varName + "|" + sampleInfo.fileName);
+//                        publish(stringBuilder.toString());
+//                        publish(sampleInfo.varName + "|" + sampleInfo.fileName);
+//                        publish(sampleInfo.toString() + "\n");
+//                        publish(likeBuilder.toString() + "\n");
+//                        return;
+//                    }
+                } // End of for.
+
+                // TODO Find the best result......the most likely
+                if (displayInfo != null) {
+                    publish("结果：" + maxValue * 100 + " CPRSI- " + displayInfo.varName + "|" + displayInfo.fileName);
+                    publish(displayString.toString());
+                    publish(displayInfo.toString() + "\n");
+                    publish(displayLike.toString() + "\n");
                 }
             }
         }
@@ -604,6 +621,14 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
             if (str.contains("PHONE")) {
                 perms.add(str);
             }
+
+            if (str.contains("ADMIN")) {
+                perms.add(str);
+            }
+
+            if (str.contains("CONTACTS")) {
+                perms.add(str);
+            }
         }
 
         publish("敏感权限：" + perms.toString());
@@ -632,9 +657,25 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, String> {
 
         callOnSet.clear();
         methodSet.clear();
+        searchCallOn("Contacts;.CONTENT_URI", methods, methodSet, callOnSet, 0);
+        if (!callOnSet.isEmpty()) {
+            publish("Contacts;.CONTENT_URI" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
+        }
+
+        callOnSet.clear();
+        methodSet.clear();
         searchCallOn("SmsManager;.sendTextMessage", methods, methodSet, callOnSet, 0);
         if (!callOnSet.isEmpty()) {
             publish("SmsManager;.sendTextMessage" + callOnSet.toString());
+            value += callOnSet.toString().split(";.on").length - 1;
+        }
+
+        callOnSet.clear();
+        methodSet.clear();
+        searchCallOn("Transport;.send", methods, methodSet, callOnSet, 0);
+        if (!callOnSet.isEmpty()) {
+            publish("mail/Transport;.send" + callOnSet.toString());
             value += callOnSet.toString().split(";.on").length - 1;
         }
 

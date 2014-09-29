@@ -8,8 +8,7 @@ public class ParserTest {
 
     @Test
     public void testReadAxml() throws Exception {
-//        File pFile = new File("/home/lai/Work/360卫士.apk");
-        File pFile = new File("/home/lai/Work/a.rogue.yaoyan/a.rouge.yaoyan.a_001.apk");
+        File pFile = new File("/Users/bin/Downloads/error.apk");
 
         Parser parser = new Parser(pFile);
         ManifestInfo manifestInfo = parser.getManifestInfo();
@@ -17,12 +16,8 @@ public class ParserTest {
 //        for (String key : manifestInfo.metaData.keySet()) {
 //            System.out.println(key + ":" + manifestInfo.metaData.get(key));
 //        }
-        System.out.println(manifestInfo.label);
+        System.out.println(manifestInfo);
 
-        for (String key : manifestInfo.activities.keySet()) {
-
-            System.out.println(key + " : "+ manifestInfo.activities.get(key));
-        }
 
     }
 }

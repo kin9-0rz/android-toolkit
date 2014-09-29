@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.zip.ZipException;
 
@@ -21,7 +22,7 @@ public class APKTest {
 
         APK apk = null;
         try {
-            apk = new APK(new File("/home/lai/Work/samples/Exploit.AndroidOS.Lotoor/test/2011-02-05-0ed1ce633b6cfe411f251af1ce290f5ed0845845b0c96e671f8cddfe97969f47.apk"));
+            apk = new APK(new File("/Users/bin/Downloads/error.apk"));
         } catch (ZipException e) {
             System.out.println("Zip 异常 : " + e.getMessage());
             return;
@@ -177,25 +178,45 @@ public class APKTest {
 
         APK apk;
         try {
-            apk = new APK("/home/lai/Work/a.rogue.yaoyan/a.rouge.yaoyan.a_001.apk");
-            System.out.println("???");
+            apk = new APK("/Users/bin/Downloads/error.apk", true, false, true);
+            System.out.println("--------------------------");
             System.out.println(apk.getLabel());
             System.out.println(apk.getCertificateInfos());
 
-            apk = new APK("/home/lai/Work/samples/Exploit.AndroidOS.DroidDream/Test/" +
-                    "2011-02-17-f49410d96e93822e44dfa1a45b55e250abca233a43f4afb0237a1a0f76b62e67.apk");
-            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-            HashMap<String, APK> hashMap = apk.getSubApkDataMap();
-            for (String str : hashMap.keySet()) {
-                System.out.println(str);
-                System.out.println(hashMap.get(str).getCertificateInfos());
-                System.out.println(hashMap.get(str).getPackageName());
-                System.out.println(hashMap.get(str).getPermissions());
+            HashMap<String, String> hashMap = apk.getSubFilesMap();
 
+            ArrayList<String> arrayList = new ArrayList<>();
+            arrayList.add("ANDROID_BINARY_XML");
+            arrayList.add("JPEG");
+            arrayList.add("PNG");
+            arrayList.add("OGG");
+            arrayList.add("XML");
+            arrayList.add("ANDROID_ARSC");
+            arrayList.add("US-ASCII text");
+            arrayList.add("GB2312 text");
+
+            for (String key : hashMap.keySet()) {
+                String fileType = hashMap.get(key);
+                if (!arrayList.contains(fileType)) {
+                    System.out.println(key + " : " + fileType);
+                }
             }
+
+//            apk = new APK("/home/lai/Work/samples/Exploit.AndroidOS.DroidDream/Test/" +
+//                    "2011-02-17-f49410d96e93822e44dfa1a45b55e250abca233a43f4afb0237a1a0f76b62e67.apk");
+//            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+//            HashMap<String, APK> hashMap = apk.getSubApkDataMap();
+//            for (String str : hashMap.keySet()) {
+//                System.out.println(str);
+//                System.out.println(hashMap.get(str).getCertificateInfos());
+//                System.out.println(hashMap.get(str).getPackageName());
+//                System.out.println(hashMap.get(str).getPermissions());
+//
+//            }
 //
 
         } catch (IOException e) {
+            e.printStackTrace();
             System.out.println(e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
