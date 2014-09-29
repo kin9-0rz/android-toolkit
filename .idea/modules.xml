@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/dex-reader/dex-reader.iml" filepath="$PROJECT_DIR$/dex-reader/dex-reader.iml" />
       <module fileurl="file://$PROJECT_DIR$/mal-detector/mal-detector.iml" filepath="$PROJECT_DIR$/mal-detector/mal-detector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scanner/scanner.iml" filepath="$PROJECT_DIR$/scanner/scanner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sis-reader/sis-reader.iml" filepath="$PROJECT_DIR$/sis-reader/sis-reader.iml" />
     </modules>
   </component>
 </project>

@@ -14,6 +14,8 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/dex-reader" />
             <option value="$PROJECT_DIR$/mal-detector" />
+            <option value="$PROJECT_DIR$/scanner" />
+            <option value="$PROJECT_DIR$/sis-reader" />
           </set>
         </option>
       </GradleProjectSettings>
