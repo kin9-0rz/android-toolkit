@@ -22,7 +22,7 @@ public class APKTest {
 
         APK apk = null;
         try {
-            apk = new APK(new File("/Users/bin/Downloads/error.apk"));
+            apk = new APK(new File("./test-apk/error.apk"));
         } catch (ZipException e) {
             System.out.println("Zip 异常 : " + e.getMessage());
             return;

@@ -8,7 +8,7 @@ public class ParserTest {
 
     @Test
     public void testReadAxml() throws Exception {
-        File pFile = new File("/Users/bin/Downloads/error.apk");
+        File pFile = new File("./test-apk/error.apk");
 
         Parser parser = new Parser(pFile);
         ManifestInfo manifestInfo = parser.getManifestInfo();

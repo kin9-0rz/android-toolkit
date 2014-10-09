@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class BagValue {
-    public List<Entry<Integer, Value>> map = new ArrayList<Entry<Integer, Value>>();
+    public List<Entry<Integer, Value>> map = new ArrayList<>();
     public final int parent;
 
     public BagValue(int parent) {

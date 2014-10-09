@@ -117,35 +117,6 @@ public class APIs extends JPanel {
         jTextAreaTest = new JTextArea();
         scrollPanePermissions.setViewportView(jTextAreaTest);
 
-
-        // ----------------------------------------------- Event -------------------------------------------------------
-//
-//        new FileDrop(System.out, jTextFieldFilePath,
-//                new FileDrop.Listener() {
-//                    @Override
-//                    public void filesDropped(File[] files) {
-//                        File f = files[0];
-//                        if (f.isFile()) {
-//                            jTextFieldFilePath.setText(f.getAbsolutePath());
-//                        }
-//                    }
-//                });
-
-//        jButtonPath.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent arg0) {
-//                final JFileChooser fc = new JFileChooser();
-//                final int returnVal = fc.showOpenDialog(null);
-//                if (returnVal == JFileChooser.APPROVE_OPTION) {
-//                    File f = fc.getSelectedFile();
-//                    if (f.isFile()) {
-//                        jTextFieldFilePath.setText(f.getAbsolutePath());
-//                    }
-//                }
-//            }
-//        });
-
-
         jButtonAnalysis.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

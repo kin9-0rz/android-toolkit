@@ -10,7 +10,7 @@ import java.util.List;
  * Created by lai on 12/26/13.
  */
 public class ElfTest {
-    @Test
+//    @Test
     public void testLoadStrings() throws Exception {
         Elf elf = new Elf(new File("/home/lai/Work/samples/Exploit.AndroidOS.Exploid/" +
                 "exploid-09ef9c605c80d8d8180af8689d9e0d282c6530f320724ce1d15117de90e4e0ee"));

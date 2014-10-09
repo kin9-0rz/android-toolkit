@@ -30,7 +30,7 @@ public class DexFileAdapter implements DexFileVisitor {
         dexClass.methodMap = new HashMap<>();
         dexClassList.add(dexClass);
 
-        System.out.println("className : " + className);
+//        System.out.println("className : " + className);
 
         return new ClassAdapter(access_flags,  className,  superClass, interfaceNames, dexClass);
     }

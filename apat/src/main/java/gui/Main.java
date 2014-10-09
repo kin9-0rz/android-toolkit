@@ -176,7 +176,7 @@ public class Main {
 //        jFrame.getContentPane().add(jTabbedPane, "2, 4, fill, fill");
 //        jFrame.getContentPane().add(jTabbedPane);
 //
-        jTabbedPane.addTab("APK Infos", null, new APKInfo(), null);
+        jTabbedPane.addTab("APK Info", null, new APKInfo(), null);
         jTabbedPane.addTab("Pkg List", null, new PkgList(), null);
         jTabbedPane.addTab("APIs", null, new APIs(), null);
         jTabbedPane.addTab("Search Ref", null, new StringSearcher(), null);

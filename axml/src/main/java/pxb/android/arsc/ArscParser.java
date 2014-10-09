@@ -62,6 +62,7 @@ import java.util.Map;
  *
  * @author bob
  */
+@SuppressWarnings("UnusedDeclaration")
 public class ArscParser implements ResConst {
     public static final int TYPE_STRING = 0x03;
     /**
@@ -79,7 +80,7 @@ public class ArscParser implements ResConst {
     private ByteBuffer in;
     private String[] keyNamesX;
     private Pkg pkg;
-    private List<Pkg> pkgs = new ArrayList<Pkg>();
+    private List<Pkg> pkgs = new ArrayList<>();
     private String[] strings;
     private String[] typeNamesX;
 
@@ -97,7 +98,6 @@ public class ArscParser implements ResConst {
         if (fileSize < 0) {
             Chunk head = new Chunk();
             if (head.type != RES_TABLE_TYPE) {
-                System.out.println("RES_TABLE_TYPE");
                 throw new RuntimeException();
             }
             fileSize = head.size;
@@ -109,7 +109,6 @@ public class ArscParser implements ResConst {
             Chunk chunk = new Chunk();
             switch (chunk.type) {
                 case RES_STRING_POOL_TYPE:
-                    System.out.println("RES_STRING_POOL_TYPE");
                     strings = StringItems.read(in);
                     if (DEBUG) {
                         for (int i = 0; i < strings.length; i++) {
@@ -118,7 +117,6 @@ public class ArscParser implements ResConst {
                     }
                     break;
                 case RES_TABLE_PACKAGE_TYPE:
-                    System.out.println("RES_TABLE_PACKAGE_TYPE");
                     readPackage(in);
                 default:
                     flag = true;
@@ -126,7 +124,6 @@ public class ArscParser implements ResConst {
             if (flag) {
                 break;
             }
-            System.out.println(chunk.location + " " + chunk.size);
             in.position(chunk.location + chunk.size);
         }
         return pkgs;
@@ -149,6 +146,7 @@ public class ArscParser implements ResConst {
             int count = in.getInt();
             BagValue bag = new BagValue(parent);
             for (int i = 0; i < count; i++) {
+                @SuppressWarnings("unchecked")
                 Map.Entry<Integer, Value> entry = new AbstractMap.SimpleEntry(in.getInt(), readValue());
                 bag.map.add(entry);
             }

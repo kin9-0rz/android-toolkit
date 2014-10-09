@@ -337,11 +337,13 @@ class AnalysisTask extends SwingWorker<HashMap<Byte, String>, HashMap<Byte, Stri
         sb.delete(0, sb.length());
 
         for (String perm : apk.getPermissions()) {
-            perm = perm.replace("android.permission.", "");
             sb.append(perm);
-            if (permissionsMap.keySet().contains(perm)) {
-                sb.append(" [ ").append(permissionsMap.get(perm)).append(" ] ");
+            for (String key : permissionsMap.keySet()) {
+                if (perm.contains(key)) {
+                    sb.append(" [ ").append(permissionsMap.get(key)).append(" ] ");
+                }
             }
+
             sb.append("\n");
 
         }
