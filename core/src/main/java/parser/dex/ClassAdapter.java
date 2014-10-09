@@ -25,6 +25,7 @@ public class ClassAdapter implements DexClassVisitor {
         this.superClass = superClass;
         this.interfaceNames = interfaceNames;
         this.dexClass = dexClass;
+        this.dexClass.stringData.add(className);
     }
 
 
@@ -40,7 +41,7 @@ public class ClassAdapter implements DexClassVisitor {
         tField.value = value;
         dexClass.fields.add(tField);
 
-        System.out.println("field : " + field + "=" + value);
+//        System.out.println("field : " + field + "=" + value);
 
         if (null != value) {
             dexClass.stringData.add(field.getName());
@@ -57,7 +58,7 @@ public class ClassAdapter implements DexClassVisitor {
         dexClass.methods.add(method);
         dexClass.stringData.add(method.getName());
 
-        System.out.println("field : " + method.getName());
+//        System.out.println("field : " + method.getName());
 
         return new MethodAdapter(accessFlags, method, dexClass);
     }
